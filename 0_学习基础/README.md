@@ -177,6 +177,7 @@ xgb_m2.predict(xgb.DMatrix(test))  这个得到的就是概率【一列 n*1】�
 
 ## WOE_IV选取离散特征重要性
 
-注：只针对类别或离散变量，连续性变量可以先进行分箱操作（用R或者python跑DT然后看节点来确定分割点）[IV详解 CSDN](http://blog.csdn.net/kevin7658/article/details/50780391)
+注：WOE相当于一种编码，只针对类别或离散变量，连续性变量可以先进行分箱操作（用R或者python跑DT然后看节点来确定分割点）<br>
+[IV详解 CSDN](http://blog.csdn.net/kevin7658/article/details/50780391)
 
 ## xxx用法
