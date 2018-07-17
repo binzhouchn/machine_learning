@@ -71,10 +71,13 @@ P{|X-μ|>=ε} <= σ^2/ε^2 <br>
 (3) 交叉熵公式:<br>
 ![cross_entropy1](pic/交叉熵公式.png)<br>
 交叉熵损失函数公式：<br>
-![cross_entorpy2](pic/交叉熵损失函数.png)
+![cross_entorpy2](pic/交叉熵损失函数.png)<br>
+y_true*log(y_pred)求和和kl散度中的交叉熵是一样的p*log(q)<br>
+这里的y_true相当于p(已知),y_pred相当于y_pred(求得的预测或近似分布)
 
-
-
+(4) 互信息 = 信息熵 - 条件熵  I(X,Y)=H(Y)-H(Y|X) <br>
+（条件熵的定义：H(Y|X)=H(X,Y)-H(X)）<br>
+[链接地址](https://www.cnblogs.com/gatherstars/p/6004075.html)
 
 ## xgb调参
 ```python
