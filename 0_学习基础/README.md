@@ -18,7 +18,7 @@
 
 [**8. 树**](#树)
 
-
+[**9. LR(逻辑回归)**](#lr逻辑回归)
 
 [**10. xgb调参(后期放到建模流程中)**](#xgb调参)
 
@@ -76,7 +76,7 @@ P{|X-μ|>=ε} <= σ^2/ε^2 <br>
 信息熵就是p*log(p)求和，交叉熵就是p*log(q)求和；一般信息熵是已知的，交叉熵未知(即p已知，q未知)<br>
 [链接地址](https://blog.csdn.net/ericcchen/article/details/72357411)
 
- - 交叉熵公式:<br>
+ - 交叉熵公式：<br>
 ![cross_entropy1](pic/交叉熵公式.png)<br>
 交叉熵损失函数公式：<br>
 ![cross_entorpy2](pic/交叉熵损失函数.png)<br>
@@ -108,7 +108,16 @@ P(θ|x)后验 = P(x|θ)P(θ) / p(x) --> P(x|θ)似然P(θ)先验 <br>
 
 ## 树
 
+ - 决策树--信息增益，信息增益比，Gini指数的理解
+ID3/C4.5/CART，使用贪心法(**随机森林是局部最优，LR是全局最优所以量纲要一致**)
+[链接地址](https://www.cnblogs.com/muzixi/p/6566803.html)
 
+## lr逻辑回归
+
+**随机森林是局部最优，LR是全局最优所以量纲要一致**<br>
+
+LR参数更新公式推导:<br>
+![lr_param_deduce](pic/lr参数更新公式推导.png)
 
 ## xgb调参
 ```python
