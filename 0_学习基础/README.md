@@ -16,6 +16,9 @@
 
 [**7. 朴素贝叶斯**](#朴素贝叶斯)
 
+[**8. 树**](#树)
+
+
 
 [**10. xgb调参(后期放到建模流程中)**](#xgb调参)
 
@@ -64,23 +67,23 @@ P{|X-μ|>=ε} <= σ^2/ε^2 <br>
 
 ## 熵
 
-(1) 熵，又叫信息熵<br>
+ - 熵，又叫信息熵<br>
 ![entropy](pic/entropy.png)
 
-(2) kl散度最常见公式：<br>
+ - kl散度最常见公式：<br>
 ![kl](pic/kl散度.png)<br>
 **KL散度 = 交叉熵 - 信息熵**<br>
 信息熵就是p*log(p)求和，交叉熵就是p*log(q)求和；一般信息熵是已知的，交叉熵未知(即p已知，q未知)<br>
 [链接地址](https://blog.csdn.net/ericcchen/article/details/72357411)
 
-(3) 交叉熵公式:<br>
+ - 交叉熵公式:<br>
 ![cross_entropy1](pic/交叉熵公式.png)<br>
 交叉熵损失函数公式：<br>
 ![cross_entorpy2](pic/交叉熵损失函数.png)<br>
 y_true*log(y_pred)求和和kl散度中的交叉熵是一样的p*log(q)<br>
 这里的y_true相当于p(已知),y_pred相当于y_pred(求得的预测或近似分布)
 
-(4) 互信息 = 信息熵 - 条件熵  I(X,Y)=H(Y)-H(Y|X) <br>
+ - 互信息 = 信息熵 - 条件熵  I(X,Y)=H(Y)-H(Y|X) <br>
 （条件熵的定义：H(Y|X)=H(X,Y)-H(X)）<br>
 [链接地址](https://www.cnblogs.com/gatherstars/p/6004075.html)
 
@@ -102,6 +105,10 @@ very slow at the plateau
 
 P(θ|x)后验 = P(x|θ)P(θ) / p(x) --> P(x|θ)似然P(θ)先验 <br>  
 在贝叶斯概率理论中，如果后验概率P(θ|x)和先验概率P(θ)满足同样的分布律，那么，先验分布和后验分布被叫做共轭分布，同时，先验分布叫做似然函数的共轭先验分布
+
+## 树
+
+
 
 ## xgb调参
 ```python
