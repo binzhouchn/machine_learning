@@ -12,9 +12,14 @@
 
 [**5. 生成模型和判别模型的区别**](#生成模型和判别模型的区别)
 
-[**6. xgb调参(后期放到建模流程中)**](#xgb调参)
+[**6. gradient descent存在的几个问题**](#gradient_descent存在的几个问题)
 
-[**7. WOE, IV(information value)来选取离散特征重要性**](#woe_iv选取离散特征重要性)
+[**7. 朴素贝叶斯**](#朴素贝叶斯)
+
+
+[**10. xgb调参(后期放到建模流程中)**](#xgb调参)
+
+[**11. WOE, IV(information value)来选取离散特征重要性**](#woe_iv选取离散特征重要性)
 
 
 ---
@@ -81,8 +86,22 @@ y_true*log(y_pred)求和和kl散度中的交叉熵是一样的p*log(q)<br>
 
 ## 生成模型和判别模型的区别
 
+生成模型有：朴素贝叶斯、HMM等<br>
+判别模型有：大部分的分类算法比如lr，svm，gbdt等、最大熵模型、CRF
+
 简单的说，生成模型是从大量的数据中找规律，属于统计学习；需要提供先验概率<br>
 而判别模型只关心不同类型的数据的差别，利用差别来分类；没有先验概率
+
+## gradient_descent存在的几个问题
+
+stuck at local minimal <br>
+stuck at saddle point <br>
+very slow at the plateau
+
+## 朴素贝叶斯
+
+P(θ|x)后验 = P(x|theta)P(theta) / p(x) --> P(x|theta)似然P(theta)先验 <br>  
+在贝叶斯概率理论中，如果后验概率P(theta|x)和先验概率P(theta)满足同样的分布律，那么，先验分布和后验分布被叫做共轭分布，同时，先验分布叫做似然函数的共轭先验分布
 
 ## xgb调参
 ```python
