@@ -2,6 +2,14 @@
 
 ---
 
+勘察内容：<br>
+ - 1. 正负样本对比<br>
+如果正负样本不平衡，就需要处理不平衡样本数据
+ - 2. 列相关统计<br>
+最值、数据类型、缺失率等
+
+
+
 ```python
 import DataFrameSummary # from pandas_summary import DataFrameSummary
 dfs = DataFrameSummary(df)
