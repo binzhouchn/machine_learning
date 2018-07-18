@@ -9,7 +9,6 @@
 最值、数据类型、缺失率等
 
 
-
 ```python
 import DataFrameSummary # from pandas_summary import DataFrameSummary
 dfs = DataFrameSummary(df)
