@@ -16,6 +16,8 @@
  - 2. 相关性分析，分析连续变量之间线性相关程度的强弱
  - 3. 周期性分析，探索某个变量是否随着时间变化而呈现出某种周期变化趋势
 
+[链接地址](https://blog.csdn.net/yawei_liu1688/article/details/78674453)
+
 ```python
 import DataFrameSummary # from pandas_summary import DataFrameSummary
 dfs = DataFrameSummary(df)
