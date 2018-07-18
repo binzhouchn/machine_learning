@@ -19,7 +19,7 @@ class DataFrameExplr(object):
     EXCLUDE = 'EXCLUDE'
 
     TYPE_BOOL = 'boolean'
-    TYPE_NUMERIC = set(('floating', 'integer', 'mixed-integer'))
+    TYPE_NUMERIC = set(('floating', 'integer', 'mixed-integer','mixed-integer-floa',))
     TYPE_DATE = set(('date', 'datetime64', 'datetime', 'timedelta64', 'timedelta', 'time', 'period',))
     TYPE_CATEGORICAL = 'categorical'
     TYPE_CONSTANT = 'constant'
