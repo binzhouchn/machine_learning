@@ -5,16 +5,16 @@
 
 ## 数据质量分析
 
- - 1. 正负样本对比<br>
+ - 1. **正负样本对比**<br>
 如果正负样本不平衡，就需要处理不平衡样本数据
- - 2. 列相关统计（描述性统计）<br>
+ - 2. **列相关统计（描述性统计）**<br>
 数据类型、缺失值、异常值、重复数据、不一致的值等
 
 ## 数据特征分析
 
- - 1. 分布分析，分析特征的分布
- - 2. 相关性分析，分析连续变量之间线性相关程度的强弱
- - 3. 周期性分析，探索某个变量是否随着时间变化而呈现出某种周期变化趋势
+ - 1. **分布分析**，分析特征的分布
+ - 2. **相关性分析**，分析连续变量之间线性相关程度的强弱
+ - 3. **周期性分析**，探索某个变量是否随着时间变化而呈现出某种周期变化趋势
 
 [链接地址](https://blog.csdn.net/yawei_liu1688/article/details/78674453)
 
@@ -23,7 +23,7 @@ import DataFrameSummary # from pandas_summary import DataFrameSummary
 dfs = DataFrameSummary(df)
 ```
 
-- 列类型: dfs.columns_types
+- 列类型: dfs.columns_types <br>
 ```python
 floating     9
 integer     3
