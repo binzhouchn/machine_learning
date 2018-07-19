@@ -14,3 +14,19 @@
 
 我们使用sklearn中的preproccessing库来进行数据预处理，可以覆盖以上问题的解决方案。
 
+**一、标准化(Standardization)**<br>
+公式：新数据 =（原数据- 均值）/ 标准差<br>
+```python
+from sklearn.preprocessing import StandardScaler
+sds = StandardScaler()
+sds.fit(X)
+
+x_train_sds = sds.transform(X)
+```
+
+**二、区间缩放法(MinMaxScaler) 特征缩放至特定范围 , default=(0, 1)**<br>
+公式：新数据 =（原数据 - 最小值）/（最大值 - 最小值）<br>
+
+
+
+

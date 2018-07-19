@@ -23,9 +23,7 @@
 
 推荐下载[Anaconda-tsinghua](https://mirrors.tuna.tsinghua.edu.cn/)，清华镜像或者[USTC](http://mirrors.ustc.edu.cn/anaconda/archive/)下载速度快。
 
-
 ## 目录
-
 
 - [1. **特征工程是什么**](01)
 
@@ -33,7 +31,7 @@
 	 - 2.1 无量纲化
 	 	- 2.1.1 标准化
 	 	- 2.1.2 区间缩放法
-	 	- 2.1.3 归一化
+	 	- 2.1.3 归一化(正则化)
 	 - 2.2 缺失值计算
 
 - [3. **特征变换**](03)
