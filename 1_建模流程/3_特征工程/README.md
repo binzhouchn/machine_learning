@@ -3,7 +3,7 @@
 
 # 特征工程笔记
 
-> 版本：0.0.1<br>
+> 版本：0.0.2<br>
 > 作者：binzhou<br>
 > 邮件：binzhouchn@gmail.com<br>
 
@@ -15,7 +15,7 @@
 
 
 
-默认安装了 `python 3.6`，以及相关的第三方包 `ipython`， `numpy`， `scipy`，`pandas`。
+默认安装了 `python 3.5`，以及相关的第三方包 `ipython`， `numpy`， `scipy`，`pandas`。
 
 > life is short. use python.
 
@@ -69,3 +69,5 @@
 <br>
 
 上述方法都已写入[代码](binzhou_pac.py)中，有待补充
+
+[特征工程干货链接地址](https://www.cnblogs.com/5poi/p/7240601.html)
