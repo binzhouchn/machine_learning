@@ -31,7 +31,21 @@ x_train_sds = sds.transform(X)
 
 公式：新数据 =（原数据 - 最小值）/（最大值 - 最小值）<br>
 ```python
-import numpy
+from sklearn.preprocessing import MinMaxScaler
+mns = MinMaxScaler((0,1))
+mns.fit(X)
+
+x_train_mns = mns.transform(X)
+```
+
+**三、归一化(正则化) Normalization**
+
+使单个样本具有单位范数的缩放操作。 经常在文本分类和聚类当中使用。<br>
+```python
+from sklearn.preprocessing import Normalizer
+Normalizer().fit_transform([[1,2,3],[11,22,23]])
+# 一般计算两个向量[1,2,3]，[11,22,23]的余弦相似的时候用的比较多
+# 一般不对特征进行正则化处理
 ```
 
 
