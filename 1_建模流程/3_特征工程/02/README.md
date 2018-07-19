@@ -48,5 +48,12 @@ Normalizer().fit_transform([[1,2,3],[11,22,23]])
 # 一般不对特征进行正则化处理
 ```
 
+**四、缺失值填充**
 
+2_数据预处理 -> 数据清洗中有介绍<br>
+```python
+from sklearn.preprocessing import Imputer
+im =Imputer(strategy='mean') # mean, median, most_frequent
+im.fit_transform(X)
+```
 
