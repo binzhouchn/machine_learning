@@ -26,5 +26,11 @@ pandas.get_dummies(df, prefix=None, prefix_sep='_', dummy_na=False, columns=None
 # dummy_na=False # 是否把 missing value单独存放一列
 ```
 
+四、LabelEncoder
+```python
+# 对于Random Forest和GBDT等模型，如果类别特征存在较多的取值，可以直接使用 LabelEncoder 后的结果作为特征
+from sklearn.preprocessing import LabelEncoder
+LabelEncoder().fit_transform(X)
+```
 
 
