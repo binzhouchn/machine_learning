@@ -4,7 +4,7 @@
 # 特征工程笔记
 
 > 版本：0.0.2<br>
-> 作者：binzhou<br>
+> 作者：BinZhou<br>
 > 邮件：binzhouchn@gmail.com<br>
 
 `Github` 加载 `.ipynb` 的速度较慢，建议在 [Nbviewer](http://nbviewer.ipython.org) 中查看该项目。
@@ -12,7 +12,6 @@
 ---
 
 ## 简介
-
 
 
 默认安装了 `python 3.5`，以及相关的第三方包 `ipython`， `numpy`， `scipy`，`pandas`。
