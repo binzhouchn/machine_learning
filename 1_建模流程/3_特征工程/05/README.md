@@ -6,7 +6,7 @@
 
 --- 
 
-**主成分分析(PCA)，计算协方差矩阵**
+### 主成分分析(PCA)，计算协方差矩阵
 
 ```python
 from sklearn.decomposition import PCA
@@ -19,7 +19,7 @@ newdata = pca.fit_transform(xdata)
 
 \*注意：PCA 前先将数据进行标准化，用z-score即可!!!
 
-**截断SVD(TruncatedSVD)**
+### 截断SVD(TruncatedSVD)
 
 TruncatedSVD 原来N列 可以选择指定保留k列 , 降维<br>
 ```python
@@ -29,7 +29,7 @@ newdata = tsvd.fit_transform(xdata)
 #n_components：int  , 输出数据的期望维度。
 ```
 
-**线性判别分析法(LDA) 有监督的降维**
+### 线性判别分析法(LDA) 有监督的降维
 
 ```python
 from sklearn.discriminant_analysis import LinearDiscriminantAnalysis

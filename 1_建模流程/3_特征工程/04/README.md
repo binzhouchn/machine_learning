@@ -1,4 +1,4 @@
-### 4. 特征选择
+## 4. 特征选择
 
 当数据预处理完成后，我们需要选择有意义的特征输入机器学习的算法和模型进行训练。通常来说，从两个方面考虑来选择特征：
 
@@ -21,11 +21,11 @@
 
 ---
 
-**Embedded**
+### Embedded
 
-推荐使用 feature importance ， Tree-base > L1-base > ... //
+推荐使用 feature importance, Tree-base > L1-base > ... //
 
-(1) 基于惩罚项的特征选择法 Lasso
+(1) **基于惩罚项的特征选择法 Lasso**
 ```python
 from sklearn.linear_model import Lasso
 lasso = Lasso()
@@ -37,8 +37,7 @@ model = SelectFromModel(lasso,prefit=True)
 x_new = model.transform(xdata)
 ```
 
-
-(2) 基于树模型的特征选择法（常用）Tree-based feature selection
+(2) **基于树模型的特征选择法（常用）Tree-based feature selection**
 ```python
 from sklearn.ensemble import RandomForestRegressor
 rf = RandomForestRegressor()
@@ -47,7 +46,7 @@ rf.fit(xdata,ydata)
 rf.feature_importances_  # 非线性模型, 没有系数, 只有变量重要性!!!!
 ```
 
-(3) 基于Univariate feature selection  单变量特征选择
+(3) **基于Univariate feature selection  单变量特征选择**
 ```python
 from sklearn.feature_selection import SelectKBest
 from sklearn.feature_selection import SelectPercentile

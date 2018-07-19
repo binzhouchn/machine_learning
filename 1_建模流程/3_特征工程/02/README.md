@@ -1,4 +1,4 @@
-### 2. 数据预处理
+## 2. 数据预处理
 
 通过特征提取，我们能得到未经处理的特征，这时的特征可能有以下问题：
 
@@ -16,7 +16,7 @@
 
 ---
 
-**一、标准化(Standardization)**
+### 一、标准化(Standardization)
 
 公式：新数据 =（原数据- 均值）/ 标准差<br>
 ```python
@@ -27,7 +27,7 @@ sds.fit(X)
 x_train_sds = sds.transform(X)
 ```
 
-**二、区间缩放法(MinMaxScaler) 特征缩放至特定范围 , default=(0, 1)**
+### 二、区间缩放法(MinMaxScaler) 特征缩放至特定范围 , default=(0, 1)
 
 公式：新数据 =（原数据 - 最小值）/（最大值 - 最小值）<br>
 ```python
@@ -38,7 +38,7 @@ mns.fit(X)
 x_train_mns = mns.transform(X)
 ```
 
-**三、归一化(正则化) Normalization**
+### 三、归一化(正则化) Normalization
 
 使单个样本具有单位范数的缩放操作。 经常在文本分类和聚类当中使用。<br>
 ```python
@@ -48,7 +48,7 @@ Normalizer().fit_transform([[1,2,3],[11,22,23]])
 # 一般不对特征进行正则化处理
 ```
 
-**四、缺失值填充**
+### 四、缺失值填充
 
 2_数据预处理 -> 数据清洗中有介绍<br>
 ```python
