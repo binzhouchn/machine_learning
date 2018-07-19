@@ -19,7 +19,7 @@ newdata = pca.fit_transform(xdata)
 
 \*注意：PCA 前先将数据进行标准化，用z-score即可!!!
 
-**TruncatedSVD**
+**TruncatedSVD，截断SVD**
 
 TruncatedSVD 原来N列 可以选择指定保留k列 , 降维<br>
 ```python
