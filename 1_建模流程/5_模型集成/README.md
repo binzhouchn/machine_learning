@@ -10,6 +10,7 @@
 
 ### 2. Stacking
 
+stacking经典图<br>
 ![stacking经典图](stacking1.png)
 
 ![stacking2](stacking2.png)
