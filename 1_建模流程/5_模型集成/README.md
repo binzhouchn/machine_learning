@@ -10,6 +10,9 @@
 
 ### 2. Stacking
 
+![stacking](stacking.png)
+
+
 
 ---
 ## 2. 多样性
