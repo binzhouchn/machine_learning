@@ -10,7 +10,9 @@
 
 ### 2. Stacking
 
-![stacking](stacking.png)
+![stacking经典图](stacking1.png)
+
+![stacking2](stacking2.png)
 
 上图展示了使用5-Fold进行一次Stacking的过程<br>
 主要步骤是，比如数据是200个特征，样本数是10万个，base model经过5折cv以后得到10万个预测值（即生成一个新特征）<br>
