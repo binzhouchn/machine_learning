@@ -20,9 +20,20 @@ stacking经典图<br>
 base model经过5折cv(一般业界一折就行)以后得到10万个预测值（即生成一个新特征）<br>
 多个基模型就有了多个特征，最后再跑一个模型
 
+### 3. Blending
+
+Blending与Stacking类似，但单独留出一部分数据（如20%）用于训练Stage X模型
+
+### 4. Bagging Ensemble Selection
+
+Bagging Ensemble Selection在CrowdFlower搜索相关性比赛中使用的方法，其主要的优点在于可以以优化任意的指标来进行模型集成。
+这些指标可以是可导的（如LogLoss等）和不可导的（如正确率，AUC，Quadratic Weighted Kappa等）。它是一个前向贪婪算法，存在过拟合的可能性，
+作者在文献中提出了一系列的方法（如Bagging）来降低这种风险，稳定集成模型的性能。使用这个方法，需要有成百上千的基础模型。
+为此，在CrowdFlower的比赛中，调参过程中所有的中间模型以及相应的预测结果保留下来，作为基础模型。这样做的好处是，
+不仅仅能够找到最优的单模型（Best Single Model），而且所有的中间模型还可以参与模型集成，进一步提升效果。
 
 ---
-## 2. 多样性
+### 5. 多样性
 - 误差——分歧分解
 - 多样性度量
 - 多样性增强
@@ -36,4 +47,5 @@ base model经过5折cv(一般业界一折就行)以后得到10万个预测值（
 
 
 ---
+
 [0]: http://www.cnblogs.com/jasonfreak/p/5657196.html
