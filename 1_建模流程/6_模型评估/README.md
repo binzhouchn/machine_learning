@@ -29,10 +29,12 @@ mean_squared_error(y_true, y_pred)
 
 分类中使用，尤其是样本不平衡中
 ```python
+# F1_score
 from sklearn.metrics import f1_score
 f1_score(y_true, y_pred)
 ```
 ```python
+# AUC
 import numpy as np
 from sklearn import metrics
 y_true = np.array([1, 1, 2, 2])
