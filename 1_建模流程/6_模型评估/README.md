@@ -45,6 +45,7 @@ fpr, tpr, thresholds = metrics.roc_curve(y_true, y_pred, pos_label=2)
 metrics.auc(fpr, tpr)
 #0.75
 ```
+
 ---
 
  [0]: https://github.com/benhamner/Metrics/tree/master/Python
