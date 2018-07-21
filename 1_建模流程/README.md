@@ -12,5 +12,6 @@
 
 [**5. 模型集成**](5_模型集成)
 
-[**6. 模型评估 metrics**](5_模型评估)
+[**6. 模型评估 metrics**](6_模型评估)
 
+[**7. Parameters Tuning**](7_ParametersTuning)
