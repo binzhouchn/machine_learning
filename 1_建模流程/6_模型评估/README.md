@@ -27,7 +27,7 @@ from sklearn.metrics import mean_squared_error
 mean_squared_error(y_true, y_pred)
 ```
 
-### Area Under the ROC(AUC) or f1_score
+### Area Under the Curve(AUC) or f1_score
 
 分类中使用，尤其是样本不平衡中
 ```python
