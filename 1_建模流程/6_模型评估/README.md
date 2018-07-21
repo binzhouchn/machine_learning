@@ -8,6 +8,7 @@
 
 用的不多<br>
 ```python
+# Accuracy
 from sklearn.metrics import accuracy_score
 accuracy_score(y_true, y_pred)
 ```
@@ -21,6 +22,7 @@ accuracy_score(y_true, y_pred)
 
 回归中使用
 ```python
+# MSE
 from sklearn.metrics import mean_squared_error
 mean_squared_error(y_true, y_pred)
 ```
