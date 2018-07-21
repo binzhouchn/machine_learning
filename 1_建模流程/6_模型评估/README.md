@@ -2,9 +2,9 @@
 
 ---
 
-## [sklearn.metrics][11]
+### [sklearn.metrics][11]
 
-1. 准确率 Accuracy
+### 准确率 Accuracy
 
 用的不多<br>
 ```python
@@ -12,12 +12,12 @@ from sklearn.metrics import accuracy_score
 accuracy_score(y_true, y_pred)
 ```
 
-2. Kolmogorov-Smirnov(KS)
+### Kolmogorov-Smirnov(KS)
 
 一般不单独用<br>
 [KS](https://www.cnblogs.com/bergus/p/shu-ju-wa-jue-shu-yu-jie-xi.html)
 
-3. MSE
+### MSE
 
 回归中使用
 ```python
@@ -25,7 +25,7 @@ from sklearn.metrics import mean_squared_error
 mean_squared_error(y_true, y_pred)
 ```
 
-4. Area Under the ROC(AUC) or f1_score
+### Area Under the ROC(AUC) or f1_score
 
 分类中使用，尤其是样本不平衡中
 ```python
