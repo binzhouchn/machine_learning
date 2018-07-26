@@ -20,7 +20,7 @@ import pandas as pd
 import seaborn as sns
 # utility for early stopping with a validation set
 from sklearn.model_selection import train_test_split
-from tqdm import tqdm
+from tqdm import tqdm, tqdm_notebook
 
 
 class FeatureSelector():
@@ -207,7 +207,7 @@ class FeatureSelector():
         record_collinear = pd.DataFrame(columns=['drop_feature', 'corr_feature', 'corr_value'])
 
         # Iterate through the columns to drop to record pairs of correlated features
-        for column in tqdm(to_drop, 'correlated features'):
+        for column in tqdm_notebook(to_drop, 'correlated features'):
             # Find the correlated features
             corr_features = list(upper.index[upper[column].abs() > correlation_threshold])
 
