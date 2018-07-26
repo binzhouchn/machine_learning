@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 """
 __title__ = '_feature_selector'
-__author__ = 'JieYuan'
-__mtime__ = '2018/7/23'
+__author__ = 'from yj'
+__mtime__ = '2018/7/26'
 """
 
 # memory management
