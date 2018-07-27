@@ -2,20 +2,25 @@
 """
 __title__ = '_horizongtalFeature'
 __author__ = 'BinZhou'
-__mtime__ = '2018/7/26'
+__mtime__ = '2018/7/27'
 """
 import numpy as np
 import pandas as pd
 from tqdm import tqdm, tqdm_notebook
 from sklearn.preprocessing import LabelEncoder
+from sklearn.preprocessing import PolynomialFeatures
+
+# 未聚合前的横向特征扩展
 
 class HorizongtalFeature(object):
+
     def __init__(self):
         pass
 
     # 1. 对数值型特征，先进行计数和排序（横向衍生两列特征）
     @staticmethod
     def get_feats_vcrank(df, feat='', return_labelencoder=False):
+        # 只能一列列进来
         # 0.1 计数特征 value_counts
         ftr_ = df[feat].value_counts()
         ftr_ = pd.DataFrame(list(zip(ftr_.index,ftr_.values)),columns=[feat,feat+'_'+'vcounts'])
@@ -25,31 +30,47 @@ class HorizongtalFeature(object):
         ftr_ = le.fit_transform(df[feat])
         df[feat+'_'+'rank'] = ftr_
         if return_labelencoder:
-            return le, df
+            return le, df # 返回的le可以对测试数据进行transform
         return df
 
     # 2. 针对同类特征群（比如消费，浏览记录等）横向扩展，计算一些统计量作为特征
     @staticmethod
-    def get_feats_syndrome(df, feat_cols=None):
+    def get_feats_syndrome(df, syndrome_num=0, feat_cols=None): #有多个特征群的时候会用到syndrome_num编号
         df = df.copy()
         _df = df[feat_cols]
 
-        funcs = ['count', 'min', 'mean', 'median', 'max', 'sum', 'std', 'var', 'sem', 'skew']
-        for f in funcs:
-            df['row_' + f] = _df.__getattr__(f)(1)
-        if len(feat_cols) > 3:
-            df['row_kurt'] = _df.kurt(1)
-        df['row_q1'] = _df.quantile(0.25, 1)
-        df['row_q3'] = _df.quantile(0.75, 1)
-        df['row_q3_q1'] = df['row_q3'] - df['row_q1']
-        df['row_max_min'] = df['row_max'] - df['row_min']
-        df['row_cv'] = df['row_std'] / (df['row_mean'] + 10 ** -8)  # 变异系数
-        df['row_cv_reciprocal'] = df['row_mean'] / (df['row_std'] + 10 ** -8)
+        buildin_funcs = ['count', 'min', 'mean', 'median', 'max', 'sum', 'std', 'var', 'sem', 'skew']
+        for f in buildin_funcs:
+            df['horz'+str(syndrome_num)+'_'+f] = _df.__getattr__(f)(axis=1)
+        if len(feat_cols) > 3: # 从公式来看峰度n要大于3
+            df['horz'+str(syndrome_num)+'_'+'kurt'] = _df.kurt(axis=1)
+        df['horz'+str(syndrome_num)+'_'+'q1'] = _df.quantile(0.25, axis=1)
+        df['horz'+str(syndrome_num)+'_'+'q3'] = _df.quantile(0.75, axis=1)
+        df['horz'+str(syndrome_num)+'_'+'q3_q1'] = df['horz'+str(syndrome_num)+'_'+'q3'] - df['horz'+str(syndrome_num)+'_'+'q1']
+        df['horz'+str(syndrome_num)+'_'+'max_min'] = df['horz'+str(syndrome_num)+'_'+'max'] - df['horz'+str(syndrome_num)+'_'+'min']
+        df['horz'+str(syndrome_num)+'_'+'COV'] = df['horz'+str(syndrome_num)+'_'+'std'] / (df['horz'+str(syndrome_num)+'_'+'mean'] + 10 ** -8)  # 变异系数C.O.V
+        df['horz'+str(syndrome_num)+'_'+'COV_reciprocal'] = df['horz'+str(syndrome_num)+'_'+'mean'] / (df['horz'+str(syndrome_num)+'_'+'std'] + 10 ** -8)
         return df
 
     # 3. 多项式特征Polynomial
+    @staticmethod
+    def get_feats_poly(data, feats=None, degree=2, return_df=True, return_poly=False):
+        """PolynomialFeatures
+        :param data: np.array or pd.DataFrame
+        :param feats: columns names
+        :param degree:
+        :return: df
+        """
+        poly = PolynomialFeatures(degree, include_bias=False)
+        data = poly.fit_transform(data[feats])
 
-    # 4. 时间特征（未聚合）
+        if return_df:
+            data = pd.DataFrame(data, columns=poly.get_feature_names(feats))
+        if return_poly:
+            return poly, data
+        return data
+
+    # 4. 时间特征
     @staticmethod
     def get_feats_time(data, group=None, feats=None, ts='ts'):
         """

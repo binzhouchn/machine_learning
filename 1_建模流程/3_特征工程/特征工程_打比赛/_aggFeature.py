@@ -1,16 +1,21 @@
 # -*- coding: utf-8 -*-
 """
-__title__ = '_get_agg_feats'
-__author__ = 'from yj'
-__mtime__ = '2018/7/26'
+__title__ = '_aggFeature'
+__author__ = 'BinZhou'
+__mtime__ = '2018/7/27'
 """
+import numpy as np
 import pandas as pd
 from sklearn.feature_extraction import text
 from tqdm import tqdm, tqdm_notebook
-from sklearn.preprocessing import PolynomialFeatures
 
-# 类别型特征（聚合）
-class CategoryFeature(object):
+
+class AggFeature(object):
+
+    def __init__(self):
+        pass
+
+    # 可以未聚合之前或聚合之后使用，都可以
     @staticmethod
     def get_feats_vectors(X, vectorizer='TfidfVectorizer', tokenizer=None, ngram_range=(1, 1), max_features=None):
         """
@@ -27,6 +32,7 @@ class CategoryFeature(object):
         vectorizer.fit(X)
         return vectorizer
 
+    # 类别型特征（聚合）
     @staticmethod
     def get_feats_desc_cat(data, group='ID', feats=None):
         for col_name in tqdm_notebook(feats):
@@ -47,40 +53,16 @@ class CategoryFeature(object):
                 df = df.merge(_func(), 'left', group).fillna(0)
         return df
 
-
-# 数值型特征（聚合）
-class NumericalFeature(object):
-
-    def __init__(self):
-        pass
-
-    @staticmethod
-    def get_feats_poly(data, feats=None, degree=2, return_df=True):
-        """PolynomialFeatures
-        :param data: np.array or pd.DataFrame
-        :param feats: columns names
-        :param degree:
-        :return: df
-        """
-        poly = PolynomialFeatures(degree, include_bias=False)
-        data = poly.fit_transform(data[feats])
-
-        if return_df:
-            data = pd.DataFrame(data, columns=poly.get_feature_names(feats))
-        return data
-
+    # 数值型特征（聚合）
     @staticmethod
     def get_feats_desc(data, group='ID', feats=['feature1', ]):
         """
         data未聚合
         时间特征差分后当数值型特征
-        
         """
         print("There are %s features..."%str(len(feats)))
 
         for col_name in tqdm_notebook(feats, desc='get_feature_desc'):
-
-#             _columns = {i: col_name + '_' + i for i in ['count', 'mean', 'std', 'var', 'min', 'q1', 'median', 'q3', 'max']}
             gr = data.groupby(group)[col_name]
 
             def _func():
@@ -95,23 +77,12 @@ class NumericalFeature(object):
                              (col_name+'_'+'median','median'), (col_name+'_'+'q1',q1_func), (col_name+'_'+'q3',q3_func), \
                              (col_name+'_'+'max_min',get_max_min), (col_name+'_'+'q3_q1',get_q3_q1), (col_name+'_'+'kurt',pd.Series.kurt), \
                              (col_name+'_'+'skew',pd.Series.skew), (col_name+'_'+'sem',pd.Series.sem), (col_name+'_'+'sum',np.sum), \
-                             (col_name+'_'+'COV',get_coef_of_var)]).reset_index()         
+                             (col_name+'_'+'COV',get_coef_of_var)]).reset_index()
                 return df
             if col_name == feats[0]:
                 df = _func()
             else:
                 df = df.merge(_func(), 'left', group).fillna(0)
         return df
-
-
-
-
-
-
-
-
-
-
-
 
 
