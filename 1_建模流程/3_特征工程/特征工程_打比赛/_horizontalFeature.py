@@ -4,7 +4,6 @@ __title__ = '_horizongtalFeature'
 __author__ = 'BinZhou'
 __mtime__ = '2018/7/27'
 """
-import numpy as np
 import pandas as pd
 from tqdm import tqdm, tqdm_notebook
 from sklearn.preprocessing import LabelEncoder
@@ -17,7 +16,7 @@ class HorizongtalFeature(object):
     def __init__(self):
         pass
 
-    # 1. 对数值型特征，先进行计数和排序（横向衍生两列特征）
+    # 1. 对类别型特征，先进行计数和排序（每个特征横向衍生两列特征）value_counts和LabelEncoder
     @staticmethod
     def get_feats_vcrank(df, feat='', return_labelencoder=False):
         # 只能一列列进来

@@ -19,7 +19,7 @@
 ## 特征初筛 - 去掉低auc，高auc衍生多项式特征
  
 最后单特征及单特征衍生特征跑一下模型比如lgb，看下效果（这里是AUC值）
- - 特征auc低的比如小于0.7的可以去掉
+ - 特征auc低的比如小于0.7(看情况)的可以去掉
  - 取效果好的前几个特征，然后造多项式特征 2.1.3
 
 # 2. 特征加法
@@ -56,8 +56,7 @@
 
 ```python
 import lightgbm as lgb
-y = new_df2['LABEL'].copy()
-X = new_df2.drop(['PERSONID','LABEL'],axis=1).copy()
+
 lgb_data = lgb.Dataset(X, y)
 params = {
     'boosting': 'gbdt', # 'rf', 'dart', 'goss'
