@@ -88,5 +88,45 @@ lgb.cv(
     show_stdv=True)
 ```
 
+# 5. 数据存取和模型存取
+
+```python
+## 数据存储
+import os
+import pandas as pd
+
+def df_save(df, hdf_path=None):
+    assert hdf_path is not None
+    print("save h5 ...")
+    df.to_hdf(hdf_path, 'w', complib='blosc', complevel=6)
+
+## 数据读入
+def df_read(hdf_path):
+    if os.path.isfile(hdf_path):
+        print("read h5 ...")
+        df = pd.read_hdf(hdf_path)
+        return df
+```
+```python
+## 模型存取
+import pickle
+
+class Pickle(object):
+    """
+    https://blog.csdn.net/justin18chan/article/details/78516452
+    json，用于字符串 和 python数据类型间进行转换:
+        json只能处理简单的数据类型，比如字典，列表等，不支持复杂数据类型，如类等数据类型。
+    """
+
+    @staticmethod
+    def save(obj, file):
+        with open(file, 'wb') as f:
+            pickle.dump(obj, f)
+
+    @staticmethod
+    def load(file):
+        with open(file, 'rb') as f:
+            return pickle.load(f)
+```
 
 
