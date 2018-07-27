@@ -67,10 +67,10 @@ class AggFeature(object):
             gr = data.groupby(group)[col_name]
 
             def _func():
-                q1_func = lambda x : np.quantile(x, q=0.25)
-                q3_func = lambda x : np.quantile(x, q=0.75)
+                q1_func = lambda x : x.quantile(0.25)
+                q3_func = lambda x : x.quantile(0.75)
                 get_max_min = lambda x : np.max(x) - np.min(x)
-                get_q3_q1 = lambda x : np.quantile(x, q=0.75) - np.quantile(x, q=0.25)
+                get_q3_q1 = lambda x : x.quantile(0.75) - x.quantile(0.25)
                 get_cov = lambda x : np.var(x)*1.0 / (np.mean(x)+10**-8)
                 get_cov_reciprocal = lambda x : np.mean(x)*1.0 / (np.var(x)+10**-8)
                 # (new_feature_name, operation)
