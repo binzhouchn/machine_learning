@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """
-__title__ = '_TimeFeature'
-__author__ = 'from yj'
+__title__ = '_horizongtalFeature'
+__author__ = 'BinZhou'
 __mtime__ = '2018/7/26'
 """
 import numpy as np
@@ -9,7 +9,6 @@ import pandas as pd
 from tqdm import tqdm, tqdm_notebook
 from sklearn.preprocessing import LabelEncoder
 
-# 4. 时间特征（未聚合）
 class HorizongtalFeature(object):
     def __init__(self):
         pass
@@ -31,7 +30,7 @@ class HorizongtalFeature(object):
 
     # 2. 针对同类特征群（比如消费，浏览记录等）横向扩展，计算一些统计量作为特征
     @staticmethod
-    def get_feats_agg_desc(df, feat_cols=None):
+    def get_feats_syndrome(df, feat_cols=None):
         df = df.copy()
         _df = df[feat_cols]
 
@@ -47,6 +46,8 @@ class HorizongtalFeature(object):
         df['row_cv'] = df['row_std'] / (df['row_mean'] + 10 ** -8)  # 变异系数
         df['row_cv_reciprocal'] = df['row_mean'] / (df['row_std'] + 10 ** -8)
         return df
+
+    # 3. 多项式特征Polynomial
 
     # 4. 时间特征（未聚合）
     @staticmethod
