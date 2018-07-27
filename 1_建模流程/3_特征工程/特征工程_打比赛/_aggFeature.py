@@ -34,7 +34,7 @@ class AggFeature(object):
 
     # 类别型特征（聚合）
     @staticmethod
-    def get_feats_desc_cat(data, group='ID', feats=None):
+    def get_feats_desc_cat(data, group='ID', feats=['feat1', ]):
         for col_name in tqdm_notebook(feats):
             gr = data.groupby(group)[col_name]
             def _func():
@@ -56,7 +56,7 @@ class AggFeature(object):
 
     # 数值型特征（聚合）
     @staticmethod
-    def get_feats_desc(data, group='ID', feats=['feat1', ]):
+    def get_feats_desc_numeric(data, group='ID', feats=['feat1', ]):
         """
         data未聚合
         时间特征差分后当数值型特征
