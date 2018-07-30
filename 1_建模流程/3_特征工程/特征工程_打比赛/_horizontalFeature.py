@@ -8,6 +8,7 @@ import pandas as pd
 from tqdm import tqdm, tqdm_notebook
 from sklearn.preprocessing import LabelEncoder
 from sklearn.preprocessing import PolynomialFeatures
+from itertools import combinations
 
 # 未聚合前的横向特征扩展
 
@@ -55,16 +56,19 @@ class HorizongtalFeature(object):
     @staticmethod
     def get_feats_poly(data, feats=None, degree=2, return_df=True, return_poly=False):
         """PolynomialFeatures
-        :param data: np.array or pd.DataFrame
+        :param data: np.array or pd.DataFrame, dataframe should be reindexed from 0 TO n
         :param feats: columns names
         :param degree:
         :return: df
         """
+        df = data.copy()
         poly = PolynomialFeatures(degree, include_bias=False)
-        data = poly.fit_transform(data[feats])
+        df = poly.fit_transform(df[feats])
 
         if return_df:
-            data = pd.DataFrame(data, columns=poly.get_feature_names(feats))
+            df = pd.DataFrame(df, columns=poly.get_feature_names(feats))
+            df.drop(feats,axis=1,inplace=True)
+            data = pd.concat([data,df],axis=1)
         if return_poly:
             return poly, data
         return data
@@ -102,3 +106,18 @@ class HorizongtalFeature(object):
             for i in tqdm_notebook(feats):  # 数值特征也可以按时间顺序进行差分
                 data['diff_' + i] = gr[i].diff().fillna(0)
         return data
+
+    # 组合特征
+    @staticmethod
+    def get_numeric_feats_comb(df, feature_for_polyAndcomb=None):
+        df = df.copy()
+        # 加减乘除
+        add = lambda a, b : a + b
+        sub = lambda a, b : a - b
+        mul = lambda a, b : a * b
+        div = lambda a, b: a / (b+10**-8)
+        for oper in tqdm_notebook(['add','sub','mul','div']):
+            for f1, f2 in combinations(feature_for_polyAndcomb,2):
+                col_name = f1+oper+f2
+                df[col_name] = eval(oper)(df[f1],df[f2])
+        return df
