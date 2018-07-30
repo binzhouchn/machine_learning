@@ -20,6 +20,7 @@ import pandas as pd
 import seaborn as sns
 # utility for early stopping with a validation set
 from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import LabelEncoder
 from tqdm import tqdm, tqdm_notebook
 
 
@@ -646,3 +647,56 @@ class FeatureSelector():
 
     def reset_plot(self):
         plt.rcParams = plt.rcParamsDefault
+
+    def select_best_auc_for_cat(self, func_cat=None, group='ID',cat_feats=None,lgb_params=None,df_id=None):
+        # func_cat为_aggFeature中的纵向聚合类别特征函数
+        auc_list = []
+        df = self.data.copy()
+        for feature in tqdm_notebook(cat_feats):
+            # 0.1 计数特征 value_counts
+            print(feature, '####################################################')
+            ftr_ = df[[group, feature]].copy()
+            a = ftr_[feature].value_counts()
+            a = pd.DataFrame(list(zip(a.index, a.values)), columns=[feature, 'vcounts'])
+            ftr_ = ftr_.merge(a, 'left', on=feature)
+            # 0.2 排序特征
+            a = LabelEncoder()
+            a_ = a.fit_transform(ftr_[feature])
+            ftr_['rank'] = a_
+            # 0.3 得到的vcounts和rank都当成类别特征，然后跑一下聚合特征加法和特征减法，进行单特征评测
+            new_df = func_cat(ftr_, group=group, feats=[feature,'vcounts', 'rank'])
+            fs = FeatureSelector(new_df.drop([group], 1))  # 把 FeatureSelector 加载进来别忘了
+            fs.identify_collinear(correlation_threshold=0.98)
+            new_df.drop(fs.ops['collinear'], axis=1, inplace=True)
+            if df_id is not None:
+                new_df = df_id.merge(new_df, 'left', on=group)
+
+            y = new_df['LABEL'].copy()
+            X = new_df.drop([group, 'LABEL'], axis=1).copy()
+            lgb_data = lgb.Dataset(X, y)
+
+            model_cv = lgb.cv(
+                lgb_params,
+                lgb_data,
+                num_boost_round=2000,
+                nfold=5,
+                stratified=False,  ########stratified回归
+                early_stopping_rounds=100,
+                verbose_eval=50,
+                show_stdv=True)
+            auc_list.append((model_cv['auc-mean'][-1], feature))
+        auc_list.sort(reverse=True)
+        return auc_list
+
+    def select_best_auc_for_numeric(self, func_numeric=None, group='ID',numeric_feats=None,lgb_params=None,df_id=None):
+        auc_list = []
+        df = self.data.copy()
+        pass
+
+    def select_bestn_variance_for_numeric(self,numeric_feats=None):
+        var_list = []
+        for feature in tqdm_notebook(numeric_feats):
+            var_list.append((np.var(self.data[feature]),feature))
+        var_list.sort(reverse=True)
+        return var_list
+
