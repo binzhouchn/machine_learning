@@ -51,4 +51,12 @@
 - **维规约**（检测并删除不相关、弱相关或冗余的属性或维）<br>
 - **数据压缩**（小波或傅立叶变换以及主成份分析）
 
-
+针对反欺诈场景，类别不平衡的情况：<br>
+(i) 欠采样(用的比较多)<br>
+(ii) 过采样(SMOTE: Synthetic Minority Over-sampling Technique)
+```python
+from imblearn.over_sampling import SMOTE
+# SMOTE Technique (OverSampling) After splitting and Cross Validating
+sm = SMOTE(ratio='minority', random_state=42)
+Xsm_train, ysm_train = sm.fit_sample(original_Xtrain, original_ytrain)
+```
