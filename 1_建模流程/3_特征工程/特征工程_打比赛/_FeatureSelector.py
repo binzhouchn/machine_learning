@@ -116,7 +116,8 @@ class FeatureSelector():
 
         self.one_hot_correlated = False
 
-    def identify_missing(self, missing_threshold):
+    # 空值处理，默认发现空值率大于0.4的特征列
+    def identify_missing(self, missing_threshold=0.4): # 0.4为经验值
         """Find the features with a fraction of missing values above `missing_threshold`"""
 
         self.missing_threshold = missing_threshold
@@ -142,6 +143,37 @@ class FeatureSelector():
         print('%d features with greater than %0.2f missing values.\n' % (
             len(self.ops['missing']), self.missing_threshold))
 
+    # 空值填充，continuous feature采取mean,min,max方式；class feature空值单独作为一类，或者one_hot_encoding的方式
+
+    # 离群点处理
+    '''
+    把空值过多的列去完之后，我们需要考虑将一些特别离群的点去掉，这边需要注意两点：
+
+    (1) 异常值分析类的场景禁止使用这步，比如信用卡评分，爬虫识别等，你如果采取了这步，还怎么去分离出这些异常啊
+    (2) 容忍度高的算法不建议使用这步，比如svm里面已经有了支持向量机这个东西，你如果采取了这步的离群识别的操作会改变原分布而且svm里面决定超平面的核心与离群点无关，后接函数会引发意想不到的彩蛋～
+
+    这边Interquartile Range Method: 对于特别异常的点进行box上下位截断操作
+    '''
+    def outlier_box(self, changed_feature_box=[], limit_value=20, method='box'):
+        # limit_value是最小处理样本个数set，当独立样本大于limit_value我们认为非可onehot字段
+        feature_cnt = changed_feature_box
+        feature_changed = []
+        data = self.data.copy()
+        for feature in feature_cnt:
+            if len(pd.DataFrame(data[feature]).drop_duplicates()) >= limit_value:
+                q1 = np.percentile(np.array(data[feature]), 25)
+                q3 = np.percentile(np.array(data[feature]), 75)
+                iqr = q3 - q1
+                # q3+3/2*iqr为上截距点，详细百度分箱图
+                top = q3 + 1.5 * iqr
+                data[feature][data[feature] > top] = top
+                # q1-3/2*iqr为下截距点，详细百度分箱图
+                bottom = q1 - 1.5 * iqr
+                data[feature][data[feature] < bottom] = bottom
+                feature_changed.append(feature)
+        return data, feature_changed
+
+    # 如果这一列都是一个值，则去除
     def identify_single_unique(self):
         """Finds features with only a single unique value. NaNs do not count as a unique value. """
 
@@ -162,7 +194,8 @@ class FeatureSelector():
 
         print('%d features with a single unique value.\n' % len(self.ops['single_unique']))
 
-    def identify_collinear(self, correlation_threshold, one_hot=False):
+    # 把共线性或相关性大于阈值的去除
+    def identify_collinear(self, correlation_threshold=0.98, one_hot=False):
         """
         Finds collinear features based on the correlation coefficient between features.
         For each pair of features with a correlation coefficient greather than `correlation_threshold`,
@@ -379,139 +412,11 @@ class FeatureSelector():
         print('%d features do not contribute to cumulative importance of %0.2f.\n' % (len(self.ops['low_importance']),
                                                                                       self.cumulative_importance))
 
-    def identify_all(self, selection_params):
-        """
-        Use all five of the methods to identify features to remove.
-
-        Parameters
-        --------
-
-        selection_params : dict
-           Parameters to use in the five feature selection methhods.
-           Params must contain the keys ['missing_threshold', 'correlation_threshold', 'eval_metric', 'task', 'cumulative_importance']
-
-        """
-
-        # Check for all required parameters
-        for param in ['missing_threshold', 'correlation_threshold', 'eval_metric', 'task', 'cumulative_importance']:
-            if param not in selection_params.keys():
-                raise ValueError('%s is a required parameter for this method.' % param)
-
-        # Implement each of the five methods
-        self.identify_missing(selection_params['missing_threshold'])
-        self.identify_single_unique()
-        self.identify_collinear(selection_params['correlation_threshold'])
-        self.identify_zero_importance(task=selection_params['task'], eval_metric=selection_params['eval_metric'])
-        self.identify_low_importance(selection_params['cumulative_importance'])
-
-        # Find the number of features identified to drop
-        self.all_identified = set(list(chain(*list(self.ops.values()))))
-        self.n_identified = len(self.all_identified)
-
-        print('%d total features out of %d identified for removal after one-hot encoding.\n' % (self.n_identified,
-                                                                                                self.data_all.shape[1]))
-
-    def check_removal(self, keep_one_hot=True):
-
-        """Check the identified features before removal. Returns a list of the unique features identified."""
-
-        self.all_identified = set(list(chain(*list(self.ops.values()))))
-        print('Total of %d features identified for removal' % len(self.all_identified))
-
-        if not keep_one_hot:
-            if self.one_hot_features is None:
-                print('Data has not been one-hot encoded')
-            else:
-                one_hot_to_remove = [x for x in self.one_hot_features if x not in self.all_identified]
-                print('%d additional one-hot features can be removed' % len(one_hot_to_remove))
-
-        return list(self.all_identified)
-
-    def remove(self, methods, keep_one_hot=True):
-        """
-        Remove the features from the data according to the specified methods.
-
-        Parameters
-        --------
-            methods : 'all' or list of methods
-                If methods == 'all', any methods that have identified features will be used
-                Otherwise, only the specified methods will be used.
-                Can be one of ['missing', 'single_unique', 'collinear', 'zero_importance', 'low_importance']
-            keep_one_hot : boolean, default = True
-                Whether or not to keep one-hot encoded features
-
-        Return
-        --------
-            data : dataframe
-                Dataframe with identified features removed
-
-
-        Notes
-        --------
-            - If feature importances are used, the one-hot encoded columns will be added to the data (and then may be removed)
-            - Check the features that will be removed before transforming data!
-
-        """
-
-        features_to_drop = []
-
-        if methods == 'all':
-
-            # Need to use one-hot encoded data as well
-            data = self.data_all
-
-            print('{} methods have been run\n'.format(list(self.ops.keys())))
-
-            # Find the unique features to drop
-            features_to_drop = set(list(chain(*list(self.ops.values()))))
-
-        else:
-            # Need to use one-hot encoded data as well
-            if 'zero_importance' in methods or 'low_importance' in methods or self.one_hot_correlated:
-                data = self.data_all
-
-            else:
-                data = self.data
-
-            # Iterate through the specified methods
-            for method in methods:
-
-                # Check to make sure the method has been run
-                if method not in self.ops.keys():
-                    raise NotImplementedError('%s method has not been run' % method)
-
-                # Append the features identified for removal
-                else:
-                    features_to_drop.append(self.ops[method])
-
-            # Find the unique features to drop
-            features_to_drop = set(list(chain(*features_to_drop)))
-
-        features_to_drop = list(features_to_drop)
-
-        if not keep_one_hot:
-
-            if self.one_hot_features is None:
-                print('Data has not been one-hot encoded')
-            else:
-
-                features_to_drop = list(set(features_to_drop) | set(self.one_hot_features))
-
-        # Remove the features and return the data
-        data = data.drop(columns=features_to_drop)
-        self.removed_features = features_to_drop
-
-        if not keep_one_hot:
-            print('Removed %d features including one-hot features.' % len(features_to_drop))
-        else:
-            print('Removed %d features.' % len(features_to_drop))
-
-        return data
 
     def plot_missing(self):
         """Histogram of missing fraction in each feature"""
         if self.record_missing is None:
-            raise NotImplementedError("Missing values have not been calculated. Run `identify_missing`")
+            raise NotImplementedError("Missing values have not been calculated. Run `identify_missing` first")
 
         self.reset_plot()
 
@@ -528,7 +433,7 @@ class FeatureSelector():
     def plot_unique(self):
         """Histogram of number of unique values in each feature"""
         if self.record_single_unique is None:
-            raise NotImplementedError('Unique values have not been calculated. Run `identify_single_unique`')
+            raise NotImplementedError('Unique values have not been calculated. Run `identify_single_unique` first')
 
         self.reset_plot()
 
@@ -554,7 +459,7 @@ class FeatureSelector():
         """
 
         if self.record_collinear is None:
-            raise NotImplementedError('Collinear features have not been idenfitied. Run `identify_collinear`.')
+            raise NotImplementedError('Collinear features have not been idenfitied. Run `identify_collinear` first.')
 
         if plot_all:
             corr_matrix_plot = self.corr_matrix
@@ -601,7 +506,7 @@ class FeatureSelector():
         """
 
         if self.record_zero_importance is None:
-            raise NotImplementedError('Feature importances have not been determined. Run `idenfity_zero_importance`')
+            raise NotImplementedError('Feature importances have not been determined. Run `idenfity_zero_importance` first')
 
         # Need to adjust number of features if greater than the features in the data
         if plot_n > self.feature_importances.shape[0]:

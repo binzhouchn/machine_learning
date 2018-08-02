@@ -73,7 +73,7 @@ class HorizongtalFeature(object):
             return poly, data
         return data
 
-    # 4. 时间特征
+    # 4. 时间特征 with_group
     @staticmethod
     def get_feats_time(data, group=None, feats=None, ts='ts'):
         """
@@ -107,7 +107,28 @@ class HorizongtalFeature(object):
                 data['diff_' + i] = gr[i].diff().fillna(0)
         return data
 
-    # 组合特征
+    # 4. 时间特征 without_group
+    def create_fts_from_timegroup(data, feats=None, ts='ts'):
+        data = data.copy()
+        q1_func = lambda x: x.quantile(0.25)
+        q3_func = lambda x: x.quantile(0.75)
+        get_max_min = lambda x: np.max(x) - np.min(x)
+        get_q3_q1 = lambda x: x.quantile(0.75) - x.quantile(0.25)
+        get_cov = lambda x: np.var(x) * 1.0 / (np.mean(x) + 10 ** -8)
+        get_cov_reciprocal = lambda x: np.mean(x) * 1.0 / (np.var(x) + 10 ** -8)
+        func_list = [('count', 'count'), ('mean', 'mean'), ('std', 'std'), ('var', 'var'), ('min', 'min'),
+                     ('max', 'max'), ('median', 'median'), \
+                     ('q1_func', q1_func), ('q3_func', q3_func), ('q3_q1', get_q3_q1), ('max_min', get_max_min),
+                     ('get_cov', get_cov), ('get_cov_reciprocal', get_cov_reciprocal)]
+        if feats is not None:  # 对时间特征可用数值特征平均编码
+            print("%s_encoding ..." % ts)
+            gr = data.groupby(ts)
+            for ft in tqdm_notebook(feats):
+                for func_name, func in func_list:
+                    data['{}_{}_encoding_'.format(ts, func_name) + ft] = gr[ft].transform(func)
+        return data
+
+    # 5. 组合特征
     @staticmethod
     def get_numeric_feats_comb(df, feature_for_polyAndcomb=None):
         df = df.copy()
