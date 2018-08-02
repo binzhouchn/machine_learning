@@ -129,6 +129,13 @@ class HorizongtalFeature(object):
         return data
 
     # 5. 组合特征
+    '''
+    造组合特征之前，一定要看下数据分布情况，然后确定哪些特征进行组合：
+    技巧一：组合特征的分布最好要一致（不一定）；
+    技巧二：几个特征的数值加总为1或者某个数，这个有业务意义，具体看场景；
+    技巧三：特征随机组合，然后看组合后与类别的logloss(或KL散度)或相关性；
+    技巧四：
+    '''
     @staticmethod
     def get_numeric_feats_comb(df, operations=['add','sub','mul','div'], feature_for_polyAndcomb=None):
         df = df.copy()
