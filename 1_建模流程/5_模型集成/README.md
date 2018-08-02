@@ -25,6 +25,11 @@ voting_clf = VotingClassifier (
 voting_clf.fit(X_train,y_train)
 ```
 
+在反欺诈中（样本不平衡），标签很多是人工打上去的，他们一般不放过一笔可疑的交易，
+所以recall会比较大；如果以f1_score作为衡量标准，几个模型融合的时候，可以取f1_score
+最大的几个模型（比如上面代码的xgb,lgb,rf）加上recall最大的模型（上面的lr）
+
+
 ### 2. Stacking
 
 stacking经典图<br>
