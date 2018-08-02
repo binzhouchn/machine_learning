@@ -130,14 +130,14 @@ class HorizongtalFeature(object):
 
     # 5. 组合特征
     @staticmethod
-    def get_numeric_feats_comb(df, feature_for_polyAndcomb=None):
+    def get_numeric_feats_comb(df, operations=['add','sub','mul','div'], feature_for_polyAndcomb=None):
         df = df.copy()
         # 加减乘除
         add = lambda a, b : a + b
         sub = lambda a, b : a - b
         mul = lambda a, b : a * b
         div = lambda a, b: a / (b+10**-8)
-        for oper in tqdm_notebook(['add','sub','mul','div']):
+        for oper in tqdm_notebook(operations):
             for f1, f2 in combinations(feature_for_polyAndcomb,2):
                 col_name = f1+oper+f2
                 df[col_name] = eval(oper)(df[f1],df[f2])
