@@ -8,6 +8,7 @@ import pandas as pd
 from tqdm import tqdm, tqdm_notebook
 from sklearn.preprocessing import LabelEncoder
 from sklearn.preprocessing import PolynomialFeatures
+from sklearn.preprocessing import StandardScaler
 from itertools import combinations
 
 # 未聚合前的横向特征扩展
@@ -108,7 +109,7 @@ class HorizongtalFeature(object):
         return data
 
     # 5. Grougby类别型特征（比如时间，性别等）计算其他数值型特征的均值，方差等等
-    def create_fts_from_catgroup(data, feats=None, by='ts'):
+    def create_fts_from_catgroup(data, feats=None, by='ts',standardize=False):
         data = data.copy()
         q1_func = lambda x: x.quantile(0.25)
         q3_func = lambda x: x.quantile(0.75)
@@ -122,10 +123,16 @@ class HorizongtalFeature(object):
                      ('get_cov', get_cov), ('get_cov_reciprocal', get_cov_reciprocal)]
         if feats is not None:  # 对时间特征可用数值特征平均编码
             print("%s_encoding ..." % by)
-            gr = data.groupby(ts)
+            new_feats = []
+            gr = data.groupby(by)
             for ft in tqdm_notebook(feats):
                 for func_name, func in func_list:
-                    data['{}_{}_encoding_'.format(by, func_name) + ft] = gr[ft].transform(func)
+                    new_feat = '{}_{}_encoding_'.format(by, func_name) + ft
+                    data[new_feat] = gr[ft].transform(func)
+                    new_feats.append(new_feat)
+        if standardize:
+            sdsr = StandardScaler()
+            data[new_feats] = sdsr.fit_transform(data[new_feats])
         return data
 
     # 6. 组合特征
