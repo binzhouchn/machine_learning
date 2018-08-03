@@ -45,10 +45,17 @@ import seaborn as sns
 fig = sns.boxplot(x='col_1', y="label", data=data)
 fig.axis(ymin=0, ymax=100); # y轴设置
 ```
- （2）数值型特征，画scatterplot，好特征呈现一定趋势<br>
+（2）数值型特征，画scatterplot，好特征呈现一定趋势<br>
 ```python
 data.plot.scatter(x='col_1', y='label', ylim=(0, 100))
 ```
+（3）把类别型用LabelEncoder转成数值型然后画关系矩阵<br>
+```python
+corrmat = data_train.corr()
+f, ax = plt.subplots(figsize=(20, 9))
+sns.heatmap(corrmat, vmax=0.8, square=True)
+```
+
 ### 2.3.2 对于分类问题
 
  待补充
