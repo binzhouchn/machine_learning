@@ -137,10 +137,34 @@ class Pickle(object):
 
 # 2. 总体流程（回归）
 
-特征工程:
+数据勘察和预处理之后，保留有用的特征；
+然后进行回归特征工程（特征衍生和修剪）:
 
-## 缺失值处理
+## 1. 缺失值处理（如果有）
 
+## 2. 把一些数值型（但实际是类别型）的变量转成类别型
 
+比如房屋号，房间号，时间（年，月）等astype(str)
 
+## 3. 探索数值型，结合业务，进行特征组合
+
+## 4. Grougby类别型特征（比如时间，性别等）计算其他数值型特征的均值，方差等等
+
+## 5. 类别型进行LabelEncoder，that may contain information in their ordering set
+
+## 6. 类别型进行one-hot编码
+
+## 7. 再看下数值型特征是否有偏（一般大于0.75为有偏）
+
+如果为长尾分布（偏度比较大）并且考虑使用线性模型，可以对变量进行幂变换或者对数变换或者box-cox进行转换。<br>
+以下是box-cox进行转换代码<br>
+```python
+# 先看下哪些特征偏度比较大，从大到小排序
+data[num_fts].apply(lambda x: x.skew()).sort_values(ascending=False)
+# 然后进行box-cox转换
+from scipy.special import boxcox, boxcox1p
+for feat in num_fts:
+    #all_data[feat] += 1
+    data[feat] = boxcox1p(data[feat], 0.15)
+```
 

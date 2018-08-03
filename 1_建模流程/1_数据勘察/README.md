@@ -16,8 +16,8 @@
 ### 2.1.1 回归
 
 (1) 特征变量为连续值：
-如果为长尾分布并且考虑使用线性模型，可以对变量进行幂变换或者对数变换。<br>
-如果特征变量偏度比较大，那么用box-cox进行转换<br>
+如果为长尾分布（偏度比较大）并且考虑使用线性模型，可以对变量进行幂变换或者对数变换或box-cox。<br>
+box-cox进行转换代码<br>
 ```python
 # 先看下哪些特征偏度比较大，从大到小排序
 data[num_fts].apply(lambda x: x.skew()).sort_values(ascending=False)
