@@ -13,7 +13,17 @@
 
 ## 2.1 分析特征变量的分布
 
-(1) 特征变量为连续值：如果为长尾分布并且考虑使用线性模型，可以对变量进行幂变换或者对数变换，或者常用的box-cox变换(skew>0.75)。<br>
+(1) 特征变量为连续值：如果为长尾分布并且考虑使用线性模型，可以对变量进行幂变换或者对数变换。<br>
+如果特征变量偏度比较大，那么用box-cox进行转换
+```python
+# 先看下哪些特征偏度比较大，从大到小排序
+data[num_fts].apply(lambda x: x.skew()).sort_values(ascending=False)
+# 然后进行box-cox转换
+from scipy.special import boxcox, boxcox1p
+for feat in num_fts:
+    #all_data[feat] += 1
+    data[feat] = boxcox1p(data[feat], 0.15)
+```
 (2) 特征变量为离散值：观察每个离散值的频率分布，对于频次较低的特征，可以考虑统一编码为“其他”类别。<br>
 比如天气特征有晴、阴、雨、刮风、雪，如果刮风和雪的频次较低则可编码为'其他'
 
