@@ -109,6 +109,7 @@ class HorizongtalFeature(object):
         return data
 
     # 5. Grougby类别型特征（比如时间，性别等）计算其他数值型特征的均值，方差等等
+    @staticmethod
     def create_fts_from_catgroup(data, feats=None, by='ts',standardize=False):
         data = data.copy()
         q1_func = lambda x: x.quantile(0.25)
@@ -133,6 +134,7 @@ class HorizongtalFeature(object):
         if standardize:
             sdsr = StandardScaler()
             data[new_feats] = sdsr.fit_transform(data[new_feats])
+            return data, sdsr # sdsr不一定用得到如果数据是训练和测试拼接完后放进来的
         return data
 
     # 6. 组合特征
@@ -155,4 +157,13 @@ class HorizongtalFeature(object):
             for f1, f2 in combinations(feature_for_polyAndcomb,2):
                 col_name = f1+oper+f2
                 df[col_name] = eval(oper)(df[f1],df[f2])
+        return df
+
+    # 7. 类别型特征进行one-hot编码
+    @staticmethod
+    def get_dumm(df, feats=None, drop_orig_feats=False):
+        df = df.copy()
+        df = pd.concat([df, pd.get_dummies(df[feats], prefix_sep='_')], axis=1)
+        if drop_orig_feats:
+            df.drop(feats, axis=1, inplace=True)
         return df
