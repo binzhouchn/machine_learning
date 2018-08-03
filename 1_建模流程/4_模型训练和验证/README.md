@@ -6,7 +6,7 @@
 [各种算法优缺点2](https://mp.weixin.qq.com/s/6hD19wWEex-0s-dweuP5sg)<br>
 [各种算法优缺点3](https://blog.csdn.net/u012422446/article/details/53034260)<br>
 
-### 数据分成训练集和验证集
+# 1. 数据分成训练集和验证集
 
 ```python
 from sklearn.model_selection import StratifiedKFold
@@ -16,21 +16,116 @@ skf = StratifiedKFold(n_splits = 5, shuffle = True, random_state = 42)
 for train_index, val_index in skf.split(X, y):
     X_train, y_train = X.iloc[train_index], y.iloc[train_index]
     X_val, y_val = X.iloc[val_index], y.iloc[val_index]
+    
+# 直接进行cv操作
+#Validation function
+import numpy as np
+from sklearn.model_selection import KFold, cross_val_score, train_test_split
+n_folds = 5
+
+def rmsle_cv(model):
+    kf = KFold(n_folds, shuffle=True, random_state=42).get_n_splits(train.values)
+    rmse= np.sqrt(-cross_val_score(model, train.values, y_train, scoring="neg_mean_squared_error", cv = kf))
+    return(rmse)
 ```
 
-### 经验参数
+# 2. 经验参数
 
 ![经验参数](经验参数.jpg)
 
-### 模型选择
+# 3. 模型选择
 
  - 对于稀疏型特征（如文本特征，One-hot的ID类特征），我们一般使用线性模型，譬如 Linear Regression 或者 Logistic Regression。Random Forest 和 GBDT 等树模型不太适用于稀疏的特征，但可以先对特征进行降维（如PCA，SVD/LSA等），再使用这些特征。稀疏特征直接输入 DNN 会导致网络 weight 较多，不利于优化，也可以考虑先降维，或者对 ID 类特征使用 Embedding 的方式
  
  - 对于稠密型特征，推荐使用XGBoost进行建模，简单易用效果好
  
  - 数据中既有稀疏特征，又有稠密特征，可以考虑使用线性模型对稀疏特征进行建模，将其输出与稠密特征一起再输入XGBoost/DNN建模，具体可以参考5_模型集成中Stacking部分
- 
-### 调参和模型验证
+
+## 3.1 分类
+
+```python
+import lightgbm as lgb
+
+lgb_data = lgb.Dataset(X, y)
+params = {
+    'boosting': 'gbdt', # 'rf', 'dart', 'goss'
+    'application': 'binary', # 'application': 'multiclass', 'num_class': 3, # multiclass=softmax, multiclassova=ova  One-vs-All
+    'learning_rate': 0.01,
+    'max_depth': -1,
+    'num_leaves': 2 ** 7 - 1,
+
+    'min_split_gain': 0,
+    'min_child_weight': 1,
+
+    'bagging_fraction': 0.8,
+    'feature_fraction': 0.8,
+    'lambda_l1': 0,
+    'lambda_l2': 1,
+
+    'scale_pos_weight': 1,
+    'metric': 'auc',
+    'num_threads': 32,
+}
+lgb.train(
+    params,
+    lgb_data,
+    num_boost_round=2000,
+    early_stopping_rounds=100,
+    verbose_eval=50)
+```
+
+## 3.2 回归
+
+```python
+from sklearn.linear_model import ElasticNet, Lasso,  BayesianRidge, LassoLarsIC
+from sklearn.ensemble import RandomForestRegressor,  GradientBoostingRegressor
+from sklearn.kernel_ridge import KernelRidge
+from sklearn.pipeline import make_pipeline
+from sklearn.preprocessing import RobustScaler
+from sklearn.base import BaseEstimator, TransformerMixin, RegressorMixin, clone
+from sklearn.model_selection import KFold, cross_val_score, train_test_split
+from sklearn.metrics import mean_squared_error
+import xgboost as xgb
+import lightgbm as lgb
+
+# Define a cross validation strategy
+#Validation function
+n_folds = 5
+
+def rmsle_cv(model):
+    kf = KFold(n_folds, shuffle=True, random_state=42).get_n_splits(train.values)
+    rmse= np.sqrt(-cross_val_score(model, train.values, y_train, scoring="neg_mean_squared_error", cv = kf))
+    return rmse
+    
+# base models
+
+# This model may be very sensitive to outliers. So we need to made it more robust on them. For that we use the sklearn's Robustscaler() method on pipeline
+lasso = make_pipeline(RobustScaler(), Lasso(alpha =0.0005, random_state=1)) 
+ENet = make_pipeline(RobustScaler(), ElasticNet(alpha=0.0005, l1_ratio=.9, random_state=3))
+KRR = KernelRidge(alpha=0.6, kernel='polynomial', degree=2, coef0=2.5)
+GBoost = GradientBoostingRegressor(n_estimators=3000, learning_rate=0.05,
+                                   max_depth=4, max_features='sqrt',
+                                   min_samples_leaf=15, min_samples_split=10, 
+                                   loss='huber', random_state =5)
+model_xgb = xgb.XGBRegressor(colsample_bytree=0.4603, gamma=0.0468, 
+                             learning_rate=0.05, max_depth=3, 
+                             min_child_weight=1.7817, n_estimators=2200,
+                             reg_alpha=0.4640, reg_lambda=0.8571,
+                             subsample=0.5213, silent=1,
+                             random_state =7, nthread = -1)
+model_lgb = lgb.LGBMRegressor(objective='regression',num_leaves=5,
+                              learning_rate=0.05, n_estimators=720,
+                              max_bin = 55, bagging_fraction = 0.8,
+                              bagging_freq = 5, feature_fraction = 0.2319,
+                              feature_fraction_seed=9, bagging_seed=9,
+                              min_data_in_leaf =6, min_sum_hessian_in_leaf = 11)
+                                                                                                                                 
+# 跑模型看下分数
+score = rmsle_cv(models_)
+print("\nLasso score: {:.4f} ({:.4f})\n".format(score.mean(), score.std()))
+```
+
+# 4. 调参和模型验证
 
  - 训练集和验证集的划分
  
