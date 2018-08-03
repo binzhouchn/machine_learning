@@ -26,7 +26,7 @@ for train_index, val_index in skf.split(X, y):
 
  - 对于稀疏型特征（如文本特征，One-hot的ID类特征），我们一般使用线性模型，譬如 Linear Regression 或者 Logistic Regression。Random Forest 和 GBDT 等树模型不太适用于稀疏的特征，但可以先对特征进行降维（如PCA，SVD/LSA等），再使用这些特征。稀疏特征直接输入 DNN 会导致网络 weight 较多，不利于优化，也可以考虑先降维，或者对 ID 类特征使用 Embedding 的方式
  
- - 对于稠密型特征，推荐使用 XGBoost 进行建模，简单易用效果好
+ - 对于稠密型特征，推荐使用XGBoost进行建模，简单易用效果好
  
  - 数据中既有稀疏特征，又有稠密特征，可以考虑使用线性模型对稀疏特征进行建模，将其输出与稠密特征一起再输入XGBoost/DNN建模，具体可以参考5_模型集成中Stacking部分
  
