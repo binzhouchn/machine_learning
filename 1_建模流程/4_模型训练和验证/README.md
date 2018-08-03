@@ -6,6 +6,17 @@
 [各种算法优缺点2](https://mp.weixin.qq.com/s/6hD19wWEex-0s-dweuP5sg)<br>
 [各种算法优缺点3](https://blog.csdn.net/u012422446/article/details/53034260)<br>
 
+### 数据分成训练集和验证集
+
+```python
+from sklearn.model_selection import StratifiedKFold
+# 训练和验证分成4:1
+# 这里X和y都是dataframe，series形式
+skf = StratifiedKFold(n_splits = 5, shuffle = True, random_state = 42)
+for train_index, val_index in skf.split(X, y):
+    X_train, y_train = X.iloc[train_index], y.iloc[train_index]
+    X_val, y_val = X.iloc[val_index], y.iloc[val_index]
+```
 
 ### 经验参数
 

@@ -17,13 +17,26 @@
 
  - 2. **分析目标变量的分布**<br>
 (1) 目标变量为连续值：查看其值域范围是否较大，如果较大，可以考虑对其进行对数变换，并以变换后的值作为新的目标变量进行建模（在这种情况下，需要对预测结果进行逆变换）。一般情况下，可以对连续变量进行Box-Cox变换。通过变换可以使得模型更好的优化，通常也会带来效果上的提升。<br>
-(2)目标变量为离散值：如果数据分布不平衡，考虑是否需要上采样/下采样；如果目标变量在某个ID上面分布不平衡，在划分本地训练集和验证集的时候，需要考虑分层采样(Stratified Sampling)。<br>
+(2)目标变量为离散值：如果类别分布不平衡，考虑是否需要上采样/下采样；如果目标变量在某个ID上面分布不平衡，在划分本地训练集和验证集的时候，需要考虑分层采样(Stratified Sampling)。<br>
 下采样最好结合业务场景，(或业务规则)，让负样本急剧下降。
 
- - 3. **分析变量之间两两的分布和相关度**<br>
+针对反欺诈场景，类别不平衡的情况：<br>
+(i) 欠采样(用的比较多)<br>
+(ii) 过采样(SMOTE: Synthetic Minority Over-sampling Technique)
+```python
+from imblearn.over_sampling import SMOTE
+# SMOTE Technique (OverSampling) After splitting and Cross Validating
+sm = SMOTE(ratio='minority', random_state=42)
+Xsm_train, ysm_train = sm.fit_sample(original_Xtrain, original_ytrain)
+```
+
+ - 3. **分析特征变量和目标变量之间的关系**<br>
+ (1) 对于回归问题，
+
+ - 4. **分析变量之间两两的分布和相关度**<br>
 (1) 分析连续变量之间线性相关程度的强弱，可以用于发现高相关和共线性的特征。
 
- - 4. **周期性分析**<br>
+ - 5. **周期性分析**<br>
  (1) 探索某个变量是否随着时间变化而呈现出某种周期变化趋势
 
 [链接地址](https://m.sohu.com/a/139981834_116235)
