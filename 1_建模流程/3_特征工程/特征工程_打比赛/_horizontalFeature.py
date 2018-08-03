@@ -107,8 +107,8 @@ class HorizongtalFeature(object):
                 data['diff_' + i] = gr[i].diff().fillna(0)
         return data
 
-    # 4. 时间特征 without_group
-    def create_fts_from_timegroup(data, feats=None, ts='ts'):
+    # 5. Grougby类别型特征（比如时间，性别等）计算其他数值型特征的均值，方差等等
+    def create_fts_from_catgroup(data, feats=None, by='ts'):
         data = data.copy()
         q1_func = lambda x: x.quantile(0.25)
         q3_func = lambda x: x.quantile(0.75)
@@ -121,14 +121,14 @@ class HorizongtalFeature(object):
                      ('q1_func', q1_func), ('q3_func', q3_func), ('q3_q1', get_q3_q1), ('max_min', get_max_min),
                      ('get_cov', get_cov), ('get_cov_reciprocal', get_cov_reciprocal)]
         if feats is not None:  # 对时间特征可用数值特征平均编码
-            print("%s_encoding ..." % ts)
+            print("%s_encoding ..." % by)
             gr = data.groupby(ts)
             for ft in tqdm_notebook(feats):
                 for func_name, func in func_list:
-                    data['{}_{}_encoding_'.format(ts, func_name) + ft] = gr[ft].transform(func)
+                    data['{}_{}_encoding_'.format(by, func_name) + ft] = gr[ft].transform(func)
         return data
 
-    # 5. 组合特征
+    # 6. 组合特征
     '''
     造组合特征之前，一定要看下数据分布情况，然后确定哪些特征进行组合：
     技巧一：组合特征的分布最好要一致（不一定）；
