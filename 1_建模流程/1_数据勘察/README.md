@@ -11,7 +11,7 @@
 ## 数据特征分析
 
  - 1. **分析特征变量的分布**<br>
-(1) 特征变量为连续值：如果为长尾分布并且考虑使用线性模型，可以对变量进行幂变换或者对数变换。<br>
+(1) 特征变量为连续值：如果为长尾分布并且考虑使用线性模型，可以对变量进行幂变换或者对数变换，或者常用的box-cox变换(skew>0.75)。<br>
 (2) 特征变量为离散值：观察每个离散值的频率分布，对于频次较低的特征，可以考虑统一编码为“其他”类别。<br>
 比如天气特征有晴、阴、雨、刮风、雪，如果刮风和雪的频次较低则可编码为'其他'
 
@@ -31,7 +31,21 @@ Xsm_train, ysm_train = sm.fit_sample(original_Xtrain, original_ytrain)
 ```
 
  - 3. **分析特征变量和目标变量之间的关系**<br>
- (1) 对于回归问题，
+ (1) **对于回归问题**，<br>
+ （i）类别型特征，画boxplot<br>
+ ```python
+import matplotlib.pyplot as plt
+import seaborn as sns
+%matplotlib inline 
+fig = sns.boxplot(x='col_1', y="label", data=data)
+fig.axis(ymin=0, ymax=100); # y轴设置
+```
+ （ii）数值型特征，画scatterplot<br>
+```python
+data.plot.scatter(x='col_1', y='label', ylim=(0, 100))
+```
+ (2) **对于分类问题**，<br>
+ 待补充
 
  - 4. **分析变量之间两两的分布和相关度**<br>
 (1) 分析连续变量之间线性相关程度的强弱，可以用于发现高相关和共线性的特征。
