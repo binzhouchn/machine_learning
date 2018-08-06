@@ -39,7 +39,50 @@ stacking经典图<br>
 上图展示了使用5-Fold进行一次Stacking的过程<br>
 主要步骤是，比如数据是200个特征，样本数是10万个，
 base model经过5折cv(一般业界一折就行)以后得到10万个预测值（即生成一个新特征）<br>
-多个基模型就有了多个特征，最后再跑一个模型
+多个基模型就有了多个特征，最后再跑一个meta模型
+
+```python
+class StackingAveragedModels(BaseEstimator, RegressorMixin, TransformerMixin):
+    def __init__(self, base_models, meta_model, n_folds=5):
+        self.base_models = base_models
+        self.meta_model = meta_model
+        self.n_folds = n_folds
+   
+    # We again fit the data on clones of the original models
+    # 三个base model得到的就是三个new features，然后再和y跑一个meta model
+    def fit(self, X, y):
+        self.base_models_ = [list() for x in self.base_models]
+        self.meta_model_ = clone(self.meta_model)
+        kfold = KFold(n_splits=self.n_folds, shuffle=True, random_state=156)
+        
+        # Train cloned base models then create out-of-fold predictions
+        # that are needed to train the cloned meta-model
+        out_of_fold_predictions = np.zeros((X.shape[0], len(self.base_models)))
+        for i, model in enumerate(self.base_models):
+            for train_index, holdout_index in kfold.split(X, y):
+                instance = clone(model)
+                self.base_models_[i].append(instance)
+                instance.fit(X[train_index], y[train_index])
+                y_pred = instance.predict(X[holdout_index])
+                out_of_fold_predictions[holdout_index, i] = y_pred
+                
+        # Now train the cloned  meta-model using the out-of-fold predictions as new feature
+        self.meta_model_.fit(out_of_fold_predictions, y)
+        return self
+   
+    #Do the predictions of all base models on the test data and use the averaged predictions as 
+    #meta-features for the final prediction which is done by the meta-model
+    def predict(self, X):
+        meta_features = np.column_stack([
+            np.column_stack([model.predict(X) for model in base_models]).mean(axis=1)
+            for base_models in self.base_models_ ])
+        return self.meta_model_.predict(meta_features)
+
+# 回归
+stacked_averaged_models = StackingAveragedModels(base_models = (ENet, model_xgb, model_lgb),
+                                                 meta_model = lasso)
+stacked_averaged_models.fit(X.values, y)
+```
 
 ### 3. Blending
 
