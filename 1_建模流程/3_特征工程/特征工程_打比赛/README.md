@@ -171,3 +171,6 @@ for feat in num_fts:
 ## 8. 特征减法
 
 ## 9. 建模
+
+
+[回归kaggle top4参考](https://www.kaggle.com/serigne/stacked-regressions-top-4-on-leaderboard/notebook)
