@@ -87,6 +87,7 @@ lgb.train(
 
 ## 3.2 回归
 
+3.2.1 参考代码一<br>
 ```python
 from sklearn.linear_model import ElasticNet, Lasso,  BayesianRidge, LassoLarsIC
 from sklearn.ensemble import RandomForestRegressor,  GradientBoostingRegressor
@@ -134,6 +135,117 @@ model_lgb = lgb.LGBMRegressor(objective='regression',num_leaves=5,
 # 跑模型看下分数
 score = rmsle_cv(models_)
 print("\nLasso score: {:.4f} ({:.4f})\n".format(score.mean(), score.std()))
+```
+
+3.2.2 参考代码二<br>
+```python
+num_round=600
+param={
+        'max_depth':2,
+        'eta':0.1,
+        'gamma':0,
+        'min_child_weight':0,
+        'save_period':0,
+        'booster':'gbtree',
+        'silent':1,
+        "seed": 0,
+        #'subsample':0.7,
+        #'colsample_bytree':0.9,
+        #'colsample_bylevel':0.9,
+        'lambda':6.0,
+        'alpha':4.0,
+        'objective':'reg:linear',
+        #'objective':'count:poisson'
+    }
+
+log_num_round=81
+log_param={
+    'max_depth':5,
+    'eta':0.08,
+    'gamma':0,
+    'min_child_weight':0,
+    'save_period':0,
+    'booster':'gbtree',
+    'silent':1,
+    "seed": 0,
+    #'subsample':0.7,
+    #'colsample_bytree':0.9,
+    #'colsample_bylevel':0.9,
+    'lambda':7.0,
+    'alpha':7.0,
+    'objective':'reg:linear',
+    #'objective':'count:poisson'
+}
+
+sqrt_num_round=321
+sqrt_param={
+    'max_depth':3,
+    'eta':0.08,
+    'gamma':0,
+    'min_child_weight':1,
+    'save_period':0,
+    'booster':'gbtree',
+    'silent':1,
+    "seed": 0,
+    #'subsample':0.7,
+    #'colsample_bytree':0.9,
+    #'colsample_bylevel':0.9,
+    'lambda':7.0,
+    'alpha':3.0,
+    'objective':'reg:linear',
+    #'objective':'count:poisson'
+}
+
+pow_num_round=20 #172
+pow_param={
+    'max_depth':3,
+    'eta':0.08,
+    'gamma':0,
+    'min_child_weight':1,
+    'save_period':0,
+    'booster':'gbtree',
+    'silent':1,
+    "seed": 0,
+    #'subsample':0.7,
+    #'colsample_bytree':0.9,
+    #'colsample_bylevel':0.9,
+    'lambda':5.0,
+    #'alpha':1.0,
+    'objective':'reg:linear',
+    #'objective':'count:poisson'
+}
+
+poi_num_round=607
+poi_param={
+    'max_depth':2,
+    'eta':0.2,
+    'gamma':0,
+    'min_child_weight':1,
+    'save_period':0,
+    'booster':'gbtree',
+    'silent':1,
+    "seed": 0,
+    #'subsample':0.7,
+    #'colsample_bytree':0.9,
+    #'colsample_bylevel':0.9,
+    'lambda':2.8,
+    #'alpha':3.0,
+    #'objective':'reg:linear',
+    'objective':'count:poisson'
+}
+data_length=len(y_data)
+num_fold=3
+#原始数据
+rmse_cross=[]
+pred,real,test_result=train_pred(X_test,y_data,X_data,param,num_round)
+#泊松回归
+rmse_cross=[]
+pred,real,poi_test_result=train_pred(X_test,y_data,X_data,poi_param,poi_num_round)
+#对score取对数后再训练
+#对score开方后再训练
+#对score平方后再训练
+
+
 ```
 
 # 4. 调参和模型验证
