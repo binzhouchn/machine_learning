@@ -19,7 +19,8 @@ import numpy as np
 import pandas as pd
 import seaborn as sns
 # utility for early stopping with a validation set
-from sklearn.model_selection import train_test_split
+from sklearn.model_selection import train_test_split, ShuffleSplit
+from sklearn.feature_selection import RFECV
 from sklearn.preprocessing import LabelEncoder
 from tqdm import tqdm, tqdm_notebook
 
@@ -263,6 +264,7 @@ class FeatureSelector():
         print('%d features with a correlation magnitude greater than %0.2f.\n' % (
             len(self.ops['collinear']), self.correlation_threshold))
 
+    # 应该加一个deprecated warning
     def identify_zero_importance(self, task, eval_metric=None,
                                  n_iterations=10, early_stopping=True):
         """
@@ -375,6 +377,7 @@ class FeatureSelector():
 
         print('\n%d features with zero importance after one-hot encoding.\n' % len(self.ops['zero_importance']))
 
+    # 应该加一个deprecated warning
     def identify_low_importance(self, cumulative_importance):
         """
         Finds the lowest importance features not needed to account for `cumulative_importance` fraction
@@ -411,7 +414,17 @@ class FeatureSelector():
             len(self.record_low_importance), self.cumulative_importance))
         print('%d features do not contribute to cumulative importance of %0.2f.\n' % (len(self.ops['low_importance']),
                                                                                       self.cumulative_importance))
-
+    def recursive_feature_elimination_withCV(self, clf, y_train=None, feats=None,n_fold=5, step=1, scoring='accuracy'):
+        data1 = self.data.copy()
+        cv_split = ShuffleSplit(n_splits=n_fold, test_size=.2, train_size=.7,
+                                                random_state=42)  # run model n_foldx with 70/20 split intentionally leaving out 10%
+        clf_rfe = RFECV(clf, step=step, scoring=scoring, cv=cv_split)
+        if y_train is not None:
+            clf_rfe.fit(data1[feats], y_train)
+        else:
+            clf_rfe.fit(data1[feats], data1['label'])
+        X_rfe = data1[feats].columns.values[clf_rfe.get_support()]
+        return X_rfe
 
     def plot_missing(self):
         """Histogram of missing fraction in each feature"""
