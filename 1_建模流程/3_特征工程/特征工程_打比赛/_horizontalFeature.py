@@ -147,6 +147,7 @@ class HorizongtalFeature(object):
     '''
     @staticmethod
     def get_numeric_feats_comb(df, operations=['add','sub','mul','div'], feature_for_polyAndcomb=None):
+        from itertools import combinations
         df = df.copy()
         # 加减乘除
         add = lambda a, b : a + b

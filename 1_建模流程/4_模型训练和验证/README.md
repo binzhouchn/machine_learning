@@ -52,7 +52,7 @@ params = {
     'application': 'binary', # 'application': 'multiclass', 'num_class': 3, # multiclass=softmax, multiclassova=ova  One-vs-All
     'learning_rate': 0.01,
     'max_depth': -1,
-    'num_leaves': 2 ** 7 - 1,
+    'num_leaves': 2 ** 7 - 1, # 根据具体问题调整
 
     'min_split_gain': 0,
     'min_child_weight': 1,
@@ -66,6 +66,17 @@ params = {
     'metric': 'auc',
     'num_threads': 32,
 }
+# 做cv
+lgb.cv(
+    params,
+    lgb_data,
+    num_boost_round=2000,
+    nfold=5,
+    stratified=False, # 回归一定是False
+    early_stopping_rounds=100,
+    verbose_eval=50,
+    show_stdv=True)
+# 跑模型
 lgb.train(
     params,
     lgb_data,

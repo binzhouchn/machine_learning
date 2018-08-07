@@ -42,6 +42,8 @@ base model经过5折cv(一般业界一折就行)以后得到10万个预测值（
 多个基模型就有了多个特征，最后再跑一个meta模型
 
 ```python
+from sklearn.model_selection import KFold
+from sklearn.base import BaseEstimator, TransformerMixin, RegressorMixin, clone
 class StackingAveragedModels(BaseEstimator, RegressorMixin, TransformerMixin):
     def __init__(self, base_models, meta_model, n_folds=5):
         self.base_models = base_models

@@ -58,41 +58,7 @@
 
 [_FeatureSelector.py](_FeatureSelector.py)
 
-# 4. 效果验证
-
-```python
-import lightgbm as lgb
-
-lgb_data = lgb.Dataset(X, y)
-params = {
-    'boosting': 'gbdt', # 'rf', 'dart', 'goss'
-    'application': 'binary', # 'application': 'multiclass', 'num_class': 3, # multiclass=softmax, multiclassova=ova  One-vs-All
-    'learning_rate': 0.01,
-    'max_depth': -1,
-    'num_leaves': 2 ** 7 - 1,
-
-    'min_split_gain': 0,
-    'min_child_weight': 1,
-
-    'bagging_fraction': 0.8,
-    'feature_fraction': 0.8,
-    'lambda_l1': 0,
-    'lambda_l2': 1,
-
-    'scale_pos_weight': 1,
-    'metric': 'auc',
-    'num_threads': 32,
-}
-lgb.cv(
-    params,
-    lgb_data,
-    num_boost_round=2000,
-    nfold=5,
-    stratified=False, # 回归一定是False
-    early_stopping_rounds=100,
-    verbose_eval=50,
-    show_stdv=True)
-```
+# 4. 效果验证(做CV)
 
 # 5. 数据存取和模型存取
 
@@ -171,6 +137,8 @@ for feat in num_fts:
 ## 8. 特征减法
 
 ## 9. 建模
+
+
 
 
 [回归kaggle top4参考](https://www.kaggle.com/serigne/stacked-regressions-top-4-on-leaderboard/notebook)
