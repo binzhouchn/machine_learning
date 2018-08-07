@@ -235,9 +235,50 @@ poi_param={
 }
 data_length=len(y_data)
 num_fold=3
+def rmse(pred,real):
+    '''
+    rmse计算函数
+    '''
+    #pred=np.round(pred)
+    l=len(real)
+    rmse_sum=0.0
+    for i in range(l):
+        rmse_sum+=np.square(pred[i]-real[i])
+    return np.sqrt(rmse_sum/l)
+
+def train_pred(X_test,y_data,X_data,param,num_round):
+    '''
+    通过交叉验证进行调参，得到效果较好的模型
+    返回值：训练数据的预测值，真实值，测试数据的预测值
+    '''
+    k_fold=KFold(num_fold,shuffle=True,random_state=20)
+    pred=[]
+    real=[]
+    model=[]
+    dtest=xgb.DMatrix(X_test)
+    test_score=[]
+    for train,valid in k_fold.split(X_data,y_data):
+        X_train=X_data[train]
+        y_train=y_data[train]
+        X_valid=X_data[valid]
+        y_valid=y_data[valid]
+
+        dtrain=xgb.DMatrix(X_train,label=y_train)
+        dvalid=xgb.DMatrix(X_valid,label=y_valid)
+        watchlist=[(dvalid,'eval'),(dtrain,'train')]
+        bst=xgb.train(param,dtrain,num_round,watchlist,learning_rates=None)
+        test_score.append(bst.predict(dtest))
+        valid_pred=bst.predict(dvalid)
+        valid_real=y_valid
+        pred.append(valid_pred)
+        real.append(valid_real)
+        #input('跑完一圈！回车继续...')
+    
+    return pred,real,test_score
+
 #原始数据
 rmse_cross=[]
-pred,real,test_result=train_pred(X_test,y_data,X_data,param,num_round)
+pred,real,test_results=train_pred(X_test,y_data,X_data,param,num_round)
 #泊松回归
 rmse_cross=[]
 pred,real,poi_test_result=train_pred(X_test,y_data,X_data,poi_param,poi_num_round)
@@ -245,7 +286,9 @@ pred,real,poi_test_result=train_pred(X_test,y_data,X_data,poi_param,poi_num_roun
 #对score开方后再训练
 #对score平方后再训练
 
-
+# 这里原始数据和泊松回归跑出来的结果最好，所以最后就用了这两个模型的预测结果取平均作为预测值。
+test_results.extend(poi_test_result) # 两个结果拼接起来(list方法)
+test_results=np.array(test_results).mean(axis=0)
 ```
 
 # 4. 调参和模型验证
