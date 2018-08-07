@@ -414,11 +414,11 @@ class FeatureSelector():
             len(self.record_low_importance), self.cumulative_importance))
         print('%d features do not contribute to cumulative importance of %0.2f.\n' % (len(self.ops['low_importance']),
                                                                                       self.cumulative_importance))
-    def recursive_feature_elimination_withCV(self, clf, y_train=None, feats=None,n_fold=5, step=1, scoring='accuracy'):
+    def recursive_feature_elimination_withCV(self, estimator, y_train=None, feats=None,n_fold=5, step=1, scoring='accuracy'):
         data1 = self.data.copy()
         cv_split = ShuffleSplit(n_splits=n_fold, test_size=.2, train_size=.7,
                                                 random_state=42)  # run model n_foldx with 70/20 split intentionally leaving out 10%
-        clf_rfe = RFECV(clf, step=step, scoring=scoring, cv=cv_split)
+        clf_rfe = RFECV(estimator, step=step, scoring=scoring, cv=cv_split)
         if y_train is not None:
             clf_rfe.fit(data1[feats], y_train)
         else:
