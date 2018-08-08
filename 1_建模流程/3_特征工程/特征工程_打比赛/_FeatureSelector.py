@@ -638,4 +638,3 @@ class FeatureSelector():
             var_list.append((np.var(self.data[feature]),feature))
         var_list.sort(reverse=True)
         return var_list
-
