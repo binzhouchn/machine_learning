@@ -23,7 +23,9 @@ from sklearn.model_selection import train_test_split, ShuffleSplit
 from sklearn.feature_selection import RFECV
 from sklearn.preprocessing import LabelEncoder
 from tqdm import tqdm, tqdm_notebook
-
+# for warning
+import warnings
+import functools
 
 class FeatureSelector():
     """
@@ -116,6 +118,24 @@ class FeatureSelector():
         self.ops = {}
 
         self.one_hot_correlated = False
+
+    @staticmethod
+    def deprecated(func):
+        """This is a decorator which can be used to mark functions
+        as deprecated. It will result in a warning being emitted
+        when the function is used."""
+
+        @functools.wraps(func)
+        def new_func(*args, **kwargs):
+            warnings.simplefilter('always', DeprecationWarning)  # turn off filter
+            warnings.warn("Call to deprecated function {}.".format(func.__name__),
+                          category=DeprecationWarning,
+                          stacklevel=2)
+            warnings.simplefilter('default', DeprecationWarning)  # reset filter
+            return func(*args, **kwargs)
+
+        return new_func
+
 
     # 空值处理，默认发现空值率大于0.4的特征列
     def identify_missing(self, missing_threshold=0.4): # 0.4为经验值
@@ -265,6 +285,7 @@ class FeatureSelector():
             len(self.ops['collinear']), self.correlation_threshold))
 
     # 应该加一个deprecated warning
+    @deprecated
     def identify_zero_importance(self, task, eval_metric=None,
                                  n_iterations=10, early_stopping=True):
         """
@@ -377,7 +398,7 @@ class FeatureSelector():
 
         print('\n%d features with zero importance after one-hot encoding.\n' % len(self.ops['zero_importance']))
 
-    # 应该加一个deprecated warning
+    @deprecated
     def identify_low_importance(self, cumulative_importance):
         """
         Finds the lowest importance features not needed to account for `cumulative_importance` fraction
