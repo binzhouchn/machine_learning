@@ -166,7 +166,7 @@ class FeatureSelector():
 
     # 空值填充，continuous feature采取mean,min,max方式；class feature空值单独作为一类，或者one_hot_encoding的方式
 
-    # 离群点处理
+    # 离群点处理（异常值处理）
     '''
     把空值过多的列去完之后，我们需要考虑将一些特别离群的点去掉，这边需要注意两点：
 
