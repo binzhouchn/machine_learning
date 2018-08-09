@@ -101,6 +101,11 @@ class Pickle(object):
             return pickle.load(f)
 ```
 
+[分类kaggle titanic参考](https://www.kaggle.com/ldfreeman3/a-data-science-framework-to-achieve-99-accuracy/notebook)<br>
+[代码]()
+
+
+
 # 2. 总体流程（回归）
 
 数据勘察和预处理之后，保留有用的特征；
@@ -146,5 +151,6 @@ for feat in num_fts:
 
 
 
-[回归kaggle top4参考](https://www.kaggle.com/serigne/stacked-regressions-top-4-on-leaderboard/notebook)  [代码](https://nbviewer.jupyter.org/github/binzhouchn/maching_learning/blob/master/1_%E5%BB%BA%E6%A8%A1%E6%B5%81%E7%A8%8B/3_%E7%89%B9%E5%BE%81%E5%B7%A5%E7%A8%8B/%E7%89%B9%E5%BE%81%E5%B7%A5%E7%A8%8B_%E6%89%93%E6%AF%94%E8%B5%9B/regression_top4.ipynb)
+[回归kaggle top4参考](https://www.kaggle.com/serigne/stacked-regressions-top-4-on-leaderboard/notebook)<br>
+[代码]()
 
