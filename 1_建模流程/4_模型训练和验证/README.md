@@ -87,6 +87,9 @@ lgb.train(
 
 ## 3.2 回归
 
+正则化方法（Lasso回归，岭回归和ElasticNet）在数据集中的变量之间
+具有高纬度和多重共线性的情况下也能有良好的效果。
+
 3.2.1 参考代码一<br>
 ```python
 from sklearn.linear_model import ElasticNet, Lasso,  BayesianRidge, LassoLarsIC
