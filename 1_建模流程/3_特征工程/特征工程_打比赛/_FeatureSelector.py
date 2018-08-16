@@ -119,7 +119,7 @@ class FeatureSelector():
 
         self.one_hot_correlated = False
 
-    @staticmethod
+
     def deprecated(func):
         """This is a decorator which can be used to mark functions
         as deprecated. It will result in a warning being emitted
@@ -175,7 +175,7 @@ class FeatureSelector():
 
     这边Interquartile Range Method: 对于特别异常的点进行box上下位截断操作
     '''
-    def outlier_box(self, changed_feature_box=[], limit_value=20, method='box'):
+    def outlier_box(self, changed_feature_box=[], limit_value=20, method='replace'):
         # limit_value是最小处理样本个数set，当独立样本大于limit_value我们认为非可onehot字段
         feature_cnt = changed_feature_box
         feature_changed = []
@@ -187,10 +187,16 @@ class FeatureSelector():
                 iqr = q3 - q1
                 # q3+3/2*iqr为上截距点，详细百度分箱图
                 top = q3 + 1.5 * iqr
-                data[feature][data[feature] > top] = top
                 # q1-3/2*iqr为下截距点，详细百度分箱图
                 bottom = q1 - 1.5 * iqr
-                data[feature][data[feature] < bottom] = bottom
+                if method == 'replace':
+                    data[feature][data[feature] > top] = top
+                    data[feature][data[feature] < bottom] = bottom
+                elif method == 'delete':
+                    data.drop(data[data[feature] > top].index, axis=0, inplace=True)
+                    data.drop(data[data[feature] < bottom].index, axis=0, inplace=True)
+                else:
+                    raise ValueError("Method is not provided.")
                 feature_changed.append(feature)
         return data, feature_changed
 
