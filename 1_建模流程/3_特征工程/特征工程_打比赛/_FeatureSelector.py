@@ -644,3 +644,12 @@ class FeatureSelector():
             var_list.append((np.var(self.data[feature]),feature))
         var_list.sort(reverse=True)
         return var_list
+
+    def get_univariable_outlier(self, feature):
+        # input one feature
+        q1 = np.percentile(np.array(self.data[feature]), 25)
+        q3 = np.percentile(np.array(self.data[feature]), 75)
+        iqr = q3 - q1
+        top = q3 + 1.5 * iqr
+        bottom = q1 - 1.5 * iqr
+        return self.data[~self.data[feature].between(bottom, top)]
