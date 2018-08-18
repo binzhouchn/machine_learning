@@ -25,6 +25,11 @@
 [**11. WOE, IV(information value)来选取离散特征重要性**](#woe_iv选取离散特征重要性)
 
 
+[**打比赛参考链接**]()
+
+https://github.com/wepe 本次比赛主要参考了他们去年微额借款用户人品预测大赛冠军解决方案以及拍拍贷风险控制大赛铜奖解决方案，干货多多！<br>
+金老师的知乎专栏：https://zhuanlan.zhihu.com/jlbookworm，收录了各种大神解决方案和开源代码。<br>
+
 ---
 
 ## 衡量标准
