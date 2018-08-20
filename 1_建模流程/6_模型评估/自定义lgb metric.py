@@ -39,6 +39,13 @@ def lgb_f1_score(y_hat, data):
     y_hat = [1 if x > 0.3 else 0 for x in y_hat]
     return 'f1_score', f1_score(y_true, y_hat), True
 
+# 自定义ks
+from sklearn import metrics
+def ks(y_hat, data):
+    y_true = data.get_label()
+    fpr,tpr,thres = metrics.roc_curve(y_true,y_hat,pos_label=1)
+    return 'ks', abs(fpr - tpr).max(), True
+
 lgb_data = lgb.Dataset(X, y)
 
 lgb.cv(
