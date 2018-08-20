@@ -24,6 +24,7 @@ params = {
 
 # 这里可以用自带的auc参数，但是我们想要用自定义的怎么办呢，以下是解决方案(自定义函数参照这个写就行了)
 # 参考 https://lightgbm.readthedocs.io/en/latest/Python-API.html
+from sklearn.metrics import auc
 def lgb_auc(y_hat, data): # 输入一定是y_pred，和data
     y_true = data.get_label()
     y_true = y_true + 1
@@ -31,6 +32,7 @@ def lgb_auc(y_hat, data): # 输入一定是y_pred，和data
     return 'auc', auc(fpr, tpr), True
 
 # 自定义f1_score
+from sklearn.metrics import f1_score
 def lgb_f1_score(y_hat, data):
     y_true = data.get_label()
 #     y_hat = np.round(y_hat)
@@ -47,5 +49,5 @@ lgb.cv(
     stratified=False, # 回归一定是False
     early_stopping_rounds=100,
     verbose_eval=50,
-    feval = lgb_auc, #lgb_f1_score # 这里增加feval参数
+    feval = lgb_auc, #lgb_f1_score  #这里增加feval参数
     show_stdv=True)
