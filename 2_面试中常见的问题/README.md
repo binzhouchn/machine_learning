@@ -40,11 +40,17 @@
 ![信用评分模型开发流程](pic/信用评分模型开发流程.png)<br>
 信用评分模型开发流程<br>
 
-## 2. 推导SVM算法
+## 2. 经典的优化方法
+ 
+ - [梯度下降法](https://zhuanlan.zhihu.com/p/36564434)
+ - 牛顿法和拟牛顿法
+ - 共轭梯度法(Adagrad, Adadelta, RMSprop, Adam)
+
+## 4. 推导SVM算法
 
 推导看统计学习方法P100
 
-## 3. 推导LR算法
+## 5. 推导LR算法
 
 看统计学习方法P78及<br>
 [LR推导及代码实现（推荐）](https://zhuanlan.zhihu.com/p/36670444)
