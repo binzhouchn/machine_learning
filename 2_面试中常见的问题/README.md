@@ -46,7 +46,8 @@
 
 ## 3. 推导LR算法
 
-看统计学习方法P78及https://zhuanlan.zhihu.com/p/36670444
+看统计学习方法P78及<br>
+[LR推导及代码实现（推荐）](https://zhuanlan.zhihu.com/p/36670444)
 
 
 
