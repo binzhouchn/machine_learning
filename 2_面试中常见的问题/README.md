@@ -36,7 +36,7 @@ ChiMerge：自底向上数据离散化方法。具有最小卡方值的相邻区
    
  - 多变量分析，如果变量之间相关性显著，会影响模型的预测效果
    - 变量的两两相关性；当相关性高时，保留IV高的或分箱均衡的
-   - 变量的多重共线性；通常用VIF来衡量，要求VIF<10，如果VIF超过10则需要逐一剔除解释变量
+   - 变量的多重共线性；通常用VIF来衡量，要求VIF<10，如果VIF超过10则需要逐一剔除解释变量<br>
    ```from statsmodels.stats.outliers_influence import variance_inflation_factor```
 ### 1.5 评分卡构建（模型开发）
 
