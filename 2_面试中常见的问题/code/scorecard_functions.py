@@ -349,7 +349,7 @@ def BadRateMonotone(df, sortByVar, target,special_attribute = []):
 
 
 ### If we find any categories with 0 bad, then we combine these categories with that having smallest non-zero bad rate
-def MergeBad0(df,col,target):
+def MergeBad0(df,col,target, direction='bad'):
     '''
      :param df: dataframe containing feature and target
      :param col: the feature that needs to be calculated the WOE and iv, usually categorical type
@@ -357,18 +357,30 @@ def MergeBad0(df,col,target):
      :return: WOE and IV in a dictionary
      '''
     regroup = BinBadRate(df, col, target)[1]
-    regroup = regroup.sort_values(by  = 'bad_rate')
+    if direction == 'bad':
+        regroup = regroup.sort_values(by  = 'bad_rate')
+    else:
+        regroup = regroup.sort_values(by='bad_rate',ascending=False)
+    regroup.index = range(regroup.shape[0])
     col_regroup = [[i] for i in regroup[col]]
+    del_index = []
     for i in range(regroup.shape[0]-1):
         col_regroup[i+1] = col_regroup[i] + col_regroup[i+1]
-        col_regroup.pop(i)
-        if regroup['bad_rate'][i+1] > 0:
-            break
+        del_index.append(i)
+        if direction == 'bad':
+            if regroup['bad_rate'][i+1] > 0:
+                break
+        else:
+            if regroup['bad_rate'][i+1] < 1:
+                break
+    col_regroup2 = [col_regroup[i] for i in range(len(col_regroup)) if i not in del_index]
     newGroup = {}
-    for i in range(len(col_regroup)):
-        for g2 in col_regroup[i]:
+    for i in range(len(col_regroup2)):
+        for g2 in col_regroup2[i]:
             newGroup[g2] = 'Bin '+str(i)
     return newGroup
+
+
 
 ### Calculate the KS and AR for the socrecard model
 def KS_AR(df, score, target):
