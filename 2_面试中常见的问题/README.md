@@ -10,9 +10,10 @@
  
 ### 1.2 数据预处理
 
- - 处理缺失值和异常值，格式转换
+ - 处理缺失值和异常值，格式转换(看下时间特征scorecard.py)
  - 变量衍生
- - 分箱（ChiMerge，）
+ - 分箱（ChiMerge，BestKS）(scorecard.py和scorecard_functions.py)
+ - WOE编码(scorecard_functions.py)
 
 ChiMerge：自底向上数据离散化方法。具有最小卡方值的相邻区间合并在一起，直到满足确定的停止准则。<br>
 基本思想：对于精确的离散化，相对类频率在一个区间内应当完全一致。因此，如果两个相邻的区间具有非常类似的类分布，
