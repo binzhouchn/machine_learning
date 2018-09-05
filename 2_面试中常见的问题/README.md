@@ -44,7 +44,7 @@ M0,M1,M2的定义<br>
 ### 1.3 数据预处理
 
  - 处理缺失值和异常值，格式转换(看下时间特征scorecard.py)
- - 变量衍生
+ - 变量衍生(统计特征、)
  - 分箱（ChiMerge，BestKS）(scorecard.py第三步和scorecard_functions.py)
  - WOE编码(scorecard_functions.py第四步)
 
