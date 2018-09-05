@@ -39,7 +39,7 @@ AUC计算示例<br>
 4、将各个点依次连接起来，就得到了如图所示的ROC曲线<br>
 5、计算ROC曲线下方的面积为0.75，即AUC=0.75<br>
 
-[参考](https://baijiahao.baidu.com/s?id=1597939133517926460&wfr=spider&for=pc)
+[以上参考](https://baijiahao.baidu.com/s?id=1597939133517926460&wfr=spider&for=pc)
 
 分类中使用，尤其是样本不平衡中
 ```python

@@ -1,6 +1,4 @@
-
-
-<h1 align = "center">:alien: 傻瓜式建模 :alien:</h1>
+<h1 align = "center">:helicopter: 傻瓜式建模 :running:</h1>
 
 ---
 ## [auto_ml][1]
