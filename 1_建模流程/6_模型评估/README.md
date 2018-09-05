@@ -30,6 +30,15 @@ mean_squared_error(y_true, y_pred)
 
 ### Area Under the Curve(AUC) or f1_score
 
+![](auc_calc.png)<br>
+AUC计算示例<br>
+如上图所示，我们有8个测试样本，模型的预测值（按大小排序）和样本的真实标签如右表所示，绘制ROC曲线的整个过程如下所示：<br>
+1、令阈值等于第一个预测值0.91，所有大于等于0.91的预测值都被判定为阳性，此时TPR=1/4，FPR=0/4，所有我们有了第一个点（0.0，0.25）<br>
+2、令阈值等于第二个预测值0.85，所有大于等于0.85的预测值都被判定为阳性，这种情况下第二个样本属于被错误预测为阳性的阴性样本，也就是FP，所以TPR=1/4，FPR=1/4，所以我们有了第二个点（0.25，0.25）<br>
+3、按照这种方法依次取第三、四...个预测值作为阈值，就能依次得到ROC曲线上的坐标点（0.5，0.25）、（0.75，0.25）...（1.0，1.0）<br>
+4、将各个点依次连接起来，就得到了如图所示的ROC曲线<br>
+5、计算ROC曲线下方的面积为0.75，即AUC=0.75<br>
+
 分类中使用，尤其是样本不平衡中
 ```python
 # F1_score
@@ -47,7 +56,7 @@ metrics.auc(fpr, tpr)
 #0.75
 # 或者
 from sklearn.metrics import roc_auc_score
-roc_auc_score(y_true, y_scores)
+roc_auc_score(y_true, y_pred)
 #0.75
 ```
 
