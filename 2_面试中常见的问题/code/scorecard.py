@@ -437,3 +437,94 @@ X['intercept'] = [1]*X.shape[0]
 
 LR = sm.Logit(y, X).fit()
 summary = LR.summary()
+
+
+
+'''
+GBDT调参
+'''
+# 1, 选择较小的步长(learning rate)后，对迭代次数(n_estimators)进行调参
+
+X = pd.DataFrame(X)
+
+param_test1 = {'n_estimators':range(20,81,10)}
+gsearch1 = GridSearchCV(estimator = GradientBoostingClassifier(learning_rate=0.1, min_samples_split=30,
+                                  min_samples_leaf=5,max_depth=8,max_features='sqrt', subsample=0.8,random_state=10),
+                       param_grid = param_test1, scoring='roc_auc',iid=False,cv=5)
+gsearch1.fit(X,y)
+gsearch1.best_params_, gsearch1.best_score_
+best_n_estimator = gsearch1.best_params_['n_estimators']
+
+
+# 2, 对决策树最大深度max_depth和内部节点再划分所需最小样本数min_samples_split进行网格搜索
+param_test2 = {'max_depth':range(3,16), 'min_samples_split':range(2,10)}
+gsearch2 = GridSearchCV(estimator = GradientBoostingClassifier(learning_rate=0.1, n_estimators=best_n_estimator, min_samples_leaf=20, max_features='sqrt', subsample=0.8, random_state=10),
+                        param_grid = param_test2, scoring='roc_auc',iid=False, cv=5)
+gsearch2.fit(X,y)
+gsearch2.best_params_, gsearch2.best_score_
+best_max_depth = gsearch2.best_params_['max_depth']
+
+#3, 再对内部节点再划分所需最小样本数min_samples_split和叶子节点最少样本数min_samples_leaf一起调参
+param_test3 = {'min_samples_split':range(10,101,10), 'min_samples_leaf':range(5,51,5)}
+gsearch3 = GridSearchCV(estimator = GradientBoostingClassifier(learning_rate=0.1, n_estimators=best_n_estimator,max_depth=best_max_depth,
+                                     max_features='sqrt', subsample=0.8, random_state=10),
+                       param_grid = param_test3, scoring='roc_auc',iid=False, cv=5)
+gsearch3.fit(X,y)
+gsearch3.best_params_, gsearch3.best_score_
+best_min_samples_split, best_min_samples_leaf = gsearch3.best_params_['min_samples_split'],gsearch3.best_params_['min_samples_leaf']
+
+#4, 对最大特征数max_features进行网格搜索
+param_test4 = {'max_features':range(5,int(np.sqrt(X.shape[0])),5)}
+gsearch4 = GridSearchCV(estimator = GradientBoostingClassifier(learning_rate=0.1, n_estimators=best_n_estimator,max_depth=best_max_depth, min_samples_leaf =best_min_samples_leaf,
+               min_samples_split =best_min_samples_split, subsample=0.8, random_state=10),
+                       param_grid = param_test4, scoring='roc_auc',iid=False, cv=5)
+gsearch4.fit(X,y)
+gsearch4.best_params_, gsearch4.best_score_
+best_max_features = gsearch4.best_params_['max_features']
+
+#5, 对采样比例进行网格搜索
+param_test5 = {'subsample':[0.6+i*0.05 for i in range(8)]}
+gsearch5 = GridSearchCV(estimator = GradientBoostingClassifier(learning_rate=0.1, n_estimators=best_n_estimator,max_depth=best_max_depth,
+                                                               min_samples_leaf =best_min_samples_leaf, max_features=best_max_features,random_state=10),
+                       param_grid = param_test5, scoring='roc_auc',iid=False, cv=5)
+gsearch5.fit(X,y)
+gsearch5.best_params_, gsearch5.best_score_
+best_subsample = gsearch5.best_params_['subsample']
+
+
+gbm_best = GradientBoostingClassifier(learning_rate=0.1, n_estimators=best_n_estimator,max_depth=best_max_depth,
+                                      min_samples_leaf =best_min_samples_leaf, max_features=best_max_features,subsample =best_subsample, random_state=10)
+gbm_best.fit(X,y)
+
+
+#在测试集上测试并计算性能
+y_pred = gbm_best.predict(X_test)
+y_predprob = gbm_best.predict_proba(X_test)[:,1].T
+testData['predprob'] = list(y_predprob)
+print "Accuracy : %.4g" % metrics.accuracy_score(y_test, y_pred)
+print "AUC Score (Test): %f" % metrics.roc_auc_score(np.array(y_test)[:,0], y_predprob)
+print "KS is :%f"%KS(testData, 'predprob', 'y')
+'''
+Accuracy : 0.8895
+AUC Score (Test): 0.676704
+KS is :0.257814
+'''
+
+
+#GBDT模型生成特征
+
+# 利用GBDT的结果衍生新的特征
+new_feature= gbm_best.apply(X)[:,:,0]
+grd_enc = OneHotEncoder()
+grd_enc.fit(new_feature)
+x = grd_enc.transform(new_feature)
+classifier=LogisticRegression()
+classifier.fit(x,y)
+
+new_feature_test= gbm_best.apply(X_test)[:,:,0]
+x_test = grd_enc.transform(new_feature_test)
+y_pred_lr = classifier.predict_proba(x_test)[:,1]
+lr_pred = pd.DataFrame({'predprob':y_pred_lr, 'y': np.array(y_test)[:,0]})
+
+print "AUC Score (Test): %f" % metrics.roc_auc_score(np.array(y_test)[:,0], y_pred_lr)
+print "KS is :%f"%KS(lr_pred, 'predprob', 'y')
