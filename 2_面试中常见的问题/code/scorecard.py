@@ -152,7 +152,7 @@ less_value_features = []
 # 第一步，检查类别型变量中，哪些变量取值超过5
 for var in cat_features:
     valueCounts = len(set(trainData[var]))
-    print valueCounts
+    print(valueCounts)
     if valueCounts > 5:
         more_value_features.append(var)  #取值超过5的变量，需要bad rate编码，再用卡方分箱法进行分箱
     else:
@@ -164,14 +164,14 @@ var_bin_list = []   #由于某个取值没有好或者坏样本而需要合并�
 for col in less_value_features:
     binBadRate = BinBadRate(trainData, col, 'y')[0]
     if min(binBadRate.values()) == 0 :  #由于某个取值没有坏样本而进行合并
-        print '{} need to be combined due to 0 bad rate'.format(col)
+        print('{} need to be combined due to 0 bad rate'.format(col))
         combine_bin = MergeBad0(trainData, col, 'y')
         merge_bin_dict[col] = combine_bin
         newVar = col + '_Bin'
         trainData[newVar] = trainData[col].map(combine_bin)
         var_bin_list.append(newVar)
     if max(binBadRate.values()) == 1:    #由于某个取值没有好样本而进行合并
-        print '{} need to be combined due to 0 good rate'.format(col)
+        print('{} need to be combined due to 0 good rate'.format(col))
         combine_bin = MergeBad0(trainData, col, 'y',direction = 'good')
         merge_bin_dict[col] = combine_bin
         newVar = col + '_Bin'
@@ -192,7 +192,7 @@ for col in more_value_features:
 # （iii）对连续型变量进行分箱，包括（ii）中的变量
 continous_merged_dict = {}
 for col in num_features:
-    print "{} is in processing".format(col)
+    print("{} is in processing".format(col))
     if -1 not in set(trainData[col]):   #－1会当成特殊值处理。如果没有－1，则所有取值都参与分箱
         max_interval = 5   #分箱后的最多的箱数
         cutOff = ChiMerge(trainData, col, 'y', max_interval=max_interval,special_attribute=[],minBinPcnt=0)
@@ -317,7 +317,7 @@ multi_analysis_vars_1 = [high_IV_sorted[i][0]+"_WOE" for i in range(cnt_vars) if
 X = np.matrix(trainData[multi_analysis_vars_1])
 VIF_list = [variance_inflation_factor(X, i) for i in range(X.shape[1])]
 max_VIF = max(VIF_list)
-print max_VIF
+print(max_VIF)
 # 最大的VIF是1.32267733123，因此这一步认为没有多重共线性
 multi_analysis = multi_analysis_vars_1
 
@@ -348,9 +348,9 @@ while(len(varLargeP) > 0 and len(multi_analysis) > 0):
     # (1) 剩余所有变量均显著
     # (2) 没有特征可选
     varMaxP = varLargeP[0][0]
-    print varMaxP
+    print(varMaxP)
     if varMaxP == 'intercept':
-        print 'the intercept is not significant!'
+        print('the intercept is not significant!')
         break
     multi_analysis.remove(varMaxP)
     y = trainData['y']
@@ -400,7 +400,7 @@ X_train.shape, y_train.shape
 model_parameter = {}
 for C_penalty in np.arange(0.005, 0.2,0.005):
     for bad_weight in range(2, 101, 2):
-        print C_penalty, bad_weight
+        print(C_penalty, bad_weight)
         LR_model_2 = LogisticRegressionCV(Cs=[C_penalty], penalty='l1', solver='liblinear', class_weight={1:bad_weight, 0:1})
         LR_model_2_fit = LR_model_2.fit(X_train,y_train)
         y_pred = LR_model_2_fit.predict_proba(X_test)[:,1]
@@ -408,9 +408,6 @@ for C_penalty in np.arange(0.005, 0.2,0.005):
         #performance = KS_AR(scorecard_result,'prob','target')
         KS = performance['KS']
         model_parameter[(C_penalty, bad_weight)] = KS
-
-# endtime = datetime.datetime.now()
-# print (endtime - starttime).seconds
 
 
 
@@ -501,9 +498,9 @@ gbm_best.fit(X,y)
 y_pred = gbm_best.predict(X_test)
 y_predprob = gbm_best.predict_proba(X_test)[:,1].T
 testData['predprob'] = list(y_predprob)
-print "Accuracy : %.4g" % metrics.accuracy_score(y_test, y_pred)
-print "AUC Score (Test): %f" % metrics.roc_auc_score(np.array(y_test)[:,0], y_predprob)
-print "KS is :%f"%KS(testData, 'predprob', 'y')
+print("Accuracy : %.4g" % metrics.accuracy_score(y_test, y_pred))
+print("AUC Score (Test): %f" % metrics.roc_auc_score(np.array(y_test)[:,0], y_predprob))
+print("KS is :%f"%KS(testData, 'predprob', 'y'))
 '''
 Accuracy : 0.8895
 AUC Score (Test): 0.676704
@@ -526,5 +523,5 @@ x_test = grd_enc.transform(new_feature_test)
 y_pred_lr = classifier.predict_proba(x_test)[:,1]
 lr_pred = pd.DataFrame({'predprob':y_pred_lr, 'y': np.array(y_test)[:,0]})
 
-print "AUC Score (Test): %f" % metrics.roc_auc_score(np.array(y_test)[:,0], y_pred_lr)
-print "KS is :%f"%KS(lr_pred, 'predprob', 'y')
+print("AUC Score (Test): %f" % metrics.roc_auc_score(np.array(y_test)[:,0], y_pred_lr))
+print("KS is :%f"%KS(lr_pred, 'predprob', 'y'))
