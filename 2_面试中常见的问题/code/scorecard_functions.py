@@ -22,21 +22,61 @@ def SplitData(df, col, numOfSplit, special_attribute=[]):
 
 
 
-def Chi2(df, total_col, bad_col, overallRate):
+# def Chi2(df, total_col, bad_col, overallRate):
+#     '''
+#     :param df: 包含全部样本总计与坏样本总计的数据框
+#     :param total_col: 全部样本的个数
+#     :param bad_col: 坏样本的个数
+#     :param overallRate: 全体样本的坏样本占比
+#     :return: 卡方值
+#     '''
+#     df2 = df.copy()
+#     # 期望坏样本个数＝全部样本个数*平均坏样本占比
+#     df2['expected'] = df[total_col].apply(lambda x: x*overallRate)
+#     combined = zip(df2['expected'], df2[bad_col])
+#     chi = [(i[0]-i[1])**2/i[0] for i in combined]
+#     chi2 = sum(chi)
+#     return chi2
+
+
+def Chi2(df, total_col, bad_col):
     '''
     :param df: 包含全部样本总计与坏样本总计的数据框
     :param total_col: 全部样本的个数
     :param bad_col: 坏样本的个数
-    :param overallRate: 全体样本的坏样本占比
     :return: 卡方值
     '''
     df2 = df.copy()
-    # 期望坏样本个数＝全部样本个数*平均坏样本占比
-    df2['expected'] = df[total_col].apply(lambda x: x*overallRate)
-    combined = zip(df2['expected'], df2[bad_col])
-    chi = [(i[0]-i[1])**2/i[0] for i in combined]
-    chi2 = sum(chi)
+    # 求出df中，总体的坏样本率和好样本率
+    badRate = sum(df2[bad_col])*1.0/sum(df2[total_col])
+    # 当全部样本只有好或者坏样本时，卡方值为0
+    if badRate in [0,1]:
+        return 0
+    df2['good'] = df2.apply(lambda x: x[total_col] - x[bad_col], axis = 1)
+    goodRate = sum(df2['good']) * 1.0 / sum(df2[total_col])
+    # 期望坏（好）样本个数＝全部样本个数*平均坏（好）样本占比
+    df2['badExpected'] = df[total_col].apply(lambda x: x*badRate)
+    df2['goodExpected'] = df[total_col].apply(lambda x: x * goodRate)
+    badCombined = zip(df2['badExpected'], df2[bad_col])
+    goodCombined = zip(df2['goodExpected'], df2['good'])
+    badChi = [(i[0]-i[1])**2/i[0] for i in badCombined]
+    goodChi = [(i[0] - i[1]) ** 2 / i[0] for i in goodCombined]
+    chi2 = sum(badChi) + sum(goodChi)
     return chi2
+
+
+# Chi2 的另外一种计算方法
+# def Chi2(df, total_col, bad_col):
+#     df2 = df.copy()
+#     df2['good'] = df2[total_col] - df2[bad_col]
+#     goodTotal = sum(df2['good'])
+#     badTotal = sum(df2[bad_col])
+#     p1 = df2.loc[0]['good']*1.0/df2.loc[0][total_col]
+#     p2 = df2.loc[1]['good']*1.0/df2.loc[1][total_col]
+#     w1 = df2.loc[0]['good']*1.0/goodTotal
+#     w2 = df2.loc[0][bad_col]*1.0/badTotal
+#     N = sum(df2[total_col])
+#     return N*(p1-p2)*(w1-w2)
 
 
 def BinBadRate(df, col, target, grantRateIndicator=0):
@@ -114,7 +154,8 @@ def ChiMerge(df, col, target, max_interval=5,special_attribute=[],minBinPcnt=0):
             for k in range(len(groupIntervals)-1):
                 temp_group = groupIntervals[k] + groupIntervals[k+1]
                 df2b = regroup.loc[regroup['temp'].isin(temp_group)]
-                chisq = Chi2(df2b, 'total', 'bad', overallRate)
+                #chisq = Chi2(df2b, 'total', 'bad', overallRate)
+                chisq = Chi2(df2b, 'total', 'bad')
                 chisqList.append(chisq)
             best_comnbined = chisqList.index(min(chisqList))
             groupIntervals[best_comnbined] = groupIntervals[best_comnbined] + groupIntervals[best_comnbined+1]
@@ -145,12 +186,14 @@ def ChiMerge(df, col, target, max_interval=5,special_attribute=[],minBinPcnt=0):
                 prevIndex = list(regroup.temp_Bin)[currentIndex - 1]
                 df3 = df2.loc[df2['temp_Bin'].isin([prevIndex, bin])]
                 (binBadRate, df2b) = BinBadRate(df3, 'temp_Bin', target)
-                chisq1 = Chi2(df2b, 'total', 'bad', overallRate)
+                #chisq1 = Chi2(df2b, 'total', 'bad', overallRate)
+                chisq1 = Chi2(df2b, 'total', 'bad')
                 # 和后一箱进行合并，并且计算卡方值
                 laterIndex = list(regroup.temp_Bin)[currentIndex + 1]
                 df3b = df2.loc[df2['temp_Bin'].isin([laterIndex, bin])]
                 (binBadRate, df2b) = BinBadRate(df3b, 'temp_Bin', target)
-                chisq2 = Chi2(df2b, 'total', 'bad', overallRate)
+                #chisq2 = Chi2(df2b, 'total', 'bad', overallRate)
+                chisq2 = Chi2(df2b, 'total', 'bad')
                 if chisq1 < chisq2:
                     cutOffPoints.remove(cutOffPoints[currentIndex - 1])
                 else:
@@ -184,16 +227,24 @@ def ChiMerge(df, col, target, max_interval=5,special_attribute=[],minBinPcnt=0):
                     prevIndex = list(valueCounts.index)[currentIndex - 1]
                     df3 = df2.loc[df2['temp_Bin'].isin([prevIndex, indexForMinPcnt])]
                     (binBadRate, df2b) = BinBadRate(df3, 'temp_Bin', target)
-                    chisq1 = Chi2(df2b, 'total', 'bad', overallRate)
+                    #chisq1 = Chi2(df2b, 'total', 'bad', overallRate)
+                    chisq1 = Chi2(df2b, 'total', 'bad')
                     # 和后一箱进行合并，并且计算卡方值
                     laterIndex = list(valueCounts.index)[currentIndex + 1]
                     df3b = df2.loc[df2['temp_Bin'].isin([laterIndex, indexForMinPcnt])]
                     (binBadRate, df2b) = BinBadRate(df3b, 'temp_Bin', target)
-                    chisq2 = Chi2(df2b, 'total', 'bad', overallRate)
+                    #chisq2 = Chi2(df2b, 'total', 'bad', overallRate)
+                    chisq2 = Chi2(df2b, 'total', 'bad')
                     if chisq1 < chisq2:
                         cutOffPoints.remove(cutOffPoints[currentIndex - 1])
                     else:
                         cutOffPoints.remove(cutOffPoints[currentIndex])
+                groupedvalues = df2['temp'].apply(lambda x: AssignBin(x, cutOffPoints))
+                df2['temp_Bin'] = groupedvalues
+                valueCounts = groupedvalues.value_counts().to_frame()
+                valueCounts['pcnt'] = valueCounts['temp'].apply(lambda x: x * 1.0 / N)
+                valueCounts = valueCounts.sort_index()
+                minPcnt = min(valueCounts['pcnt'])
         cutOffPoints = special_attribute + cutOffPoints
         return cutOffPoints
 
@@ -305,6 +356,8 @@ def CalcWOE(df, col, target):
     IV = sum(IV)
     return {"WOE": WOE_dict, 'IV':IV}
 
+
+
 ## 判断某变量的坏样本率是否单调
 def BadRateMonotone(df, sortByVar, target,special_attribute = []):
     '''
@@ -326,10 +379,6 @@ def BadRateMonotone(df, sortByVar, target,special_attribute = []):
         return False
     else:
         return True
-
-
-
-
 
 def MergeBad0(df,col,target, direction='bad'):
     '''
@@ -363,3 +412,41 @@ def MergeBad0(df,col,target, direction='bad'):
         for g2 in col_regroup2[i]:
             newGroup[g2] = 'Bin '+str(i)
     return newGroup
+
+def Prob2Score(prob, basePoint, PDO):
+    #将概率转化成分数且为正整数
+    y = np.log(prob/(1-prob))
+    return int(basePoint+PDO/np.log(2)*(-y))
+
+
+### 计算KS值
+def KS(df, score, target):
+    '''
+    :param df: 包含目标变量与预测值的数据集
+    :param score: 得分或者概率
+    :param target: 目标变量
+    :return: KS值
+    '''
+    total = df.groupby([score])[target].count()
+    bad = df.groupby([score])[target].sum()
+    all = pd.DataFrame({'total':total, 'bad':bad})
+    all['good'] = all['total'] - all['bad']
+    all[score] = all.index
+    all = all.sort_values(by=score,ascending=False)
+    all.index = range(len(all))
+    all['badCumRate'] = all['bad'].cumsum() / all['bad'].sum()
+    all['goodCumRate'] = all['good'].cumsum() / all['good'].sum()
+    KS = all.apply(lambda x: x.badCumRate - x.goodCumRate, axis=1)
+    return max(KS)
+
+
+
+def MergeByCondition(x,condition_list):
+    #condition_list是条件列表。满足第几个condition，就输出几
+    s = 0
+    for condition in condition_list:
+        if eval(str(x)+condition):
+            return s
+        else:
+            s+=1
+    return s
