@@ -1,4 +1,4 @@
-<h1 align = "center">:runner: Metrics :runner:</h1>
+<h1 align = "center">:running: Metrics :running:</h1>
 
 ---
 
