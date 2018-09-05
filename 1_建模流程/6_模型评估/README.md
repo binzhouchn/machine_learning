@@ -41,9 +41,13 @@ f1_score(y_true, y_pred)
 import numpy as np
 from sklearn import metrics
 y_true = np.array([1, 1, 2, 2])
-y_pred = np.array([0.1, 0.4, 0.35, 0.8])
+y_pred = np.array([0.1, 0.4, 0.35, 0.8]) # [1,4,3.5,8]出来的auc值是一样的
 fpr, tpr, thresholds = metrics.roc_curve(y_true, y_pred, pos_label=2)
 metrics.auc(fpr, tpr)
+#0.75
+# 或者
+from sklearn.metrics import roc_auc_score
+roc_auc_score(y_true, y_scores)
 #0.75
 ```
 
