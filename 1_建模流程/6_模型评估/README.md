@@ -16,6 +16,7 @@ accuracy_score(y_true, y_pred)
 ### Kolmogorov-Smirnov(KS)
 
 一般不单独用<br>
+评分卡用LR建模，如果评价指标是KS则要把pred_prob转成pred_log_prob<br>
 [KS](https://www.cnblogs.com/bergus/p/shu-ju-wa-jue-shu-yu-jie-xi.html)
 
 ### MSE
