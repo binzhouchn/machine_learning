@@ -12,8 +12,8 @@
 
  - 处理缺失值和异常值，格式转换(看下时间特征scorecard.py)
  - 变量衍生
- - 分箱（ChiMerge，BestKS）(scorecard.py和scorecard_functions.py)
- - WOE编码(scorecard_functions.py)
+ - 分箱（ChiMerge，BestKS）(scorecard.py第三步和scorecard_functions.py)
+ - WOE编码(scorecard_functions.py第四步)
 
 ChiMerge：自底向上数据离散化方法。具有最小卡方值的相邻区间合并在一起，直到满足确定的停止准则。<br>
 基本思想：对于精确的离散化，相对类频率在一个区间内应当完全一致。因此，如果两个相邻的区间具有非常类似的类分布，
@@ -25,10 +25,10 @@ ChiMerge：自底向上数据离散化方法。具有最小卡方值的相邻区
 ### 1.4 变量分析与选择
 
  - 变量挑选的依据
-   - 带约束：LASSO
-   - 特征重要性：随机森林
-   - 模型拟合优度和复杂度：基于AIC的逐步回归
-   - 变量信息度：IV
+   - 带约束：LASSO(scorecard.py第六步)
+   - 特征重要性：随机森林(scorecard.py第六步)
+   - 模型拟合优度和复杂度：基于AIC的逐步回归(scorecard.py第六步)
+   - 变量信息度：IV(scorecard.py第六步)
    
  - 单变量分析，如 应用统计学方法筛选出预测能力较高的变量，获取自变量中对违约状态影响最显著的指标。经过筛选的变量将进入信用评分模型
    - 变量的显著性（高IV）
