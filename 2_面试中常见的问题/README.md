@@ -32,7 +32,7 @@
 
 2. 过采样
 
-代表算法：SMOTE
+代表算法：SMOTE(Synthetic Minority Over-sampling Technique)
 
 3. 阈值移动
 

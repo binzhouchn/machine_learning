@@ -65,7 +65,7 @@ Xsm_train, ysm_train = sm.fit_sample(original_Xtrain, original_ytrain)
  ```python
 import matplotlib.pyplot as plt
 import seaborn as sns
-%matplotlib inline 
+%matplotlib inline
 fig = sns.boxplot(x='col_1', y="label", data=data)
 fig.axis(ymin=0, ymax=100); # y轴设置
 ```
