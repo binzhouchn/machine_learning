@@ -48,7 +48,7 @@ for feat in num_fts:
 下采样最好结合业务场景，(或业务规则)，让负样本急剧下降。
 
 针对反欺诈场景，类别不平衡的情况：<br>
-（i）欠采样(用的比较多)<br>
+（i）欠采样(用的比较多)，每次好样本抽样，坏样本都保留<br>
 （ii）过采样(SMOTE: Synthetic Minority Over-sampling Technique)
 ```python
 from imblearn.over_sampling import SMOTE
