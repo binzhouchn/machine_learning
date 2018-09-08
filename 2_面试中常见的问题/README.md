@@ -32,11 +32,23 @@
 
 2. 过采样
 
-代表算法：SMOTE(Synthetic Minority Over-sampling Technique)
+代表算法：<br>
+
+ - Bootstrap少数样本
+ - SMOTE(Synthetic Minority Over-sampling Technique)
+ - Borderline(SMOTE的一种提升方法)
+
+[过采样参考网址](https://blog.csdn.net/a358463121/article/details/52304670)
 
 3. 阈值移动
 
 基于原始训练集进行学习，但在用训练好的分类器进行预测时，
 将再缩放的公式y_new/(1-y_new)=y/(1-y)*(m+/m-) 嵌入到决策过程中，称为“阈值移动”。
 
+## 7. 过拟合
 
+1. 增加样本数
+
+2. 加正则（损失函数上）
+
+3. CV
