@@ -45,7 +45,7 @@ class Tokenizer():
             print(tokens)
         self.n += 1
         if self.n%10000==0:
-            print(self.n,end=' ')
+            print(self.n,end=' ') # 每10000条打印一下
         return tokens 
 ```
 
