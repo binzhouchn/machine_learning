@@ -44,10 +44,6 @@ class Tokenizer():
             for gram in [1,2]:
                 for i in range(len(words) - gram + 1):
                     tokens += ["_*_".join(words[i:i+gram])]
-        if np.random.rand() < 0.00001:
-            print(line)
-            print('='*20)
-            print(tokens)
         self.n += 1
         if self.n%10000==0:
             print(self.n,end=' ') # 每10000条打印一下
