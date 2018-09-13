@@ -40,7 +40,7 @@ class Tokenizer():
     def __call__(self, line):
         tokens = []
         for query in line.split('\t'):
-            words = [word for word in jieba.cut(query)]
+            words = jieba.lcut(query)
             for gram in [1,2]:
                 for i in range(len(words) - gram + 1):
                     tokens += ["_*_".join(words[i:i+gram])]
