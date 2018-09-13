@@ -10,6 +10,11 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 corpus = ['this is test it','this unbeliveble haha']
 vectorizer = TfidfVectorizer()
 tfidf = vectorizer.fit_transform(corpus)
+
+tfidf.todense() # 把稀疏矩阵转成稠密矩阵，每个文档就是一个向量
+# 查看单词及单词对应的索引
+vectorizer.get_feature_names()
+vectorizer.vocabulary_
 ```
 
 可以改写成tokenizer比如用\t进行分割，重写__call__函数即可
