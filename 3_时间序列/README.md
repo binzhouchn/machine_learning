@@ -17,5 +17,15 @@
  - 预测的时候，X不变，每次预测lgb.train完了以后预测一天的销量，总共预测16次
  最后进行stack操作16列变成一列，提交结果
  
+ [代码](code/lgbm-one-step-ahead.py)
+ 
+## 2. lstm-starter
+
+ - 基本思路和上一个一样，就是模型换成了lstm
+ 
+ [keras版本代码](code/lstm-starter-keras-version.py)
+ 
+ [pytorch版本代码-byself](c)
+ 
 
 
