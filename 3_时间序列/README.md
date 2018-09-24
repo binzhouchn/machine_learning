@@ -3,7 +3,7 @@
 ## statistical method
 
 
-
+[待补充]以后看到好的时间序列比赛及kernel再补充
 
 
 
