@@ -26,6 +26,9 @@
  [keras版本代码](code/lstm-starter-keras-version.py)
  
  [pytorch版本代码-byself](code/lstm_starter_pytorch_version)
+ - 重写损失函数
+ - 加入cv
  
+## 3. 
 
 
