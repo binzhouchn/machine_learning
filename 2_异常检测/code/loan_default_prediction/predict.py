@@ -45,6 +45,21 @@ def load_test_fs():
     test_fs[np.isinf(test_fs)] = 0
     return test_fs
 
+# 加载数据byself
+def load_train_fs2():
+    train_data = pd.read_csv('./train_v2.csv')
+    c['f137'] = train_data.f137.replace('NA', np.nan)
+    imp = Imputer(missing_values=np.nan, strategy='mean', axis=0)
+    train_data = imp.fit_transform(train_data)
+    return train_data.astype(float)
+def load_test_fs2():
+    test_x = pd.read_csv('./test_v2.csv')
+    test_x['f137'] = test_x.f137.replace('NA', np.nan)
+    test_x['f276'] = test_x.f137.replace('NA', np.nan)
+    imp = Imputer(missing_values=np.nan, strategy='mean', axis=0)
+    test_x = imp.fit_transform(test_x)
+    return test_x.astype(float)
+
 # extract features from test data
 def test_type(test_fs):
     x_Test = test_fs[:,range(1, label_index)]
