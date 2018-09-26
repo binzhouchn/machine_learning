@@ -1,17 +1,16 @@
 # 时间序列
 
-## statistical method
+## 比赛类 statistical method
 
 
 [待补充]以后看到好的时间序列比赛及kernel再补充
 
 
+## 比赛类 machine learning method
 
-## machine learning method
+[**1. Corporación Favorita Grocery Sales Forecasting**](https://www.kaggle.com/c/favorita-grocery-sales-forecasting)
 
-[**Corporación Favorita Grocery Sales Forecasting**](https://www.kaggle.com/c/favorita-grocery-sales-forecasting)
-
-### 1. lgbm-one-step-ahead.py
+#### 1.1 lgbm-one-step-ahead.py
 
 介绍：代码中包含<br>
  - set_index：对数据进行店铺到商品的三级目录操作<br>
@@ -28,7 +27,7 @@
  
  [代码](code/lgbm-one-step-ahead.py)
  
-### 2. lstm-starter
+#### 1.2 lstm-starter
 
  - 基本思路和上一个一样，就是模型换成了lstm
  
@@ -38,6 +37,10 @@
  - 重写损失函数
  - 加入cv
  
-### 3. 
+---
+
+## 项目类
+
+
 
 
