@@ -150,6 +150,9 @@ def get_data(train_x, feature_indexs, feature_minus_pair_list=[], feature_plus_p
         
     return sub_train_x
 
+# get_data for dataframe version byself 返回的是整一个dataframe加上衍生的特征
+
+
 # use gbm classifier to predict whether the loan defaults or not
 def gbc_classify(train_x, train_y):
     feature_indexs = getTopFeatures(train_x, train_y)
