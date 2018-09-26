@@ -118,7 +118,7 @@ def ChiMerge(df, col, target, max_interval=5,special_attribute=[],minBinPcnt=0):
     colLevels = sorted(list(set(df[col])))
     N_distinct = len(colLevels)
     if N_distinct <= max_interval:  #如果原始属性的取值个数低于max_interval，不执行这段函数
-        print "The number of original levels for {} is less than or equal to max intervals".format(col)
+        print("The number of original levels for {} is less than or equal to max intervals".format(col))
         return colLevels[:-1]
     else:
         if len(special_attribute)>=1:
