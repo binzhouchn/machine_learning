@@ -1,8 +1,10 @@
 # 文本处理
 
-[**搜狗用户画像**](https://www.datafountain.cn/competitions/239/details)
+## 比赛类
 
-## 1. tfidf
+[**1. 搜狗用户画像**](https://www.datafountain.cn/competitions/239/details)
+
+## 1.1 tfidf知识点
 
 这里默认的tokenizer就是用空格进行分割单词的
 ```python
@@ -50,3 +52,6 @@ class Tokenizer():
         return tokens 
 ```
 
+---
+
+## 项目类
