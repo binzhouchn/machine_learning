@@ -166,6 +166,7 @@ def get_feature_pair_sub_mul_list(train_x, train_y, eps=0.01):
     feature_pair_sub_mul_list = [[corr[0], corr[1], corr[2]] for corr in feature_pair_sub_mul_list]
     return feature_pair_sub_mul_list
 
+# keep it optional
 def get_feature_pair_sub_list_sf(train_x, train_y, eps=0.01):
     #Owing to the features are selected by random sampling, the returned result may be different from what I provide
     sub_list = find_corr_pairs_sub(train_x, train_y, eps)
