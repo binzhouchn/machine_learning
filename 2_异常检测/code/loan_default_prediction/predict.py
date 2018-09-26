@@ -151,7 +151,36 @@ def get_data(train_x, feature_indexs, feature_minus_pair_list=[], feature_plus_p
     return sub_train_x
 
 # get_data for dataframe version byself 返回的是整一个dataframe加上衍生的特征
+def get_data_forDF(train_x, num_features, feature_minus_pair_list: list, feature_plus_pair_list: list,
+                   feature_mul_pair_list: list, feature_divide_pair_list: list, feature_pair_sub_mul_list: list):
+    # sub
+    for i in range(len(feature_minus_pair_list)):
+        f1 = feature_minus_pair_list[i][0]
+        f2 = feature_minus_pair_list[i][1]
+        train_x[f1 + '_' + f2 + '_sub'] = train_x[f1] - train_x[f2]
+    # plus
+    for i in range(len(feature_plus_pair_list)):
+        f1 = feature_plus_pair_list[i][0]
+        f2 = feature_plus_pair_list[i][1]
+        train_x[f1 + '_' + f2 + '_plus'] = train_x[f1] + train_x[f2]
+    # mul
+    for i in range(len(feature_mul_pair_list)):
+        f1 = feature_mul_pair_list[i][0]
+        f2 = feature_mul_pair_list[i][1]
+        train_x[f1 + '_' + f2 + '_mul'] = train_x[f1] * train_x[f2]
+    # div
+    for i in range(len(feature_divide_pair_list)):
+        f1 = feature_divide_pair_list[i][0]
+        f2 = feature_divide_pair_list[i][1]
+        train_x[f1 + '_' + f2 + '_div'] = train_x[f1] * 1.0 / train_x[f2]
+    # sub_mul
+    for i in range(len(feature_pair_sub_mul_list)):
+        f1 = feature_pair_sub_mul_list[i][0]
+        f2 = feature_pair_sub_mul_list[i][1]
+        f3 = feature_pair_sub_mul_list[i][2]
+        train_x[f1 + '_' + f2 + '_sub_mul'] = (train_x[f1] - train_x[f2]) * train_x[f3]
 
+    return train_x
 
 # use gbm classifier to predict whether the loan defaults or not
 def gbc_classify(train_x, train_y):
