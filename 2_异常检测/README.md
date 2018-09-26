@@ -7,3 +7,5 @@
  - 把test第16列小于1的行index拿出来，然后把101列所对应的这些index进行log1-p转换、训练的101列也进行log1-p转换；16列大于等于1的预测都为0（看ind_tmp）
  - 先用gbc分类0和1，然后对test预测概率大于0.55的值，进行回归预测，回归训练数据用train_y大于0的行训练；
  最后多模型融合，svr、gbr、GaussianProcess
+ 
+ [代码](code/loan_default_prediction/README.md)
