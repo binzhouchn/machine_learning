@@ -129,10 +129,8 @@ def get_feature_pair_sub_list(train_x, train_y, eps=0.01):
     sub_list = find_corr_pairs_sub(train_x, train_y, eps)
     sub_list2 = [corr for corr in sub_list if abs(corr[2])>eps]
     sorted_sub_list = sorted(sub_list2, key=lambda corr:abs(corr[2]), reverse=True)
-    dist_sub_list = get_distinct_feature_pairs(sorted_sub_list)
-    dist_sub_list2 = [[corr[0], corr[1]] for corr in dist_sub_list]
-    feature_pair_sub_list = [[520, 521], [271, 521], [271, 520]] # 看具体问题加
-    feature_pair_sub_list.extend(dist_sub_list2[1:])
+    feature_pair_sub_list = get_distinct_feature_pairs(sorted_sub_list)
+    feature_pair_sub_list = [[corr[0],corr[1]] for corr in feature_pair_sub_list]
     return feature_pair_sub_list
 
 def get_feature_pair_plus_list(train_x, train_y, eps=0.01):
