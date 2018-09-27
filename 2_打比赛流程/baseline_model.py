@@ -9,7 +9,7 @@ import lightgbm as lgb
 
 
 class Model(object):
-    def __init__(self, X, y, learning_rate=0.1, metric='auc', application='binary', feval=None, seed=0):
+    def __init__(self, X, y, learning_rate=0.01, metric='auc', application='binary', feval=None, seed=0):
         """params
         :param learning_rate:
         :param metric: https://lightgbm.readthedocs.io/en/latest/Parameters.html#metric-parameters
