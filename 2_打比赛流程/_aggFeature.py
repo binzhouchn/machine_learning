@@ -42,15 +42,17 @@ class AggFeature(object):
                 get_category_density = lambda x : pd.Series.nunique(x)*1.0 / pd.Series.count(x)
                 # get_mode = lambda x : max(pd.Series.mode(x)) # 可能返回多个mode，取最大的那个mode
                 get_mode = lambda x : x.value_counts().index[0]
-                
+
                 df = gr.agg([(col_name + '_' + 'count','count'),(col_name + '_' + 'nunique','nunique'),(col_name + '_' + 'max','max'),\
                              (col_name + '_' + 'min','min'),(col_name + '_' + 'max_min',get_max_min),(col_name + '_' + 'mode',get_mode),\
                             (col_name + '_' + 'category_density',get_category_density)]).reset_index()
                 return df
 
             if col_name == feats[0]:
+                col_name = group + '-' + col_name
                 df = _func()
             else:
+                col_name = group + '-' + col_name
                 df = df.merge(_func(), 'left', group).fillna(0)
         return df
 
