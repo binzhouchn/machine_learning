@@ -55,7 +55,7 @@ class Model(object):
 
             'scale_pos_weight': 1,
 
-            'num_threads': 32,
+            'num_threads': 32, # 根据cpu核数参考
         }
 
     def cv(self, nfold=5, return_model=False):
