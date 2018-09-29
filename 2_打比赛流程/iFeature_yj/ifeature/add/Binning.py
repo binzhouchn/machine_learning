@@ -16,11 +16,17 @@ from tqdm import tqdm
 
 class Binning(object):
     def __init__(self, df: pd.DataFrame, label: str):
+        '''
+        这里输入的df是训练集和测试集拼接起来的，label区分两者
+        训练集label是0和1，测试集是-2
+        '''
         assert label in df.columns
         self.label = label
         self.feats = [col for col in df.columns if col != label]
         self.X = df[self.feats]
         self.y = df[label].values
+        self.X_train = df[df.y>=0][self.feats]
+        self.y_train = df[df.y>=0][label].values
         self.node = {}
 
     def binning(self, return_X_y=True, n_jobs=16):
@@ -37,10 +43,11 @@ class Binning(object):
         :param feat:
         :return:
         """
-        _X = self.X[[feat]].values
+        _X = self.X_train[[feat]].values
+        _X_all = self.X[[feat]].values
         clf = LGBMClassifier(num_leaves=20, n_estimators=1, learning_rate=0.1)
-        model = clf.fit(_X, self.y)
-        rst = model.predict(_X, pred_leaf=True)
+        model = clf.fit(_X, self.y_train)
+        rst = model.predict(_X_all, pred_leaf=True)
         js = json.dumps(model.booster_.dump_model()['tree_info'][0]['tree_structure'])
         self.node[feat] = sorted(map(float, re.findall(r'"threshold": (.*?),', js)))
         return rst
