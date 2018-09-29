@@ -1,9 +1,10 @@
 # -*- coding: utf-8 -*-
-"""
+
 __title__ = 'binning'
-__author__ = 'JieYuan'
+__orig_author__ = 'JieYuan'
+__modify_author__ = 'binzhou'
 __mtime__ = '2018/8/28'
-"""
+
 import json
 import re
 from concurrent.futures import ThreadPoolExecutor
