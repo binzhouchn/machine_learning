@@ -1,4 +1,4 @@
-<h1 align = "center">:alien: lgb常用参数 :alien:</h1>
+<h1 align = "center">:helicopter: lgb常用参数 :running:</h1>
 
 ---
 ## 1. 原生接口
