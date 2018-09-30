@@ -16,13 +16,14 @@
 [**2. 西南财经大学“新网银行杯”数据科学竞赛**](http://www.dcjingsai.com/common/cmpt/%E8%A5%BF%E5%8D%97%E8%B4%A2%E7%BB%8F%E5%A4%A7%E5%AD%A6%E2%80%9C%E6%96%B0%E7%BD%91%E9%93%B6%E8%A1%8C%E6%9D%AF%E2%80%9D%E6%95%B0%E6%8D%AE%E7%A7%91%E5%AD%A6%E7%AB%9E%E8%B5%9B_%E7%BB%93%E6%9E%9C%E6%8F%90%E4%BA%A4.html)
 
  - 数据集先合并
- - 先可以不进行空缺值去除(0.95)和single_unique，或collinear
+ - 粗筛：空缺值去除(0.95)和single_unique，或collinear
  - 先每一行的空缺值进行统计（连续型，类别型分类统计NA，及加总的NA三个特征）
+ - 相同空缺率的数值型特征进行横向加总
  - 数值型空缺值用均值填充（中位数也可以，对异常值不敏感）
  - 先跑一个base lgb，然后根据重要排序选择15%-20%重要特征
  - 特征衍生...
  - 根据重要的特征进行特征衍生(poly特征)
- - 根据原始特征进行组合特征(pls,sub,mul,div,sub_mul等)
+ - 根据原始特征进行组合特征(pls,sub,mul,div,sub_mul等) loan_default_pred代码中有
  
 
 ---
