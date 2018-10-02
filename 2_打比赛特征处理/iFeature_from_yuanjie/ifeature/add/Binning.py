@@ -12,7 +12,7 @@ from concurrent.futures import ThreadPoolExecutor
 import numpy as np
 import pandas as pd
 from lightgbm import LGBMClassifier
-from tqdm import tqdm
+from tqdm import tqdm, tqdm_notebook
 
 
 class Binning(object):
@@ -32,7 +32,7 @@ class Binning(object):
 
     def binning(self, return_X_y=True, n_jobs=16):
         with ThreadPoolExecutor(max_workers=n_jobs) as pool:
-            lst = pool.map(self.__binning, tqdm(self.feats, 'Binning ...'), chunksize=1)
+            lst = pool.map(self.__binning, tqdm_notebook(self.feats, 'Binning ...'), chunksize=1)
         _data = np.column_stack(lst)
         if return_X_y:
             _data = pd.DataFrame(np.column_stack((_data, self.y)), columns=self.feats + [self.label])
