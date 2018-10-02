@@ -52,3 +52,6 @@ class Binning(object):
         js = json.dumps(model.booster_.dump_model()['tree_info'][0]['tree_structure'])
         self.node[feat] = sorted(map(float, re.findall(r'"threshold": (.*?),', js)))
         return rst
+
+## 还有另一种从R移植过来的bin方法，见金融风控->评分卡 scorecardpy
+## 结果和这种Bin方法一样
