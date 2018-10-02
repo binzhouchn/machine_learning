@@ -72,3 +72,11 @@
 2. 加正则（损失函数上）
 
 3. CV
+
+
+---
+
+面试总结参考网址：
+
+[机器学习、数据挖掘、数据分析岗面试总结](https://blog.csdn.net/Datawhale/article/details/81212235?from=singlemessage&isappinstalled=0)<br>
+
