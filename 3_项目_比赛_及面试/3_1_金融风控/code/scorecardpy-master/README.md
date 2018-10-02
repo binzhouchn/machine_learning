@@ -88,6 +88,7 @@ train_score = sc.scorecard_ply(train, card, print_step=0)
 test_score = sc.scorecard_ply(test, card, print_step=0)
 
 # psi
+# 一般认为PSI小于0.1时候模型稳定性很高，0.1-0.25一般，大于0.25模型稳定性差，建议重做。
 sc.perf_psi(
   score = {'train':train_score, 'test':test_score},
   label = {'train':y_train, 'test':y_test}
