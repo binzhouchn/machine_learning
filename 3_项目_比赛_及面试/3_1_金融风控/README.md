@@ -49,7 +49,7 @@
 ---
 
 ## 资料
-
+ 
 [金融风险控制基础常识——巴塞尔协议+信用评分卡Fico信用分](https://blog.csdn.net/sinat_26917383/article/details/51720662)
 [风控分类模型种类（决策、排序）比较与模型评估体系（ROC/gini/KS/lift）](https://blog.csdn.net/sinat_26917383/article/details/51725102)
 [信用风险模型（申请评分、行为评分）与数据准备（违约期限、WOE转化）](https://blog.csdn.net/sinat_26917383/article/details/51721107)

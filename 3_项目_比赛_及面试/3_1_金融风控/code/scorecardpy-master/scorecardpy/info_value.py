@@ -75,7 +75,7 @@ def iv_xy(x, y):
         DistrGood = lambda x: x.good/sum(x.good)
       ) \
       .assign(iv = lambda x: (x.DistrBad-x.DistrGood)*np.log(x.DistrBad/x.DistrGood)) \
-      .iv.sum()
+      .iv.sum() # iv核心公式
     # return iv
     return iv_total
 
