@@ -21,10 +21,6 @@
 ## 2. 项目workflow
 
  - 确定业务场景及目标
- 
- - 定义问题：What is the specific gap in your ideal world and the real one that requires machine learning to fill? Ask questions that can be addressed using your data and predictive modeling
- - 确定算法模型及算法指标：分类、回归还是聚类模型，用AUC还是其他指标
- 
  - 理解实际问题，抽象为机器学习能处理的数学问题
     - 明确可以获得的数据
     - 机器学习的目标是分类、回归还是聚类
