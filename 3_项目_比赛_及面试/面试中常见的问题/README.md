@@ -21,6 +21,10 @@
 ## 2. 项目workflow
 
  - 确定业务场景及目标
+ - 定义问题：What is the specific gap in your ideal world and the real one that requires machine learning to fill? Ask questions that can be addressed using your data and predictive modeling
+ - 创建common sense baseline
+ - 确定算法模型及算法指标：分类、回归还是聚类模型，用AUC还是其他指标
+ - EDA
  - 
 
 ## 3. 经典的优化方法
@@ -96,3 +100,4 @@
 
 [机器学习、数据挖掘、数据分析岗面试总结](https://blog.csdn.net/Datawhale/article/details/81212235?from=singlemessage&isappinstalled=0)<br>
 
+[Data Science Question Answer](https://github.com/ShuaiW/data-science-question-answer)
