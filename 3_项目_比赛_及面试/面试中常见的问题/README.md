@@ -109,4 +109,6 @@
 
 [机器学习、数据挖掘、数据分析岗面试总结](https://blog.csdn.net/Datawhale/article/details/81212235?from=singlemessage&isappinstalled=0)<br>
 
+[机器学习项目流程](https://www.cnblogs.com/wxquare/p/5484690.html)
+
 [Data Science Question Answer](https://github.com/ShuaiW/data-science-question-answer)
