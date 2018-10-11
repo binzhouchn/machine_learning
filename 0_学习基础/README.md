@@ -79,7 +79,7 @@ P{|X-μ|>=ε} <= σ^2/ε^2 <br>
 
 (5) 大数定理   
 
-## 熵
+## 熵(平均熵)
 
  - 熵，又叫信息熵<br>
 ![entropy](pic/entropy.png)
@@ -100,6 +100,10 @@ y_true*log(y_pred)求和和kl散度中的交叉熵是一样的p*log(q)<br>
  - 互信息 = 信息熵 - 条件熵  I(X,Y)=H(Y)-H(Y|X) <br>
 （条件熵的定义：H(Y|X)=H(X,Y)-H(X)）<br>
 [链接地址](https://www.cnblogs.com/gatherstars/p/6004075.html)
+
+H(XY) = H(X) + H(Y|X)强可加性<br>
+如果X,Y独立则H(XY) = H(X) + H(Y)即可加性<br>
+H(X|Y) <= H(X)平均熵小于等于，直观的解释就是知道一个条件后进行推测会更加确定所以熵要更小
 
 ## 生成模型和判别模型的区别
 
