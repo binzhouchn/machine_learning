@@ -24,6 +24,8 @@
 
 [**11. WOE, IV(information value)来选取离散特征重要性**](#woe_iv选取离散特征重要性)
 
+[**12. gbdt原理**](#gbdt原理)
+
 ---
 
 [**对机器学习与数据竞赛的一些总结**](https://blog.csdn.net/q383700092/article/details/53842160)
@@ -194,4 +196,7 @@ xgb_m2.predict(xgb.DMatrix(test))  这个得到的就是概率【一列 n*1】�
 金融风控->code/scorecardpy；ifeature->add/Binning）<br>
 [IV详解 CSDN](http://blog.csdn.net/kevin7658/article/details/50780391)
 
-## xxx用法
+## gbdt原理
+
+可以说讲得非常清楚<br>
+[GBDT原理与Sklearn源码分析-回归篇](https://blog.csdn.net/qq_22238533/article/details/79185969)
