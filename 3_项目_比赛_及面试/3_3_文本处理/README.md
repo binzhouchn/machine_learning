@@ -58,6 +58,9 @@ class Tokenizer():
 
 [胶囊网络capsule]()
 
+
+[别人的代码baseline 62+](https://github.com/312shan/Subject-and-Sentiment-Analysis)
+
 ---
 
 ## 项目类
