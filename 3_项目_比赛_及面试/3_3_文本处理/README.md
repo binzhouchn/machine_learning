@@ -52,6 +52,10 @@ class Tokenizer():
         return tokens 
 ```
 
+[**2. 汽车行业用户观点主题及情感识别**](https://www.datafountain.cn/competitions/310/details)
+
+[初步代码,跑一个lstm流程](0_汽车行业用户观点主题及情感识别_lstm_naive.ipynb)
+
 ---
 
 ## 项目类
