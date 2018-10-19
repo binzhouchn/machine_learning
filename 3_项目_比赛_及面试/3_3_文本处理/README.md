@@ -56,7 +56,7 @@ class Tokenizer():
 
 [初步代码,跑一个lstm流程](0_汽车行业用户观点主题及情感识别_lstm_naive.ipynb)<br>
 [初步代码,跑一个cnn流程](1_汽车行业用户观点主题及情感识别_cnn_naive.ipynb)<br>
-[胶囊网络capsule]()
+[胶囊网络Capsule]()
 
 
 [别人的代码baseline 62+](https://github.com/312shan/Subject-and-Sentiment-Analysis)
