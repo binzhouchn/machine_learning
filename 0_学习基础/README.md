@@ -204,3 +204,10 @@ xgb_m2.predict(xgb.DMatrix(test))  这个得到的就是概率【一列 n*1】�
 
 可以说讲得非常清楚<br>
 [GBDT原理与Sklearn源码分析-回归篇](https://blog.csdn.net/qq_22238533/article/details/79185969)
+
+
+---
+
+参考学习：
+
+[100-Days-Of-ML-Code](https://github.com/Avik-Jain/100-Days-Of-ML-Code)
