@@ -53,6 +53,15 @@ class Tokenizer():
         return tokens 
 ```
 
+## 1.2 gensim加载自己的训练的词向量
+
+```python
+#文件格式，存成txt文件
+#8383 100
+#我 -0.027192615 0.3832912 0.29597545 -0.15442707 0.13949695 0.37888202 -0.070740506 0.16849327 -0.00089764595 0.022406599 0.08953266 -0.20218499 -0.21548781 0.1358894 
+glove_model= gensim.models.KeyedVectors.load_word2vec_format('./ft_wv.txt')
+```
+
 [**2. 汽车行业用户观点主题及情感识别**](https://www.datafountain.cn/competitions/310/details)
 
 [初步代码,跑一个lstm流程](0_汽车行业用户观点主题及情感识别_lstm_naive.ipynb)<br>
