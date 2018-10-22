@@ -9,6 +9,7 @@
 这里默认的tokenizer就是用空格进行分割单词的
 ```python
 from sklearn.feature_extraction.text import TfidfVectorizer
+# from sklearn.feature_extraction.text import CountVectorizer # CountVectorizer和tfidf类似，用词频表征
 corpus = ['this is test it','this unbeliveble haha']
 vectorizer = TfidfVectorizer()
 tfidf = vectorizer.fit_transform(corpus)
