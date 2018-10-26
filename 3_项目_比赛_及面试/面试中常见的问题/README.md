@@ -105,6 +105,10 @@
 
 面试总结参考网址：
 
+[牛客网coding](https://www.nowcoder.com/ta/coding-interviews?page=1)
+
+[牛客网sql](http://www.nowcoder.com/ta/sql)
+
 [机器学习中你不可不知的几个算法常识](https://mp.weixin.qq.com/s/Fh-eQm41DI3rkKjEgC1Yig)
 
 [机器学习、数据挖掘、数据分析岗面试总结](https://blog.csdn.net/Datawhale/article/details/81212235?from=singlemessage&isappinstalled=0)<br>
