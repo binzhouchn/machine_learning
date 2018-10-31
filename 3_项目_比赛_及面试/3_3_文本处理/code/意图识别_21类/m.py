@@ -86,7 +86,6 @@ class BasicModule(t.nn.Module):
 		if 'opt' in data:
 			# old_opt_stats = self.opt.state_dict() 
 			if change_opt:
-				
 				self.opt.parse(data['opt'],print_=False)
 				self.opt.embedding_path=None
 				self.__init__(self.opt)
@@ -110,13 +109,22 @@ class BasicModule(t.nn.Module):
 		t.save(data, path)
 		return path
 
-	def get_optimizer(self,lr1,lr2=0,weight_decay = 0):
-		ignored_params = list(map(id, self.encoder.parameters()))
-		base_params = filter(lambda p: id(p) not in ignored_params,
-						self.parameters())
-		if lr2 is None: lr2 = lr1*0.5 
+	def get_optimizer(self, lr1, lr2=0, weight_decay=0):
+		embed_params = list(map(id, self.encoder.parameters()))
+		base_params = filter(lambda p: id(p) not in embed_params, self.parameters())
 		optimizer = t.optim.Adam([
-				dict(params=base_params,weight_decay = weight_decay,lr=lr1),
-				{'params': self.encoder.parameters(), 'lr': lr2}
-			])
+			{'params': self.encoder.parameters(), 'lr': lr2},
+			{'params': base_params, 'lr': lr1, 'weight_decay': weight_decay}
+		])
 		return optimizer
+
+	# def get_optimizer(self,lr1,lr2=0,weight_decay = 0):
+	# 	ignored_params = list(map(id, self.encoder.parameters()))
+	# 	base_params = filter(lambda p: id(p) not in ignored_params,
+	# 					self.parameters())
+	# 	if lr2 is None: lr2 = lr1*0.5
+	# 	optimizer = t.optim.Adam([
+	# 			dict(params=base_params,weight_decay = weight_decay,lr=lr1),
+	# 			{'params': self.encoder.parameters(), 'lr': lr2}
+	# 		])
+	# 	return optimizer
