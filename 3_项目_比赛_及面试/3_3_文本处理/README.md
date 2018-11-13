@@ -1,8 +1,8 @@
 # 文本处理
 
-## Basics
+## 1. Basics
 
-### 1. gensim加载自己的训练的词向量
+### 1.1 gensim加载自己的训练的词向量
 
 ```python
 #文件格式，存成txt文件
@@ -14,18 +14,18 @@ glove_model= gensim.models.KeyedVectors.load_word2vec_format('./ft_wv.txt')
 ```
 
 
-### 2. 各种距离计算及文本相似度算法
+### 1.2 各种距离计算及文本相似度算法
 
 [各种距离计算及文本相似度算法](各种距离计算及文本相似度算法.py)
 
 
 ---
 
-## 比赛类
+## 2. 比赛类
 
-[**搜狗用户画像**](https://www.datafountain.cn/competitions/239/details)
+[**2.1 搜狗用户画像**](https://www.datafountain.cn/competitions/239/details)
 
-## 1.1 tfidf知识点
+## 2.1.1 tfidf知识点
 
 这里默认的tokenizer就是用空格进行分割单词的
 ```python
@@ -74,7 +74,7 @@ class Tokenizer():
         return tokens 
 ```
 
-[**汽车行业用户观点主题及情感识别**](https://www.datafountain.cn/competitions/310/details)
+[**2.2 汽车行业用户观点主题及情感识别**](https://www.datafountain.cn/competitions/310/details)
 
 [初步代码,跑一个lstm流程](pytorch_code/汽车行业用户观点主题及情感识别_lstm_naive.ipynb)<br>
 [初步代码,跑一个cnn流程](pytorch_code/汽车行业用户观点主题及情感识别_cnn_naive.ipynb)<br>
@@ -87,13 +87,13 @@ class Tokenizer():
 
 ---
 
-## 项目类
+## 3. 项目类
 
 
-[**1. 智能客服**](智能客服流程.md)
+[**3.1 智能客服**](智能客服流程.md)
 
 
-[**2. 催收机器人**](催收机器人.md)
+[**3.2 催收机器人**](催收机器人.md)
 
 
 ---
