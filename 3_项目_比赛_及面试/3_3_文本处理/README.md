@@ -76,7 +76,7 @@ glove_model= gensim.models.KeyedVectors.load_word2vec_format('./ft_wv.txt')
 
 ## 1.3 各种距离计算及文本相似度算法
 
-[各种距离计算及文本相似度算法.py](各种距离计算及文本相似度算法.py)
+[各种距离计算及文本相似度算法](各种距离计算及文本相似度算法.py)
 
 ---
 
@@ -94,3 +94,5 @@ glove_model= gensim.models.KeyedVectors.load_word2vec_format('./ft_wv.txt')
 参考资料：
 
 [停用词库](https://github.com/goto456/stopwords)
+
+[腾讯AI Lab开源大规模高质量中文词向量数据](https://cloud.tencent.com/developer/article/1356164)
