@@ -74,6 +74,10 @@ glove_model= gensim.models.KeyedVectors.load_word2vec_format('./ft_wv.txt')
 
 [别人的代码baseline 62+](https://github.com/312shan/Subject-and-Sentiment-Analysis)
 
+## 1.3 各种距离计算及文本相似度算法
+
+[各种距离计算及文本相似度算法.py](各种距离计算及文本相似度算法.py)
+
 ---
 
 ## 项目类
