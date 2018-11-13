@@ -13,10 +13,13 @@
 glove_model= gensim.models.KeyedVectors.load_word2vec_format('./ft_wv.txt')
 ```
 
+
 ### 2. 各种距离计算及文本相似度算法
 
 [各种距离计算及文本相似度算法](各种距离计算及文本相似度算法.py)
 
+
+---
 
 ## 比赛类
 
