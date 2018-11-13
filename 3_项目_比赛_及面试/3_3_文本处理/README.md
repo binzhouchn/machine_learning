@@ -1,5 +1,23 @@
 # 文本处理
 
+## Basics
+
+### gensim加载自己的训练的词向量
+
+```python
+#文件格式，存成txt文件
+'''
+8383 100
+我 -0.027192615 0.3832912 0.29597545 -0.15442707 0.13949695 0.37888202 -0.070740506 0.16849327 -0.00089764595 0.022406599 0.08953266 -0.20218499 -0.21548781 0.1358894 
+'''
+glove_model= gensim.models.KeyedVectors.load_word2vec_format('./ft_wv.txt')
+```
+
+### 各种距离计算及文本相似度算法
+
+[各种距离计算及文本相似度算法](各种距离计算及文本相似度算法.py)
+
+
 ## 比赛类
 
 [**1. 搜狗用户画像**](https://www.datafountain.cn/competitions/239/details)
@@ -53,17 +71,6 @@ class Tokenizer():
         return tokens 
 ```
 
-## 1.2 gensim加载自己的训练的词向量
-
-```python
-#文件格式，存成txt文件
-'''
-8383 100
-我 -0.027192615 0.3832912 0.29597545 -0.15442707 0.13949695 0.37888202 -0.070740506 0.16849327 -0.00089764595 0.022406599 0.08953266 -0.20218499 -0.21548781 0.1358894 
-'''
-glove_model= gensim.models.KeyedVectors.load_word2vec_format('./ft_wv.txt')
-```
-
 [**2. 汽车行业用户观点主题及情感识别**](https://www.datafountain.cn/competitions/310/details)
 
 [初步代码,跑一个lstm流程](pytorch_code/汽车行业用户观点主题及情感识别_lstm_naive.ipynb)<br>
@@ -74,9 +81,6 @@ glove_model= gensim.models.KeyedVectors.load_word2vec_format('./ft_wv.txt')
 
 [别人的代码baseline 62+](https://github.com/312shan/Subject-and-Sentiment-Analysis)
 
-## 1.3 各种距离计算及文本相似度算法
-
-[各种距离计算及文本相似度算法](各种距离计算及文本相似度算法.py)
 
 ---
 
@@ -96,3 +100,6 @@ glove_model= gensim.models.KeyedVectors.load_word2vec_format('./ft_wv.txt')
 [停用词库](https://github.com/goto456/stopwords)
 
 [腾讯AI Lab开源大规模高质量中文词向量数据](https://cloud.tencent.com/developer/article/1356164)
+
+[各种距离](https://blog.csdn.net/shiwei408/article/details/7602324)
+
