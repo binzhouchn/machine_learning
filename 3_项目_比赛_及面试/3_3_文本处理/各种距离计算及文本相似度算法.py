@@ -37,13 +37,17 @@ def Minkowski(vec1, vec2, params):
 # 参考  标准化欧式距离：http://blog.csdn.net/jinzhichaoshuiping/article/details/51019473
 
 # 马氏距离，优点：去除量纲，而且可以排除变量之间的相关性的干扰
-def Mahalanobis(vec1, vec2):
-    npvec1, npvec2 = np.array(vec1), np.array(vec2)
-    npvec = np.array([npvec1, npvec2])
-    sub = npvec.T[0]-npvec.T[1]
-    inv_sub = np.linalg.inv(np.cov(npvec1, npvec2))
-    return math.sqrt(np.dot(inv_sub, sub).dot(sub.T))
-# MahalanobisDistance,马氏距离
+x1 = [3, 5, 2]
+x2 = [4, 6, 2]
+x3 = [6,7,2]
+x4 = [10,1,7]
+def mahalanobis(*args, v1=None, v2=None): # v1,v2包含在args中
+    X = np.vstack(args).T
+    S = np.cov(X)
+    SI = np.linalg.inv(S)
+    return np.dot(np.dot((v1 - v2).T, SI), (v1 - v2))
+print(mahalanobis([x1,x2,x3,x4],v1=x1,v2=x2))
+
 
 
 def Edit_distance_str(str1, str2):
