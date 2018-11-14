@@ -36,7 +36,7 @@ def Minkowski(vec1, vec2, params):
 # 按照普通的距离聚类出的大多是圆形的区域，这时候要采用标准的欧式距离。
 # 参考  标准化欧式距离：http://blog.csdn.net/jinzhichaoshuiping/article/details/51019473
 
-# 马氏距离，优点：去除量纲，而且考虑了相关性
+# 马氏距离，优点：去除量纲，而且去除相关性的干扰
 def Mahalanobis(vec1, vec2):
     npvec1, npvec2 = np.array(vec1), np.array(vec2)
     npvec = np.array([npvec1, npvec2])
