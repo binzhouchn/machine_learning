@@ -13,7 +13,6 @@
 glove_model= gensim.models.KeyedVectors.load_word2vec_format('./ft_wv.txt')
 ```
 
-
 ### 1.2 各种距离计算及文本相似度算法
 
 [各种距离计算及文本相似度算法](各种距离计算及文本相似度算法.py)
@@ -23,12 +22,26 @@ glove_model= gensim.models.KeyedVectors.load_word2vec_format('./ft_wv.txt')
 def generate_ngram(input_list, n):
     result = []
     for i in range(1, n+1):
-        a = zip(*[input_list[j:] for j in range(i)])
-        print(list(a))
-        result.extend(a)
+        result.extend(zip(*[input_list[j:] for j in range(i)]))
     return result
+    
+generate_ngram([1,2,3,4,5], 3)
+# [(1,), (2,), (3,), (4,), (1, 2), (2, 3), (3, 4), (1, 2, 3), (2, 3, 4)]
+```
+或者用nltk包
+```python
+from nltk.util import ngrams
+list(ngrams([1,2,3,4], 3))
+# [(1, 2, 3), (2, 3, 4)]
 ```
 
+### 1.4 中文新词发现
+
+[python3实现互信息和左右熵的新词发现](https://blog.csdn.net/qq_34695147/article/details/80464877)
+
+互信息（凝固度）<br>
+左右熵（自由度）<br>
+新词IDF
 
 ---
 
