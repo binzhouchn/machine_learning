@@ -18,6 +18,17 @@ glove_model= gensim.models.KeyedVectors.load_word2vec_format('./ft_wv.txt')
 
 [各种距离计算及文本相似度算法](各种距离计算及文本相似度算法.py)
 
+### 1.3 生成ngram
+```python
+def generate_ngram(input_list, n):
+    result = []
+    for i in range(1, n+1):
+        a = zip(*[input_list[j:] for j in range(i)])
+        print(list(a))
+        result.extend(a)
+    return result
+```
+
 
 ---
 
