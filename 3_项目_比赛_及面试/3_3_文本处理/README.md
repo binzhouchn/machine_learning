@@ -27,7 +27,15 @@ glove_model= gensim.models.KeyedVectors.load_word2vec_format('./ft_wv.txt')
 
 [各种距离计算及文本相似度算法](各种距离计算及文本相似度算法.py)
 
-### 1.3 生成ngram
+### 1.3 N-Gram:简单的马尔科夫链
+
+bigram:一个词的出现仅依赖于它前面出现的一个词 P(w1,w2...wm) = 连乘P(wi|wi-1) 假设有一个很大的语料库，我们统计下面一些词出现的量，其中I出现了2533次，
+再给出基于bigram模型进行计数的结果，其中第一行，第二列表示给定前一个词是"I"时，当前词为"want"的情况一共出现了827次，所以P(want|I)=827/2533=0.33
+
+ngram的应用：搜索，输入法联想，文本自动生成<br>
+[自然语言处理中的N-Gram模型详解](https://blog.csdn.net/baimafujinji/article/details/51281816)
+
+**生成ngram**<br>
 ```python
 def generate_ngram(input_list, n):
     result = []
