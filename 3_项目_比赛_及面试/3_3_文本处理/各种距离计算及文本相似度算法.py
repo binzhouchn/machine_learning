@@ -109,6 +109,7 @@ def cosine_similarity_tfidf(s1, s2):
     return np.dot(vectors[0], vectors[1]) / (norm(vectors[0]) * norm(vectors[1]))
 
 # WMD距离
+# https://blog.csdn.net/cht5600/article/details/53405315
 from gensim.similarities import WmdSimilarity
 
 # Jaccard距离
