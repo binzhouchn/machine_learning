@@ -61,10 +61,10 @@ list(ngrams([1,2,3,4], 3))
 左右熵（自由度）<br>
 新词IDF
 
-分词：<br>
+**分词：**<br>
 加载搜狗词典sogou_words.txt<br>
 加载腾讯词典tencent_words.txt<br>
-[利用互信息和左右信息熵的中文分词新词发现](https://github.com/zhanzecheng/Chinese_segment_augment)
+[利用互信息和左右信息熵的中文分词新词发现github](https://github.com/zhanzecheng/Chinese_segment_augment)
 
 ### 1.5 关键词提取主要算法
 
