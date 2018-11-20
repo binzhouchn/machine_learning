@@ -46,6 +46,16 @@ def mahalanobis(*args, v1=None, v2=None): # v1,v2包含在args中
     return np.dot(np.dot((v1 - v2).T, SI), (v1 - v2))
 print(mahalanobis([x1,x2,x3,x4],v1=x1,v2=x2))
 
+# Cosine，余弦夹角
+# 机器学习中借用这一概念来衡量样本向量之间的差异。
+# 也可以使用在余弦相似度算法中
+def Cosine(vec1, vec2):
+    npvec1, npvec2 = np.array(vec1), np.array(vec2)
+    return npvec1.dot(npvec2)/(math.sqrt((npvec1**2).sum()) * math.sqrt((npvec2**2).sum()))
+
+
+################################################################################################
+#-------------------------------------文本相似度算法-------------------------------------------#
 
 # 针对列表改写的编辑距离，在NLP领域中，计算两个文本的相似度，是基于句子中词和词之间的差异。
 # 如果使用传统的编辑距离算法，则计算的为文本中字与字之间的编辑次数。这里根据编辑距离的思维，
@@ -70,10 +80,7 @@ def Edit_distance_array(str_ary1, str_ary2):
     similarity = 1-int(matrix[-1])/max(len(str_ary1), len(str_ary2))
     return {'Distance': distance, 'Similarity': similarity}
 
-# Cosine，余弦夹角
-# 机器学习中借用这一概念来衡量样本向量之间的差异。
-# 也可以使用在余弦相似度算法中
-def Cosine(vec1, vec2):
-    npvec1, npvec2 = np.array(vec1), np.array(vec2)
-    return npvec1.dot(npvec2)/(math.sqrt((npvec1**2).sum()) * math.sqrt((npvec2**2).sum()))
+# WMD距离
+from gensim.similarities import WmdSimilarity
 
+# Jaccard距离
