@@ -1,5 +1,7 @@
 import numpy as np
 import math
+from scipy.linalg import norm
+from sklearn.feature_extraction.text import CountVectorizer, TfidfVectorizer
 
 # 依赖包numpy、python-Levenshtein、scipy
 
@@ -48,7 +50,6 @@ print(mahalanobis([x1,x2,x3,x4],v1=x1,v2=x2))
 
 # Cosine，余弦夹角
 # 机器学习中借用这一概念来衡量样本向量之间的差异。
-# 也可以使用在余弦相似度算法中
 def Cosine(vec1, vec2):
     npvec1, npvec2 = np.array(vec1), np.array(vec2)
     return npvec1.dot(npvec2)/(math.sqrt((npvec1**2).sum()) * math.sqrt((npvec2**2).sum()))
@@ -80,7 +81,50 @@ def Edit_distance_array(str_ary1, str_ary2):
     similarity = 1-int(matrix[-1])/max(len(str_ary1), len(str_ary2))
     return {'Distance': distance, 'Similarity': similarity}
 
+# 余弦相似度算法
+# 算法一 基于句子的TF
+def cosine_similarity_tf(s1, s2):
+    """
+    计算两个句子的TF余弦相似度
+    :param s1:
+    :param s2:
+    :return:
+    """
+    vectorizer = CountVectorizer(tokenizer=lambda s: s.split())
+    corpus = [s1, s2]
+    vectors = vectorizer.fit_transform(corpus).toarray()
+    return np.dot(vectors[0], vectors[1]) / (norm(vectors[0]) * norm(vectors[1]))
+
+# 算法二 基于句子的TFIDF
+def cosine_similarity_tfidf(s1, s2):
+    """
+    计算两个句子的TFIDF余弦相似度
+    :param s1:
+    :param s2:
+    :return:
+    """
+    vectorizer = TfidfVectorizer(tokenizer=lambda s: s.split())
+    corpus = [s1, s2]
+    vectors = vectorizer.fit_transform(corpus).toarray()
+    return np.dot(vectors[0], vectors[1]) / (norm(vectors[0]) * norm(vectors[1]))
+
 # WMD距离
 from gensim.similarities import WmdSimilarity
 
 # Jaccard距离
+def jaccard_similarity(s1, s2):
+    """
+    计算两个句子的雅可比相似度
+    :param s1:
+    :param s2:
+    :return:
+    """
+    vectorizer = CountVectorizer(tokenizer=lambda s: s.split())
+    corpus = [s1, s2]
+    vectors = vectorizer.fit_transform(corpus).toarray()
+    numerator = np.sum(np.min(vectors, axis=0))
+    denominator = np.sum(np.max(vectors, axis=0))
+    return 1.0 * numerator / denominator
+
+# Dice距离
+# 待补充
