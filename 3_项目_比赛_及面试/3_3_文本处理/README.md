@@ -66,6 +66,17 @@ list(ngrams([1,2,3,4], 3))
 加载腾讯词典tencent_words.txt<br>
 [利用互信息和左右信息熵的中文分词新词发现](https://github.com/zhanzecheng/Chinese_segment_augment)
 
+### 1.5 关键词提取主要算法
+
+ - tfidf
+ - topic-model(LDA)
+ - textrank关键词提取
+ 
+[关键词提取详细笔记](https://github.com/binzhouchn/ai_notes/blob/master/%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E5%A4%84%E7%90%86/%E5%85%AC%E5%85%B1%E6%A8%A1%E5%9D%97/keyword_extraction.md)
+
+### 1.6 word2vec
+
+
 ---
 
 ## 2. 比赛类
