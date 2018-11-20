@@ -15,6 +15,17 @@ glove_model= gensim.models.KeyedVectors.load_word2vec_format('./ft_wv.txt')
 
 ### 1.2 各种距离计算及文本相似度算法
 
+ - 欧式距离
+ - 曼哈顿距离
+ - 切比雪夫距离
+ - 闵可夫斯基距离
+ - 马氏距离
+ - 编辑距离（edit distance）
+ - 余弦相似性（cosine similarity）
+ - WMD距离（word mover’s distance）
+ - 杰卡顿距离（Jaccard distance）
+ - Dice 距离（Dice distance）
+
 [各种距离计算及文本相似度算法](各种距离计算及文本相似度算法.py)
 
 ### 1.3 生成ngram
