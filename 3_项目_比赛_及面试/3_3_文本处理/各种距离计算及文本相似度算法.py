@@ -126,5 +126,3 @@ def jaccard_similarity(s1, s2):
     denominator = np.sum(np.max(vectors, axis=0))
     return 1.0 * numerator / denominator
 
-# Dice距离
-# 待补充
