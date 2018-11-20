@@ -76,6 +76,23 @@ list(ngrams([1,2,3,4], 3))
 
 ### 1.6 word2vec
 
+ - CBOW模型
+ - Skip-gram模型
+ - Hierarchical Softmax 与 Negative Sampling
+ - FastText
+ - GolVe
+
+GloVe 与 Word2Vec 的区别:
+
+ - Word2Vec 本质上是一个神经网络；Glove 也利用了反向传播来更新词向量，但是结构要更简单，所以 GloVe 的速度更快
+ - Glove 认为 Word2Vec 对高频词的处理还不够，导致速度慢；GloVe 认为共现矩阵可以解决这个问题
+ - 从效果上看，虽然 GloVe 的训练速度更快，但是词向量的性能在通用性上要弱一些
+
+FastText 是从 Word2Vec 的 CBOW 模型演化而来的，不同点：
+
+ - CBOW 的输入是中心词两侧skip_window内的上下文词；FastText 除了上下文词外，还包括这些词的字符级 N-gram 特征
+ 
+[word2vec详细笔记](https://github.com/binzhouchn/ai_notes/blob/master/%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E5%A4%84%E7%90%86/%E5%85%AC%E5%85%B1%E6%A8%A1%E5%9D%97/word2vec.md)
 
 ---
 
