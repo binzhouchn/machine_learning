@@ -144,8 +144,8 @@ class Tokenizer():
                 for i in range(len(words) - gram + 1):
                     tokens += ["_*_".join(words[i:i+gram])]
         self.n += 1
-        if self.n%10000==0:
-            print(self.n,end=' ') # 每10000条打印一下
+        if self.n % 10000 == 0:
+            print(self.n, end=' ') # 每10000条打印一下
         return tokens 
 ```
 
