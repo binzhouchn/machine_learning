@@ -116,3 +116,5 @@
 [机器学习项目流程](https://www.cnblogs.com/wxquare/p/5484690.html)
 
 [Data Science Question Answer](https://github.com/ShuaiW/data-science-question-answer)
+
+[别人的简历（参考）](https://cyc2018.github.io/page.html#next)
