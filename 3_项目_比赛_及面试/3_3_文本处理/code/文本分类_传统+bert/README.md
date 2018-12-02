@@ -102,7 +102,9 @@ tmp_dev = tmp.loc[val_idx]
 tmp_train.to_csv('data/train.tsv',sep='\t',index=False)
 tmp_dev.to_csv('data/dev.tsv',sep='\t',index=False)
 
-
+# 这里就一列text输入，二分类问题
+# 所以run_classify.py文件得改 MRPC任务(MrpcProcessor)
+[run_classify.py](run_classify.py)
 ```
 
 
