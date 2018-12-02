@@ -70,7 +70,7 @@ bc_y_train = data.label[train_idx]
 bc_X_dev = bc_X[val_idx]
 bc_y_dev = data.label[val_idx]
 
-# 接xgb
+# 接xgb或lgb
 from xgboost.sklearn import XGBClassifier
 clf = XGBClassifier(
     n_estimators=17,
@@ -91,5 +91,18 @@ print('acc: ',accuracy_score(bc_y_dev.tolist(), model_xgb.predict(np.array(bc_X_
 print('auc: ', roc_auc_score(bc_y_dev.tolist(), model_xgb.predict_proba(np.array(bc_X_dev.tolist()))[:,1]))
 ```
 
+## 3. 生成train和dev跑bert模型 run_classify.py
+
+```python
+# comment不需要切分，用空格分开就行
+tmp = data[['comment_text','label']]
+tmp_train = tmp.loc[train_idx]
+tmp_dev = tmp.loc[val_idx]
+# 保存成tsv文件
+tmp_train.to_csv('data/train.tsv',sep='\t',index=False)
+tmp_dev.to_csv('data/dev.tsv',sep='\t',index=False)
+
+
+```
 
 
