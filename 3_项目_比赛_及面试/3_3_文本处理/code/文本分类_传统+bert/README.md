@@ -108,7 +108,7 @@ tmp_dev.to_csv('data/dev.tsv',sep='\t',index=False)
 # 这里就一列text输入，二分类问题
 # 所以run_classify.py文件得改 MRPC任务(MrpcProcessor)
 # 还有文件中各种路径
-[run_classify.py](run_classify_v1.py)
+[run_classify.py](run_classifier_v1.py)
 ```
 
 
