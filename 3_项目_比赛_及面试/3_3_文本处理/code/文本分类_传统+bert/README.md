@@ -15,7 +15,7 @@ from gensim.models.word2vec import Word2Vec
 from m import BOW
 ```
 
-## tfidf+lr
+## 1. tfidf+lr
 
 ```python
 # data['comment_text'] 数据格式
@@ -52,4 +52,16 @@ print('acc: ', accuracy_score(val_y, val_pred))
 #acc:  0.9566647866140252
 ```
 
-## d
+## 2. bert句向量接xgb
+
+[bert as service](https://github.com/hanxiao/bert-as-service)<br>
+ 
+ - 先启动bert as service端口号是5555
+ - 把service/client.py文件放到notebook启动目录下(也可以任何位置)
+ - import导入
+```python
+from client import BertClient
+bc = BertClient()
+bc.encode(['我 是 中国 人'])
+```
+
