@@ -93,6 +93,9 @@ print('auc: ', roc_auc_score(bc_y_dev.tolist(), model_xgb.predict_proba(np.array
 
 ## 3. 生成train和dev跑bert模型 run_classify.py
 
+[google bert](https://github.com/google-research/bert/)<br>
+[BERT在极小数据下带来显著提升的开源实现](https://mp.weixin.qq.com/s?__biz=MzIwMTc4ODE0Mw==&mid=2247493161&idx=1&sn=58ddcd071602c42dda93275289311bb3&chksm=96ea39a9a19db0bf15df95cc9961064a3bab4e4a0b8d25a9bfb45c154942330b9cdb0abe0f4b&scene=0&xtrack=1#rd)<br>
+
 ```python
 # comment不需要切分，用空格分开就行
 tmp = data[['comment_text','label']]
