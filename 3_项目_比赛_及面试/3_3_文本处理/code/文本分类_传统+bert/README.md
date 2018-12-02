@@ -60,8 +60,36 @@ print('acc: ', accuracy_score(val_y, val_pred))
  - 把service/client.py文件放到notebook启动目录下(也可以任何位置)
  - 导入BertClient
 ```python
-from client import BertClient
+from client import BertClient # 启动目录下
 bc = BertClient()
-bc.encode(['我 是 中国 人'])
+# bc.encode(['我 是 中国 人'])
+bc_X = data.comment_text.apply(lambda x : bc.encode([x])[0])
+# train dev split
+bc_X_train = bc_X[train_idx]
+bc_y_train = data.label[train_idx]
+bc_X_dev = bc_X[val_idx]
+bc_y_dev = data.label[val_idx]
+
+# 接xgb
+from xgboost.sklearn import XGBClassifier
+clf = XGBClassifier(
+    n_estimators=17,
+    learning_rate=0.05,
+    max_depth=10,
+    min_child_weight=1,
+    gamma=0.3,
+    subsample=0.8,
+    colsample_bytree=0.8,
+    objective='binary:logistic',
+    nthread=12,
+    scale_pos_weight=1,
+    reg_lambda=1,
+    seed=88)
+model_xgb = clf.fit(np.array(bc_X_train.tolist()), bc_y_train.tolist())
+# val on dev set
+print('acc: ',accuracy_score(bc_y_dev.tolist(), model_xgb.predict(np.array(bc_X_dev.tolist()))))
+print('auc: ', roc_auc_score(bc_y_dev.tolist(), model_xgb.predict_proba(np.array(bc_X_dev.tolist()))[:,1]))
 ```
+
+
 
