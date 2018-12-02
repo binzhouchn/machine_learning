@@ -58,7 +58,7 @@ print('acc: ', accuracy_score(val_y, val_pred))
  
  - 先启动bert as service端口号是5555
  - 把service/client.py文件放到notebook启动目录下(也可以任何位置)
- - import导入
+ - 导入BertClient
 ```python
 from client import BertClient
 bc = BertClient()
