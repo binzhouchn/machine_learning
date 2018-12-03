@@ -149,7 +149,7 @@ word_list = []
 for x in tqdm(my_set.find()):
     word_list.append(x['word'])
 # 写入文件
-with open('../save/tencent_words.txt','w',encoding='utf-8') as f:
+with open('../save/tencent_words.txt', 'w', encoding='utf-8') as f:
     for w in word_list:
         f.write(w + '\n')
 ```
