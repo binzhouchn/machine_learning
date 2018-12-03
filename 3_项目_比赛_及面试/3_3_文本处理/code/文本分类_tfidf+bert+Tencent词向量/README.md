@@ -127,7 +127,7 @@ db.drop_collection('test_set')
 # 插入词向量
 from tqdm import tqdm
 def __reader():
-    with open("/opt/common_files/Tencent_AILab_ChineseEmbedding.txt",encoding='utf-8',errors='ignore') as f:
+    with open("../Tencent_AILab_ChineseEmbedding.txt",encoding='utf-8',errors='ignore') as f:
         for idx, line in tqdm(enumerate(f), 'Loading ...'):
             ws = line.strip().split(' ')
             if idx:
