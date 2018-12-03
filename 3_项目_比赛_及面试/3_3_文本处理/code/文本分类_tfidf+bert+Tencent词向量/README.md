@@ -164,7 +164,7 @@ for x in tqdm(my_set.find()):
 d_ = {}
 for x in res:
     d_[x['word']] = x['vector']
-# embedding matrix
+# 生成embedding matrix
 embedding_dim = 200
 vocab_size = len(word2idx)
 embedding_matrix = np.zeros((vocab_size+1,embedding_dim))
