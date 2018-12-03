@@ -143,4 +143,17 @@ while rd:
 # 查询
 my_set.find_one({'word':'document'})
 ```
+3. 把8百多万个单词提出来 作为外部词典<br>
+```python
+word_list = []
+for x in tqdm(my_set.find()):
+    word_list.append(x['word'])
+# 写入文件
+with open('../save/tencent_words.txt','w',encoding='utf-8') as f:
+    for w in word_list:
+        f.write(w + '\n')
+```
+4. 把文本词对应的词向量从mongodb中取出<br>
+```python
 
+```
