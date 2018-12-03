@@ -155,5 +155,22 @@ with open('../save/tencent_words.txt','w',encoding='utf-8') as f:
 ```
 4. 把文本词对应的词向量从mongodb中取出<br>
 ```python
-
+# 读取word2idx
+word2idx = np.load('../save/wd2idx.npy').tolist()
+res = []
+for x in tqdm(my_set.find()):
+    if x['word'] in word2idx.keys():
+        res.append(x)
+d_ = {}
+for x in res:
+    d_[x['word']] = x['vector']
+# embedding matrix
+embedding_dim = 200
+vocab_size = len(word2idx)
+embedding_matrix = np.zeros((vocab_size+1,embedding_dim))
+for key, value in tqdm(word2idx.items()):
+    if key in d_.keys():
+        embedding_matrix[value] = d_[key]
+    else:
+        embedding_matrix[value] = [0] * embedding_dim
 ```
