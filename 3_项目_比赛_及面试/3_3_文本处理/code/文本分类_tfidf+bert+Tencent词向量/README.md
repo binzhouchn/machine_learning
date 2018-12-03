@@ -113,5 +113,34 @@ tmp_dev.to_csv('data/dev.tsv',sep='\t',index=False)
 
 ## 4. 用腾讯外部词+词向量
 
+1. 把腾讯词向量存入mongodb中，需先安装mongodb<br>
+2. 安装pymongo，连接启动的mongodb，创建数据库和集<br>
+```python
+import pymongo
+client = pymongo.MongoClient(host='xx.xxx.x.xx', port=27017)
+db = client.tencent_wv
+my_set = db.test_set
+# 删除 test_set
+db.drop_collection('test_set')
+```
+```python
+# 插入词向量
+from tqdm import tqdm
+def __reader():
+    with open("/opt/common_files/Tencent_AILab_ChineseEmbedding.txt",encoding='utf-8',errors='ignore') as f:
+        for idx, line in tqdm(enumerate(f), 'Loading ...'):
+            ws = line.strip().split(' ')
+            if idx:
+                vec = [float(i) for i in ws[1:]]
+                if len(vec) != 200:
+                    continue
+                yield {'word': ws[0], 'vector': vec}
 
+rd = __reader()
+# 插入
+while rd:
+    my_set.insert_one(next(rd))
+# 查询
+my_set.find_one({'word':'iphoneX'})
+```
 
