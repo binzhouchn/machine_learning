@@ -141,6 +141,6 @@ rd = __reader()
 while rd:
     my_set.insert_one(next(rd))
 # 查询
-my_set.find_one({'word':'iphoneX'})
+my_set.find_one({'word':'document'})
 ```
 
