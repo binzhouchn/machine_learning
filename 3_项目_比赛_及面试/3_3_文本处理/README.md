@@ -66,7 +66,7 @@ list(ngrams([1,2,3,4], 3))
 训练隐含马尔可夫模型更实用的方式是仅仅通过大量观测到的信号O1，O2，O3，….就能推算模型参数的P(St|St-1)和P(Ot|St)的方法（无监督训练算法），
 其中主要使用[鲍姆-韦尔奇算法](https://www.cnblogs.com/pinard/p/6972299.html)
 
-原理：三个骰子例子<br>
+原理：三个骰子例子【楼一】 天气模型【楼二】<br>
 [如何用简单易懂的例子解释隐马尔可夫模型](https://www.zhihu.com/question/20962240?sort=created)
 
 NLP应用：<br>
