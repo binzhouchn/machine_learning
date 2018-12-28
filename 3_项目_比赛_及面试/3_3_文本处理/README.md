@@ -53,7 +53,7 @@ list(ngrams([1,2,3,4], 3))
 # [(1, 2, 3), (2, 3, 4)]
 ```
 
-### 隐马尔可夫HMM
+### 隐马尔可夫HMM和Viterbi算法
 
 原理：三个骰子例子<br>
 [如何用简单易懂的例子解释隐马尔可夫模型](https://www.zhihu.com/question/20962240?sort=created)
