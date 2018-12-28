@@ -55,7 +55,8 @@ list(ngrams([1,2,3,4], 3))
 
 ### 隐马尔可夫HMM
 
-原理：三个骰子例子
+原理：三个骰子例子<br>
+[如何用简单易懂的例子解释隐马尔可夫模型](https://www.zhihu.com/question/20962240?sort=created)
 
 
 NLP应用：<br>
