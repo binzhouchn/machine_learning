@@ -62,6 +62,7 @@ list(ngrams([1,2,3,4], 3))
 答：我们根据转移概率P(St|St-1)和发射概率P(ot|st)
 列举所有可能的隐状态序列，选最大概率的序列；现实中这个情况太多所以
 通常用维特比算法解决（维特比算法就是求解HMM上的最短路径（-log(prob)，也即是最大概率）的算法）<br>
+[维特比算法python代码](http://www.hankcs.com/nlp/hmm-and-segmentation-tagging-named-entity-recognition.html)<br>
 (3) 给定足够量的观测数据，如何估计隐含马尔可夫模型的参数？<br>
 训练隐含马尔可夫模型更实用的方式是仅仅通过大量观测到的信号O1，O2，O3，….就能推算模型参数的P(St|St-1)和P(Ot|St)的方法（无监督训练算法），
 其中主要使用[鲍姆-韦尔奇算法](https://www.cnblogs.com/pinard/p/6972299.html)
