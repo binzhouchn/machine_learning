@@ -37,6 +37,7 @@ glove_model= gensim.models.KeyedVectors.load_word2vec_format('./ft_wv.txt')
 [简单易懂讲解simhash算法 hash 哈希](https://blog.csdn.net/le_le_name/article/details/51615931)
 
 
+
 ### 1.3 N-Gram:简单的马尔科夫链
 
 bigram:一个词的出现仅依赖于它前面出现的一个词 P(w1,w2...wm) = 连乘P(wi|wi-1) 假设有一个很大的语料库，我们统计下面一些词出现的量，其中I出现了2533次，
