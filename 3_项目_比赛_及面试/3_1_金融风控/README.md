@@ -38,6 +38,13 @@
  
 [代码](code/西南财经大学_新网银行杯)
 
+[**3. 融360天机 智能金融算法挑战赛**](http://openresearch.rong360.com/#/question)
+
+ - [第一题 拒绝推断 top2方案](https://zhuanlan.zhihu.com/p/46090290)
+ - [第二题 特征挖掘 1st_解决方案](https://github.com/xSupervisedLearning/Rong360_feature_mining_1st_solution)
+ - [第二题 特征挖掘 2nd_解决方案](https://github.com/Questions1/Rong360_2nd)
+ - [第三题 多金融场景下的模型训练 top1解决方案](https://github.com/shuiliwanwu/Rong360-Model-training-in-multiple-financial-scenarios)
+
 ---
  
 ## 项目类
