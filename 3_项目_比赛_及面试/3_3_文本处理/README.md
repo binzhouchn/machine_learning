@@ -144,7 +144,7 @@ FastText 是从 Word2Vec 的 CBOW 模型演化而来的，不同点：
 from sklearn.feature_extraction.text import TfidfVectorizer
 # from sklearn.feature_extraction.text import CountVectorizer # CountVectorizer和tfidf类似，用词频表征
 corpus = ['this is test it','this unbeliveble haha']
-vectorizer = TfidfVectorizer()
+vectorizer = TfidfVectorizer() # 默认每句话中的词用空格分开，也可以自定义tokenizer
 tfidf = vectorizer.fit_transform(corpus)
 
 tfidf.todense() # 把稀疏矩阵转成稠密矩阵，每个文档就是一个向量
