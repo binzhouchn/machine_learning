@@ -152,3 +152,12 @@ clf.fit(
 )
 ```
 ---
+
+遇到的问题：<br>
+如果服务器上直接pip install lightgbm那么跑模型的时候可能会非常慢，解决办法：
+git clone 源码，重新编译。[LightGBM](https://lightgbm.readthedocs.io/en/latest/Installation-Guide.html#linux)<br>
+安装完后然后python setup.py intall<br>
+import此包的时候可能会报错；<br>
+ - libgomp.so.1，GOMP_4.0不存在问题 [解决链接](https://blog.csdn.net/u010486697/article/details/79156723)
+ - OSError: /opt/algor/zhoubin/anaconda3/bin/../lib/libstdc++.so.6: version `GLIBCXX_3.4.20' not found [解决链接](https://www.cnblogs.com/weinyzhou/p/4983306.html)
+ 
