@@ -9,21 +9,15 @@ params = {
     'application': 'binary', # 'application': 'multiclass', 'num_class': 3, # multiclass=softmax, multiclassova=ova  One-vs-All
     'learning_rate': 0.01,
     'max_depth': -1,
-    'num_leaves': 2 ** 7 - 1, # 根据具体问题调整
+    'num_leaves': 2 ** 6 - 1, # 根据具体问题调整
     
-    'max_bin':255,
+    'max_bin':15,
     'metric_freq':10,
     
-    'min_split_gain': 0,
-    'min_child_weight': 1,
-
-    'bagging_fraction': 0.8,
-    'feature_fraction': 0.8,
-    'bagging_freq': 5,
-    'min_data_in_leaf': 1000,
-    'min_sum_hessian_in_leaf': 5.0,
-    'lambda_l1': 0,
-    'lambda_l2': 1,
+    'subsample': 0.8,
+    'subsample_freq': 5,
+    'colsample_bytree': 0.8,
+    'reg_lambda': 7,
 
     'scale_pos_weight': 1,
     'metric': 'auc',
