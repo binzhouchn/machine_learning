@@ -43,6 +43,8 @@ https://github.com/wepe 本次比赛主要参考了他们去年微额借款用�
 
 ## 衡量标准
 
+![TP_FP_FN.png](pic/TP_FP_FN.png)
+
 ![precision_recall.png](pic/precision_recall.png)
 
 ## 经验参数
