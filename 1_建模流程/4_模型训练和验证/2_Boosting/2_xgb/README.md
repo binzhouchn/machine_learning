@@ -8,20 +8,16 @@
 max_delta_step: 类别不平衡有助于逻辑回归
 """
 params = {
-    'booster': 'gbtree', #  'dart' # 'rank:pairwise'对排序友好
-    'objective': 'binary:logistic', # 'objective': 'multi:softmax', 'num_class': 3,
-    'eta': 0.1,
+    'booster': 'gbtree', #  'dart' # 'rank:pairwise'对排序友好
+   'objective': 'binary:logistic', # 'objective': 'multi:softmax', 'num_class': 3,
+    'eta': 00.1,
     'max_depth': 7,
 
-    'gamma': 0,
-    'min_child_weight': 1,
-
     'subsample': 0.8,
-    'colsample_bytree': 0.8,
-    'alpha': 0,
-    'lambda': 1,
+    'colsample_bytree': 0.4,
+    'min_child_weight': 10,
 
-    'scale_pos_weight': 1,
+    'gamma': 2,
     'eval_metric': 'auc',
     'nthread': 16,
     'seed': 888,
