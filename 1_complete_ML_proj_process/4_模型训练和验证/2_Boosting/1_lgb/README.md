@@ -4,25 +4,22 @@
 ## 1. 原生接口
 - 分类
 ```python
-params = {
-    'boosting': 'gbdt', # 'rf', 'dart', 'goss'
-    'application': 'binary', # 'application': 'multiclass', 'num_class': 3, # multiclass=softmax, multiclassova=ova  One-vs-All
-    'learning_rate': 0.01,
-    'max_depth': -1,
-    'num_leaves': 2 ** 6 - 1, # 根据具体问题调整
-    
-    'max_bin':15,
-    'metric_freq':10,
-    
-    'subsample': 0.8,
-    'subsample_freq': 5,
-    'colsample_bytree': 0.8,
-    'reg_lambda': 7,
-
-    'scale_pos_weight': 1,
-    'metric': 'auc',
-    'num_threads': 32,
-}
+params = {'boosting_type': 'gbdt',# 'rf', 'dart', 'goss'
+          'objective': 'binary',# 'application': 'multiclass', 'num_class': 3, # multiclass=softmax, multiclassova=ova  One-vs-All
+          'max_depth': -1,
+          'num_leaves': 63, # 根据具体问题调整
+          'learning_rate': 0.01,
+          'min_split_gain': 0.0,
+          'min_child_weight': 0.001,
+          'min_child_samples': 20,
+          'subsample': 0.8,
+          'subsample_freq': 8,
+          'colsample_bytree': 0.8,
+          'reg_alpha': 0.0,
+          'reg_lambda': 0.0,
+          'scale_pos_weight': 1,
+          'random_state': None,
+          'n_jobs': 32}
 ```
 
 - 回归
