@@ -20,11 +20,9 @@
 
 [**10. LR(逻辑回归)**](#lr逻辑回归)
 
-[**11. xgb调参(后期放到建模流程中)**](#xgb调参)
+[**11. WOE, IV(information value)来选取离散特征重要性**](#woe_iv选取离散特征重要性)
 
-[**12. WOE, IV(information value)来选取离散特征重要性**](#woe_iv选取离散特征重要性)
-
-[**13. gbdt原理**](#gbdt原理)
+[**12. gbdt原理**](#gbdt原理)
 
 ---
 
