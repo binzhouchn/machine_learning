@@ -25,9 +25,16 @@
 
 如果连续型变量缺失率比较高，可以先变成类别型0和1，看下与label的IV值
 
+部分代码：<br>
+```python
+from sklearn.preprocessing import Imputer
+im =Imputer(strategy='mean') # mean, median, most_frequent
+im.fit_transform(X)
+```
+
 ## 1.2 数据平滑
 
-比如分箱，贝叶斯平滑
+比如分箱，贝叶斯平滑[代码](BayesianSmoothing.py)
  
 ## 1.3 文本数据清洗
 
@@ -38,7 +45,7 @@
 (1) 将多个数据源中的数据结合起来并统一存储，建立数据仓库的过程实际上就是数据集成，具体来讲就是将分散在不同来源的数据有机地整合到一起的一步，例如宽表整合<br>
 (2) 提供的数据散落在多个文件，需要根据相应的键值进行数据的拼接
 
-# 3. 数据变换(又可属于特征工程)
+# 3. 数据变换
 
 ## 3.1 特征变换
 

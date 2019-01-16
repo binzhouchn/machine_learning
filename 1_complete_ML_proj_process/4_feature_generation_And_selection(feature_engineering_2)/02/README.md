@@ -56,8 +56,3 @@ from sklearn.preprocessing import Imputer
 im =Imputer(strategy='mean') # mean, median, most_frequent
 im.fit_transform(X)
 ```
-
-### 五、数据平滑
-
-（1）分箱<br>
-（2）贝叶斯平滑 [代码](BayesianSmoothing.py)
