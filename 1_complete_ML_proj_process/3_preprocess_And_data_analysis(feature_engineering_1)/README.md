@@ -13,7 +13,6 @@
 
 <h1 align = "left">:helicopter: 数据预处理 :running:</h1>
 
----
 
 # 1. 数据清洗
 
@@ -138,7 +137,7 @@ Normalizer().fit_transform([[1,2,3],[11,22,23]])
 
 <h1 align = "left">:helicopter: 数据探索与分析 :running:</h1>
 
----
+
 从两个方面进行分析
 
 # 1. 数据质量分析
