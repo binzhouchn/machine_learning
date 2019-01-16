@@ -7,31 +7,7 @@
 
 ### 3.2 特征编码
 
-一、Binarization 特征二值化是将数值型特征变成布尔型特征
-```python
-from sklearn.preprocessing import Binarizer
-bi = Binarizer(threshold=2)           # 设置阈值默认2.0  大于阈值设置为1 , 小于阈值设置为0
-bi.fit_transform(df[['dd']])    # shape (1行,X列)
-```
 
-二、连续性变量划分份数，对定量特征多值化（分箱）
-```python
-import pandas as pd
-pd.cut(df['app'],bins=5) # bin：int 在x范围内的等宽单元的数量
-```
-
-三、one-hot Encoding / Encoding categorical features
-```python
-pandas.get_dummies(df, prefix=None, prefix_sep='_', dummy_na=False, columns=None, sparse=False, drop_first=False)
-# dummy_na=False # 是否把 missing value单独存放一列
-```
-
-四、LabelEncoder
-```python
-# 对于Random Forest和GBDT等模型，如果类别特征存在较多的取值，可以直接使用 LabelEncoder 后的结果作为特征
-from sklearn.preprocessing import LabelEncoder
-LabelEncoder().fit_transform(X)
-```
 
 ### 3.2.1 特征编码遇到的问题
 
