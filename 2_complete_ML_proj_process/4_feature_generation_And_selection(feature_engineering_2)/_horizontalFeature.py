@@ -108,7 +108,7 @@ class HorizongtalFeature(object):
                 data['diff_' + i] = gr[i].diff().fillna(0)
         return data
 
-    # 5. Grougby类别型特征（比如时间，性别等）计算其他数值型特征的均值，方差等等
+    # 5. Grougby类别型特征（比如时间，性别等）计算其他数值型特征的均值，方差等等（交叉特征，特征表征）
     @staticmethod
     def create_fts_from_catgroup(data, feats=None, by='ts',standardize=False):
         data = data.copy()
