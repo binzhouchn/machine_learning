@@ -79,6 +79,13 @@ pandas.get_dummies(df, prefix=None, prefix_sep='_', dummy_na=False, columns=None
 from sklearn.preprocessing import LabelEncoder
 LabelEncoder().fit_transform(X)
 ```
+
+**特征编码遇到的问题**<br>
+对于取值较多（如几十万）的类别特征（ID特征）<br>
+(1) 统计每个取值在样本中出现的频率，取 Top N 的取值进行 One-hot 编码，剩下的类别分到“其他“类目下，其中 N 需要根据模型效果进行调优<br>
+(2) 统计每个 ID 特征的一些统计量（譬如历史平均点击率，历史平均浏览率）等代替该 ID 取值作为特征<br>
+(3) 参考 word2vec 的方式，将每个类别特征的取值映射到一个连续的向量，对这个向量进行初始化，跟模型一起训练。训练结束后，可以同时得到每个ID的Embedding
+
  
 ## 3.3 数据标准化、正则化
  
