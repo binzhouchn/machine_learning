@@ -1,7 +1,44 @@
 <h1 align = "center">:helicopter: lgb常用参数 :running:</h1>
 
+# 目录
+
+[**1. lgb baseline模型**](#lgb_baseline模型)
+
+[**2. lgb 自定义metric**](#lgb_自定义metric)
+
+[**3. lgb常用参数**](#lgb常用参数)
+
 ---
-## 1. 原生接口
+
+## lgb_baseline模型
+
+[lgb_baseline模型](baseline_model.py)
+
+## lgb_自定义metric
+
+```python
+from sklearn import metrics
+def ks(y_hat, data):
+    y_true = data.get_label()
+    fpr,tpr,thres = metrics.roc_curve(y_true,y_hat,pos_label=1)
+    return 'ks', abs(fpr - tpr).max(), True
+
+lgb_data = lgb.Dataset(X, y)
+
+lgb.cv(
+    params,
+    lgb_data,
+    num_boost_round=2000,
+    nfold=5,
+    stratified=False, # 回归一定是False
+    early_stopping_rounds=100,
+    verbose_eval=50,
+    feval = ks, #ks  #这里增加feval参数
+    show_stdv=True)
+```
+
+## lgb常用参数
+### 1. 原生接口
 - 分类
 ```python
 params = {'boosting_type': 'gbdt',# 'rf', 'dart', 'goss'
@@ -72,7 +109,7 @@ lgb.train(
 )
 ```
 ---
-## 2. SK接口
+### 2. SK接口
 - 分类
 ```python
 clf = LGBMClassifier(
@@ -142,7 +179,6 @@ clf.fit(
     categorical_feature='auto'
 )
 ```
----
 
 遇到的问题：<br>
 如果服务器上直接pip install lightgbm那么跑模型的时候可能会非常慢，解决办法：
