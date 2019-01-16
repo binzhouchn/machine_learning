@@ -6,7 +6,7 @@
 
 [**3. Project and Interview**](3_proj_And_interview)
 
- - 金融风控
- - 时间序列
- - 文本处理
- - 面试中常见的问题
+ - Financial Risk
+ - Time Series
+ - NLP Text
+ - Interview Qs
