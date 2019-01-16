@@ -1,12 +1,10 @@
-# 机器学习目录
+# ML Catalog
 
-[**0. 学习基础**](0_学习基础)
+[**1. ML Basic**](1_basic)
 
-[**1. 建模流程**](1_建模流程)
+[**2. Complete ML Process**](2_complete_ML_proj_process)
 
-[**2. 打比赛特征处理**](2_打比赛特征处理)
-
-[**3. 项目_比赛_及面试**](3_项目_比赛_及面试)
+[**3. Project and Interview**](3_proj_And_interview)
 
  - 金融风控
  - 时间序列
