@@ -39,20 +39,13 @@ x_train_mns = mns.transform(X)
 ```
 
 ### 三、归一化(正则化) Normalization
-
-使单个样本具有单位范数的缩放操作。 经常在文本分类和聚类当中使用。<br>
 ```python
 from sklearn.preprocessing import Normalizer
 Normalizer().fit_transform([[1,2,3],[11,22,23]])
 # 一般计算两个向量[1,2,3]，[11,22,23]的余弦相似的时候用的比较多
 # 一般不对特征进行正则化处理
 ```
+使单个样本具有单位范数的缩放操作。 经常在文本分类和聚类当中使用。<br>
 
-### 四、缺失值填充
 
-2_数据预处理 -> 数据清洗中有介绍<br>
-```python
-from sklearn.preprocessing import Imputer
-im =Imputer(strategy='mean') # mean, median, most_frequent
-im.fit_transform(X)
-```
+

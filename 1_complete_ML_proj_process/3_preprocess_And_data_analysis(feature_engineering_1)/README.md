@@ -60,12 +60,34 @@ im.fit_transform(X)
  
 **数据归一化有两个作用：（1）消除异方差（2）加快了梯度下降求最优解的速度**
  
-（1）min-max标准化<br>
+（1）min-max标准化(MinMaxScaler) 特征缩放至特定范围 <br>
 对于每个属性，设minA和maxA分别为属性A的最小值和最大值，将A的一个原始值x通过min-max标准化映射成在区间[0,1]中的值x'，其公式为：新数据 =（原数据 - 最小值）/（最大值 - 最小值）<br>
-（2）z-score标准化<br>
+公式：新数据 =（原数据 - 最小值）/（最大值 - 最小值）<br>
+```python
+from sklearn.preprocessing import MinMaxScaler
+mns = MinMaxScaler((0,1))
+mns.fit(X)
+
+x_train_mns = mns.transform(X)
+```
+（2）z-score标准化(Standardization)<br>
 基于原始数据的均值（mean）和标准差（standarddeviation）进行数据的标准化。将A的原始值x使用z-score标准化到x'。z-score标准化方法适用于属性A的最大值和最小值未知的情况，或有超出取值范围的离群数据的情况。新数据 =（原数据- 均值）/ 标准差 <br>
-（3）数据正则化<br>
+公式：新数据 =（原数据- 均值）/ 标准差<br>
+```python
+from sklearn.preprocessing import StandardScaler
+sds = StandardScaler()
+sds.fit(X)
+
+x_train_sds = sds.transform(X)
+```
+（3）数据正则化（归一化）<br>
 每个属性值除以其Lp范数，将样本缩放到单位范数(一般不用在这里)
+```python
+from sklearn.preprocessing import Normalizer
+Normalizer().fit_transform([[1,2,3],[11,22,23]])
+# 一般计算两个向量[1,2,3]，[11,22,23]的余弦相似的时候用的比较多
+# 一般不对特征进行正则化处理
+```
 
 # 4. 数据归约
 
