@@ -162,7 +162,7 @@ class HorizongtalFeature(object):
 
     # 7. 类别型特征进行one-hot编码
     @staticmethod
-    def get_dumm(df, feats=None, drop_orig_feats=False):
+    def get_dummy(df, feats=None, drop_orig_feats=False):
         df = df.copy()
         df = pd.concat([df, pd.get_dummies(df[feats], prefix_sep='_')], axis=1)
         if drop_orig_feats:
