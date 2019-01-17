@@ -2,12 +2,11 @@
 
 【有agg的情况 聚合】（多列，id重复）
 
-数值型特征可以有统计特征，排序特征和多项式特征<br>
-
-数值型特征：count sum avg std min max mean max-min等
+数值型特征：可以有统计特征(count sum avg)，排序特征和多项式特征<br>
 
 类别型特征：count nunique category_density等
 
+时间特征
 
 ---
 
