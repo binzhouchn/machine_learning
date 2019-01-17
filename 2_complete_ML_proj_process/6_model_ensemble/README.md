@@ -1,35 +1,55 @@
-[<h1 align = "center">:helicopter: 模型集成 :running:</h1>][0]
+[<h1 align = "center">:helicopter: 集成学习基本策略 :running:</h1>][0]
 
 ---
 
-### 1. Averaging 和 Voting
-- 平均法 对于目标变量为连续值的任务，使用平均
-- 投票法
-    - 硬投票：每个模型输出它自认为最可能的类别，投票模型从其中选出投票模型数量最多的类别，作为最终分类。
-    - 软投票：每个模型输出一个所有类别的概率矢量(1 * n_classes)，投票模型取其加权平均，得到一个最终的概率矢量。
+## 1. Bagging（Booststrap AGGregatING）
 
-```python
-from sklearn.linear_model import LogisticRegression
-import xgboost as xgb
-from sklearn.ensemble import RandomForestClassifier,VotingClassifier
-from lightgbm import LGBMClassifier
-log_clf = LogisticRegression(penalty='l1',C=0.1,class_weight='balanced')
-xgb_clf = xgb.XGBClassifier(n_jobs = -1)
-rf_clf = RandomForestClassifier(n_jobs = -1,n_estimators=200,
-                                random_state = 42)             
-lgb_clf = LGBMClassifier(num_leaves=127,learning_rate=0.01,n_jobs=32)
-# 这里选soft软投票
-voting_clf = VotingClassifier (
-        estimators = [('xgb', xgb_clf), ('lgb',lgb_clf), ('lt', log_clf), ('rf', rf_clf)],
-                     voting='soft', weights = [1, 1, 1, 1.33])
-voting_clf.fit(X_train,y_train)
-```
+ - **基于并行策略**：基学习器之间不存在依赖关系，可同时生成
+ - **基本思路:**
+    - 利用`自助采样法`对训练集随机采样，重复进行 T 次；
+    - 基于每个采样集训练一个基学习器，并得到 T 个基学习器；
+    - 预测时，集体**投票决策****
+        > `自助采样法`：对 m 个样本的训练集，有放回的采样 m 次；此时，样本在 m 次采样中始终没被采样的概率约为
+         0.368，即每次自助采样只能采样到全部样本的 63% 左右<br>
+         ![pic1](pic/公式_20180902220459.png)
+ - **特点：**
+    - 训练每个基学习器时只使用一部分样本；
+    - 偏好`不稳定的学习器`作为基学习器；所谓`不稳定的学习器`，指的是对样本分布较为敏感的学习器。
 
-在反欺诈中（样本不平衡），标签很多是人工打上去的，他们一般不放过一笔可疑的交易，
-所以recall会比较大；如果以f1_score作为衡量标准，几个模型融合的时候，可以取f1_score
-最大的几个模型（比如上面代码的xgb,lgb,rf）加上recall最大的模型（上面的lr）
+## 2. Boosting
 
-### 2. Stacking
+ - **基于串行策略**
+ 
+基学习器之间存在依赖关系，新的学习器需要根据上一个学习器生成<br>
+其主要思想是将弱分类器组装成一个强分类器。在PAC（概率近似正确）学习框架下，则一定可以将弱分类器组装成一个强分类器。
+
+ - **基本思路**
+    - 先从初始训练集训练一个基学习器；初始训练集中各样本的权重是相同的；
+    - 根据上一个基学习器的表现，调整样本权重，使分类错误的样本得到更多的关注；
+    - 基于调整后的样本分布，训练下一个基学习器；
+    - 测试时，对各基学习器加权得到最终结果
+ 
+ - **特点**：每次学习都会使用全部训练样本
+ - **代表算法：**
+    - [AdaBoost算法](https://blog.csdn.net/guyuealian/article/details/70995333)
+    - [GBDT算法](http://www.jianshu.com/p/005a4e6ac775)
+    - xgboost
+    - lgb
+
+关于Boosting的两个核心问题：
+
+1. 在每一轮如何改变训练数据的权值或概率分布？
+
+通过提高那些在前一轮被弱分类器分错样例的权值，减小前一轮分对样例的权值，来使得分类器对误分的数据有较好的效果。
+
+2. 通过什么方式来组合弱分类器？
+
+通过加法模型将弱分类器进行线性组合，比如AdaBoost通过加权多数表决的方式（使用加权的投票机制代替平均投票机制），即增大错误率小的分类器的权值，同时减小错误率较大的分类器的权值。而提升树通过拟合残差的方式逐步减小残差，将每一步生成的模型叠加得到最终模型。
+
+
+
+
+## 3. Stacking
 
 stacking经典图<br>
 ![stacking经典图](stacking1.png)
@@ -86,11 +106,11 @@ stacked_averaged_models = StackingAveragedModels(base_models = (ENet, model_xgb,
 stacked_averaged_models.fit(X.values, y)
 ```
 
-### 3. Blending
+## 3. Blending
 
 Blending与Stacking类似，但单独留出一部分数据（如20%）用于训练Stage X模型
 
-### 4. Bagging Ensemble Selection
+## 4. Bagging Ensemble Selection
 
 Bagging Ensemble Selection在CrowdFlower搜索相关性比赛中使用的方法，其主要的优点在于可以以优化任意的指标来进行模型集成。
 这些指标可以是可导的（如LogLoss等）和不可导的（如正确率，AUC，Quadratic Weighted Kappa等）。它是一个前向贪婪算法，存在过拟合的可能性，
@@ -99,7 +119,7 @@ Bagging Ensemble Selection在CrowdFlower搜索相关性比赛中使用的方法�
 不仅仅能够找到最优的单模型（Best Single Model），而且所有的中间模型还可以参与模型集成，进一步提升效果。
 
 ---
-### 5. 多样性
+## 5. 多样性
 - 误差——分歧分解
 - 多样性度量
 - 多样性增强
@@ -110,6 +130,7 @@ Bagging Ensemble Selection在CrowdFlower搜索相关性比赛中使用的方法�
         - 翻转法(Flipping Output)：随机改变一些训练样本标记
         - 输出调制法(Output Smearing)：分类输出转化为回归输出
         - OVO/ECOC
+
 
 
 ---
