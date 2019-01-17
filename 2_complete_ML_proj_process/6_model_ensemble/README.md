@@ -131,11 +131,11 @@ stacked_averaged_models = StackingAveragedModels(base_models = (ENet, model_xgb,
 stacked_averaged_models.fit(X.values, y)
 ```
 
-## 3. Blending
+## 4. Blending
 
 Blending与Stacking类似，但单独留出一部分数据（如20%）用于训练Stage X模型
 
-## 4. Bagging Ensemble Selection
+## 5. Bagging Ensemble Selection
 
 Bagging Ensemble Selection在CrowdFlower搜索相关性比赛中使用的方法，其主要的优点在于可以以优化任意的指标来进行模型集成。
 这些指标可以是可导的（如LogLoss等）和不可导的（如正确率，AUC，Quadratic Weighted Kappa等）。它是一个前向贪婪算法，存在过拟合的可能性，
@@ -144,7 +144,7 @@ Bagging Ensemble Selection在CrowdFlower搜索相关性比赛中使用的方法�
 不仅仅能够找到最优的单模型（Best Single Model），而且所有的中间模型还可以参与模型集成，进一步提升效果。
 
 ---
-## 5. 多样性
+## 6. 多样性
 - 误差——分歧分解
 - 多样性度量
 - 多样性增强
@@ -156,6 +156,17 @@ Bagging Ensemble Selection在CrowdFlower搜索相关性比赛中使用的方法�
         - 输出调制法(Output Smearing)：分类输出转化为回归输出
         - OVO/ECOC
 
+## 总结
+
+这两种方法都是把若干个分类器整合为一个分类器的方法，只是整合的方式不一样，最终得到不一样的效果，将不同的分类算法套入到此类算法框架中一定程度上会提高了原单一分类器的分类效果，但是也增大了计算量。
+
+下面是将决策树与这些算法框架进行结合所得到的新的算法：
+
+1）Bagging + 决策树 = 随机森林
+
+2）AdaBoost + 决策树 = 提升树
+
+3）Gradient Boosting + 决策树 = GBDT
 
 
 ---
