@@ -26,7 +26,9 @@
  - 组合特征（强特组合）
  
 [_horizontalFeature.py](_horizontalFeature.py)
- 
+
+[可借鉴iFeature_from_yuanjie](iFeature_from_yuanjie)
+
 # 2. 特征筛选
 
 ## 特征选择
