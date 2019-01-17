@@ -131,6 +131,10 @@ FastText 是从 Word2Vec 的 CBOW 模型演化而来的，不同点：
  
 [word2vec详细笔记](https://github.com/binzhouchn/ai_notes/blob/master/%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E5%A4%84%E7%90%86/%E5%85%AC%E5%85%B1%E6%A8%A1%E5%9D%97/word2vec.md)
 
+### 1.7 Transformer
+
+[[整理]聊聊 Transformer](https://zhuanlan.zhihu.com/p/47812375)
+
 ---
 
 ## 2. 比赛类
