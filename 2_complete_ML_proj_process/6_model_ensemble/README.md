@@ -95,7 +95,6 @@ Boosting：各个预测函数只能顺序生成，因为后一个模型参数需
     - 在 T 个初级学习器都训练完毕后，得到次级训练集 D'={(z_i, y_i)}
 ```
 
-
 stacking经典图<br>
 ![stacking经典图](stacking1.png)
 
@@ -188,6 +187,7 @@ Bagging Ensemble Selection在CrowdFlower搜索相关性比赛中使用的方法�
 
 3）Gradient Boosting + 决策树 = GBDT
 
+[为什么使用决策树作为基学习器](https://github.com/binzhouchn/Algorithm_Interview_Notes-Chinese/blob/master/A-%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/C-%E4%B8%93%E9%A2%98-%E9%9B%86%E6%88%90%E5%AD%A6%E4%B9%A0.md#%E4%B8%BA%E4%BB%80%E4%B9%88%E4%BD%BF%E7%94%A8%E5%86%B3%E7%AD%96%E6%A0%91%E4%BD%9C%E4%B8%BA%E5%9F%BA%E5%AD%A6%E4%B9%A0%E5%99%A8)
 
 ---
 
