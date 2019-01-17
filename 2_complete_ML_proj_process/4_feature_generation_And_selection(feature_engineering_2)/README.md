@@ -4,9 +4,7 @@
 
 数值型特征可以有统计特征，排序特征和多项式特征<br>
 
-统计特征：count sum avg std min max mean max-min等
-
-多项式特征：
+数值型特征：count sum avg std min max mean max-min等
 
 类别型特征：count nunique category_density等
 
@@ -20,7 +18,9 @@
     - 异常值特征：3sigma/箱型图，孤立森林(isolated forest)
     - 分箱
     - 多项式特征
- - 类别型特征（交叉特征）：结合类别型特征对数值型进行编码
+ - 类别型特征 
+    - 计数和排序特征
+    - （交叉特征）：结合类别型特征对数值型进行编码
  - 时间特征
  - 组合特征（强特组合）
  
