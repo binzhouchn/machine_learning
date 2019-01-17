@@ -16,7 +16,7 @@
     - 测试时，对各基学习器加权得到最终结果
  
  - **特点**：每次学习都会使用全部训练样本
- - **代表算法：**
+ - **代表算法**
     - [AdaBoost算法](https://blog.csdn.net/guyuealian/article/details/70995333)
     - [GBDT算法](http://www.jianshu.com/p/005a4e6ac775)
     - xgboost
