@@ -26,6 +26,8 @@
 
 ---
 
+[**CS229 课程讲义中文翻译**](https://kivy-cn.github.io/Stanford-CS-229-CN/#/Markdown/cs229-notes1)
+
 [**对机器学习与数据竞赛的一些总结**](https://blog.csdn.net/q383700092/article/details/53842160)
 
 [**打比赛参考链接**]()
