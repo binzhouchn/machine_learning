@@ -38,7 +38,9 @@
 
 ## 3. 经典的优化方法
  
- - [梯度下降法](https://zhuanlan.zhihu.com/p/36564434)
+[梯度下降法](https://zhuanlan.zhihu.com/p/36564434)
+选择每一步的方向：泰勒公式！
+
  - 牛顿法和拟牛顿法
  - 共轭梯度法(Adagrad, Adadelta, RMSprop, Adam)
 
