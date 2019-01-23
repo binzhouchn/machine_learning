@@ -86,7 +86,7 @@ CART：回归MSE；分类Gini，gini系数越小越好
 
 bagging方法：随机森林
 
-boosting方法：adaboost, xgb, lgb
+boosting方法：adaboost, gbdt, xgb, lgb
 
 
 ## 7. 类别不平衡问题
