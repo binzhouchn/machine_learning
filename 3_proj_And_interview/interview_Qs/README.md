@@ -84,9 +84,14 @@ CART：回归MSE；分类Gini，gini系数越小越好
 注意看下ID3, C4.5/C5.0的label都要是离散的，cart的label可以是连续的，
 而且cart是回归树，后面用的默认的rf, xgb, lgb用的都是回归树
 
-bagging方法：random forest
+Bagging方法：random forest
 
-boosting方法：adaboost, gbdt, xgb, lgb
+random forest：
+ - 样本扰动和属性扰动(k=logd)
+ - 降低方差
+ - 预测：n棵树投票
+
+Boosting方法：adaboost, gbdt, xgb, lgb
 
 
 ## 7. 类别不平衡问题
