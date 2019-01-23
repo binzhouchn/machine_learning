@@ -79,6 +79,8 @@ ID3用的是信息增益<br>
 C4.5用的是信息增益比<br>
 CART：回归MSE；分类Gini，gini系数越小越好
 
+[cart剪枝](https://www.zhihu.com/question/22697086)
+
 注意看下ID3, C4.5/C5.0的label都要是离散的，cart的label可以是连续的，
 而且cart是回归树，后面用的默认的rf, xgb, lgb用的都是回归树
 
