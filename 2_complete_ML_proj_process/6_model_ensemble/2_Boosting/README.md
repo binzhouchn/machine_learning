@@ -19,6 +19,7 @@
  - **代表算法**
     - [AdaBoost算法](https://blog.csdn.net/guyuealian/article/details/70995333)
     - [GBDT算法](http://www.jianshu.com/p/005a4e6ac775)
+    - [GBDT算法例子（讲解的非常好）](https://blog.csdn.net/zpalyq110/article/details/79527653)
     - xgboost
     - lgb
 

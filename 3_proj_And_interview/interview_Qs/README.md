@@ -98,6 +98,7 @@ Boosting方法：Adaboost, GBDT, xgb, lgb
  - 误差率即每个样本的权值中分类错误的样本权值和
 
 [GBDT](https://www.jianshu.com/p/005a4e6ac775)
+ - [GBDT算法例子（讲解的非常好）](https://blog.csdn.net/zpalyq110/article/details/79527653)
  - GBDT中的树是回归树
  - 提升树是迭代多棵回归树来共同决策。当采用平方误差损失函数时，每一棵回归树学习的是之前所有树的结论和残差，拟合得到一个当前的残差回归树（提升树即是整个迭代过程生成的回归树的累加）
  - 梯度提升决策树(GBDT)
