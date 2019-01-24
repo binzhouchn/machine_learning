@@ -115,7 +115,7 @@ Boosting方法：Adaboost, GBDT, xgb, lgb
  - 列抽样
  - 对缺失值的处理。对于特征的值有缺失的样本，xgboost可以自动学习出它的分裂方向
  - 支持并行，特征并行
- - 分裂时用近似直方图算法
+ - 分裂时用贪心法和近似直方图算法
 
 [lgb优化](https://zhuanlan.zhihu.com/p/25308051)
  - 带深度限制的Leaf-wise的叶子生长策略
