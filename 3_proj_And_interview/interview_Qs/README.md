@@ -105,7 +105,9 @@ Boosting方法：Adaboost, GBDT, xgb, lgb
  - 梯度提升决策树(GBDT)
  - [简书](https://www.jianshu.com/p/005a4e6ac775)
 
-[xgb]()
+[xgb](https://blog.csdn.net/a819825294/article/details/51206410)
+ - 损失函数加入正则，并进行泰勒展开
+ - 分裂点选取：贪心法、近似直方图算法
 
 [GBDT和xgb的区别](https://www.zhihu.com/question/41354392/answer/98658997)
  - GBDT的基分类器是CART，xgb还支持线性分类器
