@@ -107,6 +107,18 @@ Boosting方法：Adaboost, GBDT, xgb, lgb
 
 [xgb]()
 
+[GBDT和xgb的区别](https://www.zhihu.com/question/41354392/answer/98658997)
+ - GBDT的基分类器是CART，xgb还支持线性分类器
+ - xgb损失函数中加入了正则项
+ - 列抽样
+ - 对缺失值的处理。对于特征的值有缺失的样本，xgboost可以自动学习出它的分裂方向
+ - 支持并行，特征并行
+ - 分裂时用近似直方图算法
+
+[lgb]()
+
+
+
 ## 7. 类别不平衡问题
 
 1. 欠采样 
