@@ -94,10 +94,12 @@ Random Forest：
 Boosting方法：Adaboost, GBDT, xgb, lgb
 
 [Adaboost](https://blog.csdn.net/guyuealian/article/details/70995333)
+ - 基本思想：调整样本权重
  - 基(弱)分类器选取（一般单层决策树或基于其他算法）
  - 误差率即每个样本的权值中分类错误的样本权值和
 
 [GBDT](https://blog.csdn.net/zpalyq110/article/details/79527653)
+ - 基本思想：拟合残差
  - GBDT中的树是回归树
  - 提升树是迭代多棵回归树来共同决策。当采用平方误差损失函数时，每一棵回归树学习的是之前所有树的结论和残差，拟合得到一个当前的残差回归树（提升树即是整个迭代过程生成的回归树的累加）
  - 梯度提升决策树(GBDT)
