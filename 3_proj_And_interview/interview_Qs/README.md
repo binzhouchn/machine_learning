@@ -105,6 +105,8 @@ Boosting方法：Adaboost, GBDT, xgb, lgb
  - 梯度提升决策树(GBDT)
  - [简书](https://www.jianshu.com/p/005a4e6ac775)
 
+[xgb]()
+
 ## 7. 类别不平衡问题
 
 1. 欠采样 
