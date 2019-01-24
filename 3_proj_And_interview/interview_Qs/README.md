@@ -97,6 +97,8 @@ Boosting方法：Adaboost, GBDT, xgb, lgb
  - 基(弱)分类器选取（一般单层决策树或基于其他算法）
  - 误差率即每个样本的权值中分类错误的样本权值和
 
+[GBDT](https://www.jianshu.com/p/005a4e6ac775)
+
 ## 7. 类别不平衡问题
 
 1. 欠采样 
