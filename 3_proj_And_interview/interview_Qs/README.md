@@ -174,7 +174,7 @@ Boosting方法：Adaboost, GBDT, xgb, lgb
  - 通过学习来的联合分布P(X, Y)再结合新样本X，通过条件概率求出Y，没有判别边界
  - 优点：所包含的信息全，可以处理隐变量
 
-[参考链接](https://www.zhihu.com/question/35866596/answer/236886066)
+[生成模型和判别模型参考链接](https://www.zhihu.com/question/35866596/answer/236886066)
 
 ### 10. 
 
