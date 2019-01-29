@@ -180,12 +180,14 @@ Boosting方法：Adaboost, GBDT, xgb, lgb
 
 ![diagram of relationships](pic/diagram_of_relationships.jpg)
 
+
+
 [如何用简单易懂的例子解释条件随机场（CRF）模型？它和HMM有什么区别？](https://www.zhihu.com/question/35866596/answer/236886066)<br>
 []
 
 ---
 
-面试总结参考网址：
+interview总结参考网址：
 
 [牛客网coding](https://www.nowcoder.com/ta/coding-interviews?page=1)
 
