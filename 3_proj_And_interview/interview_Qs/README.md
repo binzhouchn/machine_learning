@@ -176,7 +176,12 @@ Boosting方法：Adaboost, GBDT, xgb, lgb
 
 [生成模型和判别模型参考链接](https://www.zhihu.com/question/35866596/answer/236886066)
 
-### 10
+### 10. HMM & CRF
+
+![diagram of relationships]()
+
+[如何用简单易懂的例子解释条件随机场（CRF）模型？它和HMM有什么区别？](https://www.zhihu.com/question/35866596/answer/236886066)<br>
+[]
 
 ---
 
