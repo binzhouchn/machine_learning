@@ -176,7 +176,7 @@ Boosting方法：Adaboost, GBDT, xgb, lgb
 
 [生成模型和判别模型参考链接](https://www.zhihu.com/question/35866596/answer/236886066)
 
-### 10. 
+### 10
 
 ---
 
