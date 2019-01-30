@@ -182,12 +182,17 @@ Boosting方法：Adaboost, GBDT, xgb, lgb
 
 [如何用简单易懂的例子解释条件随机场（CRF）模型？它和HMM有什么区别？](https://www.zhihu.com/question/35866596/answer/236886066)<br>
 
-### 11. CapsNet 胶囊网络
+### Word2Vec
+
+
+
+
+### 18. CapsNet 胶囊网络
 
 [揭开迷雾，来一顿美味的Capsule盛宴【科学空间】](https://spaces.ac.cn/archives/4819)<br>
 
 
-### 12. Transformer
+### 19. Transformer
 
 [图解Transformer](https://blog.csdn.net/qq_41664845/article/details/84969266)<br>
 [attention-is-all-you-need-pytorch](https://github.com/jadore801120/attention-is-all-you-need-pytorch)
