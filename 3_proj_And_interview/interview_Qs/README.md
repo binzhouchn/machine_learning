@@ -186,6 +186,8 @@ Boosting方法：Adaboost, GBDT, xgb, lgb
 
 ### 12. Transformer
 
+[图解Transformer](https://blog.csdn.net/qq_41664845/article/details/84969266)<br>
+[attention-is-all-you-need-pytorch](https://github.com/jadore801120/attention-is-all-you-need-pytorch)
 ---
 
 interview总结参考网址：
