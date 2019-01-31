@@ -182,7 +182,7 @@ Boosting方法：Adaboost, GBDT, xgb, lgb
 
 [如何用简单易懂的例子解释条件随机场（CRF）模型？它和HMM有什么区别？](https://www.zhihu.com/question/35866596/answer/236886066)<br>
 
-### Word2Vec及词嵌入
+### 11. Word2Vec及词嵌入
 
 [秒懂词向量Word2vec的本质（讲的非常好）](https://zhuanlan.zhihu.com/p/26306795)
 
@@ -193,6 +193,7 @@ Word2vec 本质上是一个语言模型，它的输出节点数是 V 个，对�
  - negative sampling
    - 本质是预测总体类别的一个子集
 
+### 12. CNN & GRU & LSTM
 
 ### 18. CapsNet 胶囊网络
 
