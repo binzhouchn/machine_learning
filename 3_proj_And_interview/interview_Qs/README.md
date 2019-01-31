@@ -184,7 +184,8 @@ Boosting方法：Adaboost, GBDT, xgb, lgb
 
 ### Word2Vec及词嵌入
 
-[秒懂词向量Word2vec的本质（讲的非常好）](https://zhuanlan.zhihu.com/p/26306795)<br>
+[秒懂词向量Word2vec的本质（讲的非常好）](https://zhuanlan.zhihu.com/p/26306795)
+
 Word2vec 本质上是一个语言模型，它的输出节点数是 V 个，对应了 V 个词语，本质上是一个多分类问题，
 但实际当中，词语的个数非常非常多，会给计算造成很大困难，所以需要用技巧来加速训练<br>
  - hierarchical softmax
