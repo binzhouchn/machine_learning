@@ -184,7 +184,7 @@ Boosting方法：Adaboost, GBDT, xgb, lgb
 
 ### Word2Vec及词嵌入
 
-
+[[NLP] 秒懂词向量Word2vec的本质](https://zhuanlan.zhihu.com/p/26306795)
 
 
 ### 18. CapsNet 胶囊网络
