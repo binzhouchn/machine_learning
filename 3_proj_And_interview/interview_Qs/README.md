@@ -195,6 +195,8 @@ Word2vec 本质上是一个语言模型，它的输出节点数是 V 个，对�
 
 ### 12. CNN & GRU & LSTM
 
+
+
 ### 18. CapsNet 胶囊网络
 
 [揭开迷雾，来一顿美味的Capsule盛宴【科学空间】](https://spaces.ac.cn/archives/4819)<br>
