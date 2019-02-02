@@ -118,7 +118,7 @@ NLP应用：<br>
  
 [关键词提取详细笔记](https://github.com/binzhouchn/ai_notes/blob/master/%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E5%A4%84%E7%90%86/%E5%85%AC%E5%85%B1%E6%A8%A1%E5%9D%97/keyword_extraction.md)
 
-### 1.6 word2vec
+### 1.6 Word2Vec及词嵌入
 
  - CBOW模型
  - Skip-gram模型
@@ -136,9 +136,18 @@ FastText 是从 Word2Vec 的 CBOW 模型演化而来的，不同点：
 
  - CBOW 的输入是中心词两侧skip_window内的上下文词；FastText 除了上下文词外，还包括这些词的字符级 N-gram 特征
  
-[word2vec详细笔记](https://github.com/binzhouchn/ai_notes/blob/master/%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E5%A4%84%E7%90%86/%E5%85%AC%E5%85%B1%E6%A8%A1%E5%9D%97/word2vec.md)
+[word2vec详细笔记](https://github.com/binzhouchn/ai_notes/blob/master/%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E5%A4%84%E7%90%86/%E5%85%AC%E5%85%B1%E6%A8%A1%E5%9D%97/word2vec.md)<br>
+[word2vec详细笔记 interviewQs]()
 
-### 1.7 Transformer
+### 1.7 CNN & GRU & LSTM
+
+看interviewQs
+
+### 1.8 CapsNet 胶囊网络
+
+看interviewQs
+
+### 1.9 Transformer
 
 [[整理]聊聊 Transformer](https://zhuanlan.zhihu.com/p/47812375)<br>
 [图解Transformer](https://blog.csdn.net/qq_41664845/article/details/84969266)<br>
