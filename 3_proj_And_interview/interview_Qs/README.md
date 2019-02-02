@@ -206,7 +206,7 @@ Word2vec 本质上是一个语言模型，它的输出节点数是 V 个，对�
 
 [[整理]聊聊 Transformer](https://zhuanlan.zhihu.com/p/47812375)<br>
 [图解Transformer](https://blog.csdn.net/qq_41664845/article/details/84969266)<br>
-[attention-is-all-you-need-pytorch](https://github.com/jadore801120/attention-is-all-you-need-pytorch)
+[Attention is all you need: A Pytorch Implementation](https://github.com/jadore801120/attention-is-all-you-need-pytorch)
 
 ### 20. GPT，ELMo，和BERT关联
 
