@@ -48,7 +48,7 @@ melt = pd.melt(train_master, id_vars=['target'], value_vars = [f for f in numeri
 g = sns.FacetGrid(data=melt, col="variable", col_wrap=4, sharex=False, sharey=False)
 g.map(sns.stripplot, 'target', 'value', jitter=True, palette="muted")
 ```
-然后手动挑选删除，hard work, but helps a lot
+然后手动挑选删除，hard work, but helps a lot.
 
 ## 1.3 数据平滑
 
@@ -69,6 +69,12 @@ g.map(sns.stripplot, 'target', 'value', jitter=True, palette="muted")
 
 主要针对一些长尾分布的特征，需要进行幂变换或者对数变换或box-cox变换，使得模型（LR或者DNN）能更好的优化。<br>
 需要注意的是，Random Forest 和 GBDT 等模型对单调的函数变换不敏感。其原因在于树模型在求解分裂点的时候，只考虑排序分位点
+
+对数变化代码示例<br>
+```python
+for f in numerical_features_log:
+    train_master[f + '_log'] = np.log1p(train_master[f])
+```
 
 ## 3.2 特征编码
 
