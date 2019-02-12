@@ -40,11 +40,21 @@ im =Imputer(strategy='mean') # mean, median, most_frequent
 im.fit_transform(X)
 ```
 
-## 1.2 数据平滑
+## 1.2 处理异常值
+
+所有的numerical feature，画出在不同target下的分布图，stripplot(with jitter)，类似于boxplot，不过更方便于大值outlier寻找<br>
+```python
+melt = pd.melt(train_master, id_vars=['target'], value_vars = [f for f in numerical_features])
+g = sns.FacetGrid(data=melt, col="variable", col_wrap=4, sharex=False, sharey=False)
+g.map(sns.stripplot, 'target', 'value', jitter=True, palette="muted")
+```
+然后手动挑选删除，hard work, but helps a lot
+
+## 1.3 数据平滑
 
 比如分箱，贝叶斯平滑[代码](BayesianSmoothing.py)
  
-## 1.3 文本数据清洗
+## 1.4 文本数据清洗
 
 在比赛当中，如果数据包含文本，往往需要进行大量的数据清洗工作。如去除HTML 标签，分词，拼写纠正, 同义词替换，去除停词，抽词干，数字和单位格式统一等
 
@@ -59,7 +69,7 @@ im.fit_transform(X)
 
 主要针对一些长尾分布的特征，需要进行幂变换或者对数变换或box-cox变换，使得模型（LR或者DNN）能更好的优化。<br>
 需要注意的是，Random Forest 和 GBDT 等模型对单调的函数变换不敏感。其原因在于树模型在求解分裂点的时候，只考虑排序分位点
- 
+
 ## 3.2 特征编码
 
 一、Binarization 特征二值化是将数值型特征变成布尔型特征
