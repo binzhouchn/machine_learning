@@ -197,6 +197,8 @@ Word2vec 本质上是一个语言模型，它的输出节点数是 V 个，对�
 
 [CNN(卷积神经网络)、RNN(循环神经网络)、DNN(深度神经网络)的内部网络结构有什么区别](https://www.zhihu.com/question/34681168/answer/84061846)<br>
 
+[TextCNN详解](https://zhuanlan.zhihu.com/p/25928551)
+
 
 ### 18. CapsNet 胶囊网络
 
