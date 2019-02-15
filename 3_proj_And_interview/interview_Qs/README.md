@@ -193,13 +193,17 @@ Word2vec 本质上是一个语言模型，它的输出节点数是 V 个，对�
  - negative sampling
    - 本质是预测总体类别的一个子集
 
-### 12. CNN & GRU & LSTM
+### 12. CNN & GRU & LSTM & Attention
 
 [CNN(卷积神经网络)、RNN(循环神经网络)、DNN(深度神经网络)的内部网络结构有什么区别](https://www.zhihu.com/question/34681168/answer/84061846)<br>
 
 [TextCNN详解](https://zhuanlan.zhihu.com/p/25928551)<br>
 TextCNN的详细过程原理图见下：<br>
 ![textcnn_pic](pic/textcnn_pic.png)
+
+[Attention机制](https://zhuanlan.zhihu.com/p/25928551)<br>
+例子：我是中国人那个<br>
+加入Attention之后最大的好处自然是能够直观的解释各个句子和词对分类类别的重要性
 
 ### 18. CapsNet 胶囊网络
 
