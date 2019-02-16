@@ -233,7 +233,7 @@ TextCNN的详细过程原理图见下：<br>
 
 ![roc_pic.png](pic/roc_pic.png)<br>
 AUC是ROC曲线下方的面积，roc曲线纵坐标TPR(TP/(TP+FN))即召回率，横坐标是FPR( FP/(FP+TN))即(1-Specificity)<br>
-
+[AUC两种计算方式](https://blog.csdn.net/qq_22238533/article/details/78666436)
 
 ---
 
