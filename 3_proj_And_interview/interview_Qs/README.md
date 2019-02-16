@@ -210,25 +210,27 @@ TextCNN的详细过程原理图见下：<br>
 例子：我是中国人那个<br>
 加入Attention之后最大的好处自然是能够直观的解释各个句子和词对分类类别的重要性
 
-
-### 18. CapsNet 胶囊网络
+### 13. CapsNet 胶囊网络
 
 [揭开迷雾，来一顿美味的Capsule盛宴【科学空间】](https://spaces.ac.cn/archives/4819)<br>
 
 
-### 19. Transformer
+### 14. Transformer
 
 [[整理]聊聊 Transformer](https://zhuanlan.zhihu.com/p/47812375)<br>
 [图解Transformer](https://blog.csdn.net/qq_41664845/article/details/84969266)<br>
 [Attention is all you need: A Pytorch Implementation](https://github.com/jadore801120/attention-is-all-you-need-pytorch)
 
-### 20. GPT，ELMo，和BERT关联
+### 15. GPT，ELMo，和BERT关联
 
  - BERT用transformer方法取代了ELMo中用lstm提取特征的方法
  - BERT解决了GPT中单向语言模型的方法，变为Masked双向（借鉴了cbow思想）
  - BERT采用了Fine Tuning方式（两阶段模型：超大规模预训练+具体任务FineTuning）
  
 [从Word Embedding到Bert模型—自然语言处理中的预训练技术发展史](https://zhuanlan.zhihu.com/p/49271699)<br>
+
+### 16. AUC和KS
+
 
 
 ---
