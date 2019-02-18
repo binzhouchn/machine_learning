@@ -211,6 +211,10 @@ TextCNN的详细过程原理图见下：<br>
 例子：我是中国人那个<br>
 加入Attention之后最大的好处自然是能够直观的解释各个句子和词对分类类别的重要性
 
+[LSTM和GRU比较好的理解]<br>
+[链接一](https://blog.csdn.net/qq_28743951/article/details/78974058)<br>
+[链接二](https://zhuanlan.zhihu.com/p/28297161)
+
 ### 13. CapsNet 胶囊网络
 
 [揭开迷雾，来一顿美味的Capsule盛宴【科学空间】](https://spaces.ac.cn/archives/4819)<br>
