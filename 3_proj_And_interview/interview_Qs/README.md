@@ -212,6 +212,11 @@ TextCNN的详细过程原理图见下：<br>
 加入Attention之后最大的好处自然是能够直观的解释各个句子和词对分类类别的重要性
 
 [LSTM和GRU比较好的理解]<br>
+
+LSTM：
+
+GRU：重置门和更新门 看链接二3.3
+
 [链接一](https://blog.csdn.net/qq_28743951/article/details/78974058)<br>
 [链接二](https://zhuanlan.zhihu.com/p/28297161)
 
