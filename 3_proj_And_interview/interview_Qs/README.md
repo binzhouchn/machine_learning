@@ -248,7 +248,7 @@ AUC是ROC曲线下方的面积，roc曲线纵坐标TPR(TP/(TP+FN))即召回率�
 ### 17. 梯度爆炸和消失的解决办法
 
 梯度爆炸：梯度阈值，权重正则，激活函数选择relu，batch_norm<br>
-梯度消失：激活函数选择relu，batch_norm，残差结构（典型GRU/LSTM）
+梯度消失：残差结构（典型GRU/LSTM），激活函数选择relu，batch_norm
 
 ---
 
