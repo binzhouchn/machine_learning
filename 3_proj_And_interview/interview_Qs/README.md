@@ -245,6 +245,11 @@ GRU：重置门和更新门；看链接二3.3
 AUC是ROC曲线下方的面积，roc曲线纵坐标TPR(TP/(TP+FN))即召回率，横坐标是FPR( FP/(FP+TN))即(1-Specificity)<br>
 [AUC两种计算方式](https://blog.csdn.net/qq_22238533/article/details/78666436)
 
+### 17. 梯度爆炸和消失的解决办法
+
+梯度爆炸：梯度阈值，权重正则，激活函数选择，batch_norm<br>
+梯度消失：激活函数选择，GRU/LSTM
+
 ---
 
 interview总结参考网址：
