@@ -166,6 +166,9 @@ Boosting方法：Adaboost, GBDT, xgb, lgb
 1. 增加样本数<br>
 2. 降低模型的复杂度(CV)。比如决策树模型中降低树深度、进行剪枝等<br>
 3. 加正则，使用正则化能够给模型的参数进行一定的约束，避免过拟合(损失函数上)<br>
+4. bagging，模型融合
+5. dropout
+6. batch norms
 
 
 ### 9. 生成模型和判别模型
