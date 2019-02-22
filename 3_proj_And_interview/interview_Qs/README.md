@@ -163,13 +163,13 @@ Boosting方法：Adaboost, GBDT, xgb, lgb
 
 **8.1 过拟合即高方差，如何处理**
 
- - 1. 增加样本数<br>
- - 2. 降低模型的复杂度(CV)。比如决策树模型中降低树深度、进行剪枝等<br>
- - 3. early stopping
- - 4. 加正则L1\L2，使用正则化能够给模型的参数进行一定的约束，避免过拟合(损失函数上)<br>
- - 5. bagging，模型融合
- - 6. dropout
- - 7. batch norm
+ - 增加样本数<br>
+ - 降低模型的复杂度(CV)。比如决策树模型中降低树深度、进行剪枝等<br>
+ - early stopping
+ - 加正则L1\L2，使用正则化能够给模型的参数进行一定的约束，避免过拟合(损失函数上)<br>
+ - bagging，模型融合
+ - dropout
+ - batch norm
 
 
 ### 9. 生成模型和判别模型
