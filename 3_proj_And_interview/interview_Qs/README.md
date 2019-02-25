@@ -251,7 +251,7 @@ GRU：重置门和更新门；看链接二3.3
 [图解Transformer](https://blog.csdn.net/qq_41664845/article/details/84969266)<br>
 [Attention is all you need: A Pytorch Implementation](https://github.com/jadore801120/attention-is-all-you-need-pytorch)
 
-### 15. GPT，ELMo，和BERT关联
+### 15. GPT，ELMo，和BERT关联 GPT-2
 
  - BERT用transformer方法取代了ELMo中用lstm提取特征的方法
  - BERT解决了GPT中单向语言模型的方法，变为Masked双向（借鉴了cbow思想）
