@@ -108,6 +108,7 @@ NLP应用：<br>
 **分词：**<br>
 加载搜狗词典sogou_words.txt<br>
 [加载腾讯词典tencent_words.txt](code/文本分类_tfidf+bert+Tencent词向量/README.md)<br>
+ngram分词：有几个备选的分词方案，用ngram模型算概率得最优分词方案<br>
 [利用互信息和左右信息熵的中文分词新词发现github](https://github.com/zhanzecheng/Chinese_segment_augment)
 
 ### 1.5 关键词提取主要算法
@@ -155,6 +156,8 @@ FastText 是从 Word2Vec 的 CBOW 模型演化而来的，不同点：
 
 [PageRank算法核心思想及数学支撑](https://www.jianshu.com/p/f6d66ab97332)<br>
 [TextRank简单讲解](https://zhuanlan.zhihu.com/p/28277883)
+
+
 
 ---
 
