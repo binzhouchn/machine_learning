@@ -97,7 +97,7 @@ NLP应用：<br>
 
 [HMM与分词、词性标注、命名实体识别](http://www.hankcs.com/nlp/hmm-and-segmentation-tagging-named-entity-recognition.html)
 
-### 1.4 中文新词发现(和分词)
+### 1.4 中文新词发现(和分词和纠错)
 
 [python3实现互信息和左右熵的新词发现](https://blog.csdn.net/qq_34695147/article/details/80464877)
 
@@ -110,6 +110,10 @@ NLP应用：<br>
 [加载腾讯词典tencent_words.txt](code/文本分类_tfidf+bert+Tencent词向量/README.md)<br>
 ngram分词：有几个备选的分词方案，用ngram模型算概率得最优分词方案<br>
 [利用互信息和左右信息熵的中文分词新词发现github](https://github.com/zhanzecheng/Chinese_segment_augment)
+
+**纠错：**<br>
+窗口K长度的pinyin纠错<br>
+ngram纠错：算基于上一个(bigram)或上两个(trigram)的当前词出现的概率
 
 ### 1.5 关键词提取主要算法
 
