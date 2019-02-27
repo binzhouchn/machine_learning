@@ -118,7 +118,7 @@ ngram纠错：算基于上一个(bigram)或上两个(trigram)的当前词出现�
 ### 1.5 关键词提取主要算法
 
  - tfidf
- - textrank关键词提取
+ - textrank关键词提取：看2.0详解
  - topic-model(LDA)
  
 [关键词提取详细笔记](https://github.com/binzhouchn/ai_notes/blob/master/%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E5%A4%84%E7%90%86/%E5%85%AC%E5%85%B1%E6%A8%A1%E5%9D%97/keyword_extraction.md)
