@@ -151,6 +151,11 @@ FastText 是从 Word2Vec 的 CBOW 模型演化而来的，不同点：
 
 看interviewQs
 
+### 2.0 PageRank & TextRank
+
+[PageRank算法核心思想及数学支撑](https://www.jianshu.com/p/f6d66ab97332)<br>
+[TextRank简单讲解](https://zhuanlan.zhihu.com/p/28277883)
+
 ---
 
 ## 2. 比赛类
