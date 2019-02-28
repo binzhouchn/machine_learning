@@ -66,6 +66,15 @@
  - 牛顿法和拟牛顿法
  - 共轭梯度法(Adagrad, Adadelta, RMSprop, Adam)
 
+SGD<br>
+Momentum<br>
+Adam<br>
+解答：sgd对参数直接求导，momentum是sgd求导加上miu乘以t-1时刻的梯度一阶矩估计
+adam有对梯度的一阶矩和二阶矩估计，自适应学习率
+
+[深度学习中的优化](https://blog.csdn.net/nickkissbaby_/article/details/81066643)<br>
+[一个框架看懂优化算法之异同](https://zhuanlan.zhihu.com/p/32230623)
+
 ## 4. 推导SVM算法
 
 最大间隔超平面背后的原理：
