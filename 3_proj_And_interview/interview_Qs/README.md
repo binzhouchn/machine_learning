@@ -298,9 +298,11 @@ AUC是ROC曲线下方的面积，roc曲线纵坐标TPR(TP/(TP+FN))即召回率�
 聚类：K-Means, 密度聚类，层次聚类<br>
 
 [k-means中K值的选取](https://blog.csdn.net/qq_15738501/article/details/79036255)<br>
-[k-means的改进算法kdtree]()
+[k-means的改进算法kdtree](https://www.cnblogs.com/zfyouxi/p/4795584.html)
 
 PCA<br>
+
+[]()
 
 异常检测<br>
 
