@@ -139,7 +139,8 @@ GloVe 与 Word2Vec 的区别:
 
 FastText 是从 Word2Vec 的 CBOW 模型演化而来的，不同点：
 
- - CBOW 的输入是中心词两侧skip_window内的上下文词；FastText 除了上下文词外，还包括这些词的字符级 N-gram 特征
+ - CBOW是周围的词预测中间的词
+ - FastText输入是句子，预测的是类别；而且除了上下文词外，还包括这些词的字符级N-gram特征
  
 [word2vec详细笔记](https://github.com/binzhouchn/ai_notes/blob/master/%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E5%A4%84%E7%90%86/%E5%85%AC%E5%85%B1%E6%A8%A1%E5%9D%97/word2vec.md)<br>
 [word2vec详细笔记 interviewQs]()
