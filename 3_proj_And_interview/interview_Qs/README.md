@@ -302,7 +302,7 @@ AUC是ROC曲线下方的面积，roc曲线纵坐标TPR(TP/(TP+FN))即召回率�
 
 PCA<br>
 
-[]()
+[PCA基本原理和原理推导](https://blog.csdn.net/u012421852/article/details/80458340)
 
 异常检测<br>
 
