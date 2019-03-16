@@ -318,7 +318,8 @@ PCA<br>
 区别：MAP 考虑了模型的先验分布， 而MLE 假设模型是均匀分布。 
 可以说，MLE是MAP的一种特例（故最大后验估计可以看做规则化的最大似然估计）
 
-[参考网址](https://blog.csdn.net/ljn113399/article/details/68957062)<br>
+[参考网址1](https://blog.csdn.net/ljn113399/article/details/68957062)<br>
+[参考网址2 样例计算](https://www.cnblogs.com/liliu/archive/2010/11/24/1886110.html)<br>
 
 ---
 
