@@ -319,7 +319,7 @@ PCA<br>
 可以说，MLE是MAP的一种特例（故最大后验估计可以看做规则化的最大似然估计）
 
 [参考网址1](https://blog.csdn.net/ljn113399/article/details/68957062)<br>
-[参考网址2 样例计算](https://www.cnblogs.com/liliu/archive/2010/11/24/1886110.html)<br>
+[参考网址2 网址1的样例计算详解](https://www.cnblogs.com/liliu/archive/2010/11/24/1886110.html)<br>
 
 ---
 
