@@ -146,6 +146,11 @@ Boosting方法：Adaboost, GBDT, xgb, lgb
  - [CSDN](https://blog.csdn.net/zpalyq110/article/details/79527653)
  - [简书](https://www.jianshu.com/p/005a4e6ac775)
 
+gbdt的正则化：<br>
+1. 对于每个模型乘以一个系数λ (0 < λ ≤ 1)，降低每个模型对拟合损失的贡献，这种方法也意味着我们需要更多的基学习器<br>
+2. 每次通过按比例（推荐[0.5, 0.8] 之间）随机抽取部分样本来训练模型（交叉验证选取）<br>
+3. 控制基学习器CART树的复杂度，可以减少深度或采用剪枝正则化
+
 [xgb](https://blog.csdn.net/a819825294/article/details/51206410)
  - 损失函数加入正则，并进行泰勒展开用到了二阶导（优点：）
  - 分裂点选取：贪心法、近似直方图算法
