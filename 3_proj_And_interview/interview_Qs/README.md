@@ -77,6 +77,10 @@ Adam<br>
 解答：sgd对参数直接求导，momentum是sgd求导加上miu乘以t-1时刻的梯度一阶矩估计
 adam有对梯度的一阶矩和二阶矩估计，自适应学习率
 
+SGD和Batch SGD的区别：
+sgd每个样本更新一次参数，b_sgd是一批次样本更新一次参数，
+[具体公式参考](https://www.cnblogs.com/richqian/p/4549590.html)<br>
+
 [深度学习中的优化](https://blog.csdn.net/nickkissbaby_/article/details/81066643)<br>
 [一个框架看懂优化算法之异同](https://zhuanlan.zhihu.com/p/32230623)
 
