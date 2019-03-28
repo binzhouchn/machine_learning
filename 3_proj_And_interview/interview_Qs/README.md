@@ -72,7 +72,7 @@
  - 共轭梯度法(Adagrad, Adadelta, RMSprop, Adam)
 
 SGD<br>
-Momentum<br>
+SGD with Momentum<br>
 Adam<br>
 解答：sgd对参数直接求导，momentum是sgd求导加上miu乘以t-1时刻的梯度一阶矩估计
 adam有对梯度的一阶矩和二阶矩估计，自适应学习率
