@@ -78,10 +78,10 @@ Adam<br>
 adam有对梯度的一阶矩和二阶矩估计，自适应学习率
 
 SGD和Batch_GD的区别：
-sgd每个样本更新一次参数，b_gd是一批次样本更新一次参数，
+sgd每个样本更新一次参数，b_gd是一批次样本更新一次参数(m个样本的梯度加起来除以m)，
 [具体公式参考](https://www.cnblogs.com/richqian/p/4549590.html)<br>
 
-[深度学习中的优化](https://blog.csdn.net/nickkissbaby_/article/details/81066643)<br>
+[深度学习中的优化（点这里）](https://blog.csdn.net/nickkissbaby_/article/details/81066643)<br>
 [一个框架看懂优化算法之异同](https://zhuanlan.zhihu.com/p/32230623)
 
 ## 4. 推导SVM算法
