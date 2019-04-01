@@ -272,7 +272,7 @@ GRU：重置门和更新门；看链接二3.3
 ### 13. CapsNet 胶囊网络
 
 [揭开迷雾，来一顿美味的Capsule盛宴【科学空间】](https://spaces.ac.cn/archives/4819)<br>
-
+ 
 ### 14. Transformer
 
 [[整理]聊聊 Transformer](https://zhuanlan.zhihu.com/p/47812375)<br>
