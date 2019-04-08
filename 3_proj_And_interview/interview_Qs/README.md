@@ -248,6 +248,10 @@ Word2vec 本质上是一个语言模型，它的输出节点数是 V 个，对�
  - negative sampling
    - 本质是预测总体类别的一个子集
 
+[word2vec模型cbow与skip-gram的比较](https://www.cnblogs.com/june0507/p/9412989.html)<br>
+ - skip-gram对生僻词比较友好，因为会预测K次
+ - sikp-gram的时间复杂度O(KV)，训练时间要比cbow要长d
+
 ### 12. CNN & GRU & LSTM & Attention
 
 [CNN(卷积神经网络)、RNN(循环神经网络)、DNN(深度神经网络)的内部网络结构有什么区别](https://www.zhihu.com/question/34681168/answer/84061846)<br>
