@@ -85,6 +85,7 @@ sgd每个样本更新一次参数，b_gd是一批次样本更新一次参数(m�
 [具体公式参考](https://www.cnblogs.com/richqian/p/4549590.html)<br>
 
 [深度学习中的优化（点这里）](https://blog.csdn.net/nickkissbaby_/article/details/81066643)<br>
+[梯度下降和(拟)牛顿法的区别](https://www.cnblogs.com/shixiangwan/p/7532830.html)<br>
 [一个框架看懂优化算法之异同](https://zhuanlan.zhihu.com/p/32230623)
 
 ## 4. 推导SVM算法
