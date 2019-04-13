@@ -14,7 +14,7 @@
 重排序<br>
 结合业务过滤层<br>
 
-[智能客服问题相似度算法设计——第三届魔镜杯大赛第12名解决方案](https://github.com/LittletreeZou/Question-Pairs-Matching)
+[智能客服问题相似度算法设计 - 第三届魔镜杯大赛第12名解决方案](https://github.com/LittletreeZou/Question-Pairs-Matching)
 
 **1.2 风控项目**
 
