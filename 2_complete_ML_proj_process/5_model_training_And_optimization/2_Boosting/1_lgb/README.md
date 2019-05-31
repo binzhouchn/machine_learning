@@ -14,6 +14,14 @@
 
 [lgb_baseline模型](baseline_model.py)
 
+baseline可以用杰哥封装的包<br>
+```python
+from iwork.models.classifier import BaselineLGB
+from iwork.models import OOF
+clf = BaselineLGB(X, y)
+clf.run()
+```
+
 ## lgb_自定义metric
 
 ```python
