@@ -162,6 +162,7 @@ fasttext还可以解决OOV问题，字维度合成（比如取平均）<br>
 ### 2.0 PageRank & TextRank
 
 [PageRank算法核心思想及数学支撑](https://www.jianshu.com/p/f6d66ab97332)<br>
+[pagerank的一个小例子](https://blog.csdn.net/leadai/article/details/81230557)<br>
 [TextRank简单讲解](https://zhuanlan.zhihu.com/p/28277883)
 
 
