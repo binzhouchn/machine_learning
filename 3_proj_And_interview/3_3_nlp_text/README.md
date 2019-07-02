@@ -166,7 +166,6 @@ fasttext还可以解决OOV问题，字维度合成（比如取平均）<br>
 [TextRank简单讲解](https://zhuanlan.zhihu.com/p/28277883)
 
 
-
 ---
 
 ## 2. 比赛类
