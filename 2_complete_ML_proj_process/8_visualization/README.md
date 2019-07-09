@@ -3,7 +3,20 @@
 
 # 1. 针对类别型变量画正负样本的直方图
 
-
+```python
+# 离散型变量的分布情况
+import seaborn as sns
+import matplotlib.pyplot as plt
+sns.set_style("darkgrid",{"font.sans-serif":['simhei', 'Arial']})
+plt.figure(figsize=(20, 10))
+sns.countplot(x='sex', hue='label',  data=data)
+plt.show()
+# 连续型变量查看分布
+melt = pd.melt(data, id_vars=['label'], value_vars = [f for f in f_num])
+g = sns.FacetGrid(data=melt, col="variable", col_wrap=4, sharex=False, sharey=False)
+g.map(sns.stripplot, 'label', 'value', jitter=True, palette="muted")
+plt.show()
+```
 
 # 2. 针对数值型变量画正负样本的差异图
 
