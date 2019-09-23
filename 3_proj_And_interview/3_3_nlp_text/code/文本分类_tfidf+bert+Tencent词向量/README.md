@@ -113,7 +113,7 @@ tmp_dev.to_csv('data/dev.tsv',sep='\t',index=False)
 
 ## 4. 用腾讯外部词+词向量
 
-1. 把[腾讯词向量](https://ai.tencent.com/ailab/nlp/embedding.html)存入mongodb中，需先[安装mongodb](https://blog.csdn.net/qq_25537177/article/details/82978610)<br>
+1. 把[腾讯词向量](https://ai.tencent.com/ailab/nlp/embedding.html)存入mongodb中，需先[安装mongodb](https://blog.csdn.net/weixin_29026283/article/details/82252941)<br>
 
 2. 安装pymongo，连接启动的mongodb，创建数据库和集<br>
 ```python
