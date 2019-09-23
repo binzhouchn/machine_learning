@@ -118,7 +118,8 @@ tmp_dev.to_csv('data/dev.tsv',sep='\t',index=False)
 2. 安装pymongo，连接启动的mongodb，创建数据库和集<br>
 ```python
 import pymongo
-client = pymongo.MongoClient(host='xx.xxx.x.xx', port=27017)
+# client = pymongo.MongoClient(host='xx.xxx.x.xx', port=27017)
+client = pymongo.MongoClient('mongodb://root:password@localhost:27017/')
 db = client.tencent_wv
 my_set = db.test_set
 # 删除 test_set
