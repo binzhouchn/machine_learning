@@ -113,7 +113,8 @@ tmp_dev.to_csv('data/dev.tsv',sep='\t',index=False)
 
 ## 4. 用腾讯外部词+词向量
 
-1. 把腾讯词向量存入mongodb中，需先安装mongodb<br>
+1. 把腾讯词向量存入mongodb中，需先[安装mongodb](https://blog.csdn.net/qq_25537177/article/details/82978610)<br>
+
 2. 安装pymongo，连接启动的mongodb，创建数据库和集<br>
 ```python
 import pymongo
