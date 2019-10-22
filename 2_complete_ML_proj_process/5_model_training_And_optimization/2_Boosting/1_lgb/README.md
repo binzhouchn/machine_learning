@@ -195,6 +195,7 @@ clf.fit(
 ```python
 from lightgbm import LGBMClassifier
 from sklearn.model_selection import StratifiedKFold
+from sklearn.metrics import roc_auc_score, f1_score
 from tqdm import tqdm
 def train_model(X, y, X_test, cv, cv_seed, lgb_seed):
     params = {'boosting_type': 'gbdt',# 'rf', 'dart', 'goss'
