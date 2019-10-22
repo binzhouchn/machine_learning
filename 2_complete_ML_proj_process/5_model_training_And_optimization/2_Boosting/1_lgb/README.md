@@ -233,6 +233,11 @@ def train_model(X, y, X_test, cv, cv_seed, lgb_seed):
     print('TRIN AUC:', roc_auc_score(y, oof_preds))
     return sub_preds
 
+if __name__ == '__main__':
+X = new_features[new_features.label!=-1].drop(['label'],axis=1)
+y = new_features[new_features.label!=-1].label
+X_test = new_features[new_features.label==-1].drop(['label'],axis=1)
+train_model(X.values, y.values, X_test.values, 5, 0, 0)
 ```
 
 
