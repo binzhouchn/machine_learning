@@ -1,0 +1,331 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="1c8e89e8-98b5-4ad0-b169-11140df361ca" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/2_complete_ML_proj_process/5_model_training_And_optimization/2_Boosting/1_lgb/oof.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/2_complete_ML_proj_process/5_model_training_And_optimization/2_Boosting/2_xgb/oof.py" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/3_proj_And_interview/3_3_nlp_text/code/文本分类_tfidf+bert+Tencent词向量/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="62">
+                <caret line="115" column="152" selection-start-line="115" selection-start-column="3" selection-end-line="115" selection-end-column="152" />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/2_complete_ML_proj_process/5_model_training_And_optimization/2_Boosting/1_lgb/oof.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="73">
+              <caret line="4" column="19" lean-forward="true" selection-start-line="4" selection-start-column="19" selection-end-line="4" selection-end-column="19" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="PUSH_TAGS">
+      <GitPushTagMode />
+    </option>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/3_proj_And_interview/3_3_nlp_text/README.md" />
+        <option value="$PROJECT_DIR$/2_complete_ML_proj_process/8_visualization/README.md" />
+        <option value="$PROJECT_DIR$/3_proj_And_interview/3_3_nlp_text/code/文本分类_tfidf+bert+Tencent词向量/README.md" />
+        <option value="$PROJECT_DIR$/2_complete_ML_proj_process/5_model_training_And_optimization/2_Boosting/1_lgb/oof.py" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="1879" />
+    <option name="y" value="31" />
+    <option name="width" value="1653" />
+    <option name="height" value="905" />
+  </component>
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="machine_learning" type="b2602c69:ProjectViewProjectNode" />
+              <item name="machine_learning" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="machine_learning" type="b2602c69:ProjectViewProjectNode" />
+              <item name="machine_learning" type="462c0819:PsiDirectoryNode" />
+              <item name="1_basic" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="machine_learning" type="b2602c69:ProjectViewProjectNode" />
+              <item name="machine_learning" type="462c0819:PsiDirectoryNode" />
+              <item name="2_complete_ML_proj_process" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="machine_learning" type="b2602c69:ProjectViewProjectNode" />
+              <item name="machine_learning" type="462c0819:PsiDirectoryNode" />
+              <item name="2_complete_ML_proj_process" type="462c0819:PsiDirectoryNode" />
+              <item name="5_model_training_And_optimization" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="machine_learning" type="b2602c69:ProjectViewProjectNode" />
+              <item name="machine_learning" type="462c0819:PsiDirectoryNode" />
+              <item name="2_complete_ML_proj_process" type="462c0819:PsiDirectoryNode" />
+              <item name="5_model_training_And_optimization" type="462c0819:PsiDirectoryNode" />
+              <item name="2_Boosting" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="machine_learning" type="b2602c69:ProjectViewProjectNode" />
+              <item name="machine_learning" type="462c0819:PsiDirectoryNode" />
+              <item name="2_complete_ML_proj_process" type="462c0819:PsiDirectoryNode" />
+              <item name="5_model_training_And_optimization" type="462c0819:PsiDirectoryNode" />
+              <item name="2_Boosting" type="462c0819:PsiDirectoryNode" />
+              <item name="1_lgb" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="machine_learning" type="b2602c69:ProjectViewProjectNode" />
+              <item name="machine_learning" type="462c0819:PsiDirectoryNode" />
+              <item name="2_complete_ML_proj_process" type="462c0819:PsiDirectoryNode" />
+              <item name="5_model_training_And_optimization" type="462c0819:PsiDirectoryNode" />
+              <item name="2_Boosting" type="462c0819:PsiDirectoryNode" />
+              <item name="2_xgb" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="machine_learning" type="b2602c69:ProjectViewProjectNode" />
+              <item name="machine_learning" type="462c0819:PsiDirectoryNode" />
+              <item name="3_proj_And_interview" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/2_complete_ML_proj_process/5_model_training_And_optimization/2_Boosting/1_lgb" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/2_complete_ML_proj_process/5_model_training_And_optimization/2_Boosting/1_lgb" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/2_complete_ML_proj_process/5_model_training_And_optimization/2_Boosting/2_xgb" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="1c8e89e8-98b5-4ad0-b169-11140df361ca" name="Default Changelist" comment="" />
+      <created>1561970445745</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1561970445745</updated>
+      <workItem from="1561970446911" duration="766000" />
+      <workItem from="1562637804168" duration="669000" />
+      <workItem from="1569230022005" duration="1484000" />
+      <workItem from="1571714066351" duration="160000" />
+    </task>
+    <task id="LOCAL-00001" summary="update on 20190701">
+      <created>1561970537227</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1561970537227</updated>
+    </task>
+    <task id="LOCAL-00002" summary="update on 20190702">
+      <created>1562054943720</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1562054943720</updated>
+    </task>
+    <task id="LOCAL-00003" summary="update on 20190709">
+      <created>1562638002866</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1562638002866</updated>
+    </task>
+    <task id="LOCAL-00004" summary="update on 20190709">
+      <created>1562638118004</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1562638118004</updated>
+    </task>
+    <task id="LOCAL-00005" summary="update on 20190709">
+      <created>1562638231034</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1562638231034</updated>
+    </task>
+    <task id="LOCAL-00006" summary="update on 20190709">
+      <created>1562647269908</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1562647269908</updated>
+    </task>
+    <task id="LOCAL-00007" summary="update on 20190923">
+      <created>1569230101212</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1569230101212</updated>
+    </task>
+    <task id="LOCAL-00008" summary="update on 20190923">
+      <created>1569231553302</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1569231553302</updated>
+    </task>
+    <task id="LOCAL-00009" summary="update on 20190923">
+      <created>1569232400342</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1569232400342</updated>
+    </task>
+    <task id="LOCAL-00010" summary="update on 20190923">
+      <created>1569237630750</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1569237630750</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="3079000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="1879" y="31" width="1653" height="905" extended-state="0" />
+    <editor active="true" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.13159528" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" />
+      <window_info anchor="bottom" id="Database Changes" order="9" />
+      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info anchor="bottom" id="Terminal" order="11" visible="true" weight="0.32911393" />
+      <window_info anchor="bottom" id="Python Console" order="12" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="SciView" order="3" />
+      <window_info anchor="right" id="Database" order="4" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="update on 20190701" />
+    <MESSAGE value="update on 20190702" />
+    <MESSAGE value="update on 20190709" />
+    <MESSAGE value="update on 20190923" />
+    <option name="LAST_COMMIT_MESSAGE" value="update on 20190923" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/1_basic/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="-208" />
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/2_complete_ML_proj_process/8_visualization/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="247">
+            <caret line="13" column="11" lean-forward="true" selection-start-line="13" selection-start-column="11" selection-end-line="13" selection-end-column="11" />
+            <folding>
+              <element signature="e#13#34#0" expanded="true" />
+              <element signature="e#21#42#0" expanded="true" />
+            </folding>
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/3_proj_And_interview/3_3_nlp_text/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="150">
+            <caret line="164" column="47" selection-start-line="164" selection-start-column="47" selection-end-line="164" selection-end-column="47" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/3_proj_And_interview/3_3_nlp_text/code/文本分类_tfidf+bert+Tencent词向量/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="62">
+            <caret line="115" column="152" selection-start-line="115" selection-start-column="3" selection-end-line="115" selection-end-column="152" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/2_complete_ML_proj_process/5_model_training_And_optimization/2_Boosting/1_lgb/oof.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="73">
+          <caret line="4" column="19" lean-forward="true" selection-start-line="4" selection-start-column="19" selection-end-line="4" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
