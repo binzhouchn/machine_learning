@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1c8e89e8-98b5-4ad0-b169-11140df361ca" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/2_complete_ML_proj_process/5_model_training_And_optimization/2_Boosting/1_lgb/oof.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/2_complete_ML_proj_process/5_model_training_And_optimization/2_Boosting/2_xgb/oof.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/2_complete_ML_proj_process/5_model_training_And_optimization/2_Boosting/1_lgb/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/2_complete_ML_proj_process/5_model_training_And_optimization/2_Boosting/1_lgb/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/2_complete_ML_proj_process/5_model_training_And_optimization/2_Boosting/1_lgb/oof.py" beforeDir="false" afterPath="$PROJECT_DIR$/2_complete_ML_proj_process/5_model_training_And_optimization/2_Boosting/1_lgb/oof.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -25,11 +26,30 @@
           </provider>
         </entry>
       </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/2_complete_ML_proj_process/5_model_training_And_optimization/2_Boosting/1_lgb/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="701">
+                <caret line="216" column="10" lean-forward="true" selection-start-line="216" selection-start-column="10" selection-end-line="216" selection-end-column="10" />
+                <folding>
+                  <element signature="e#0#47#0" expanded="true" />
+                  <element signature="e#0#20#0" expanded="true" />
+                </folding>
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/2_complete_ML_proj_process/5_model_training_And_optimization/2_Boosting/1_lgb/oof.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="73">
-              <caret line="4" column="19" lean-forward="true" selection-start-line="4" selection-start-column="19" selection-end-line="4" selection-end-column="19" />
+            <state relative-caret-position="1349">
+              <caret line="71" column="10" selection-start-line="71" selection-start-column="10" selection-end-line="71" selection-end-column="10" />
+              <folding>
+                <element signature="e#47#65#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -48,6 +68,7 @@
         <option value="$PROJECT_DIR$/3_proj_And_interview/3_3_nlp_text/README.md" />
         <option value="$PROJECT_DIR$/2_complete_ML_proj_process/8_visualization/README.md" />
         <option value="$PROJECT_DIR$/3_proj_And_interview/3_3_nlp_text/code/文本分类_tfidf+bert+Tencent词向量/README.md" />
+        <option value="$PROJECT_DIR$/2_complete_ML_proj_process/5_model_training_And_optimization/2_Boosting/1_lgb/README.md" />
         <option value="$PROJECT_DIR$/2_complete_ML_proj_process/5_model_training_And_optimization/2_Boosting/1_lgb/oof.py" />
       </list>
     </option>
@@ -55,8 +76,8 @@
   <component name="ProjectFrameBounds">
     <option name="x" value="1879" />
     <option name="y" value="31" />
-    <option name="width" value="1653" />
-    <option name="height" value="905" />
+    <option name="width" value="1721" />
+    <option name="height" value="992" />
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -162,7 +183,7 @@
       <workItem from="1561970446911" duration="766000" />
       <workItem from="1562637804168" duration="669000" />
       <workItem from="1569230022005" duration="1484000" />
-      <workItem from="1571714066351" duration="160000" />
+      <workItem from="1571714066351" duration="341000" />
     </task>
     <task id="LOCAL-00001" summary="update on 20190701">
       <created>1561970537227</created>
@@ -234,17 +255,31 @@
       <option name="project" value="LOCAL" />
       <updated>1569237630750</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="update on 20191022">
+      <created>1571714245130</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1571714245130</updated>
+    </task>
+    <task id="LOCAL-00012" summary="update on 20191022">
+      <created>1571714309559</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1571714309559</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3079000" />
+    <option name="totallyTimeSpent" value="3260000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1879" y="31" width="1653" height="905" extended-state="0" />
+    <frame x="1879" y="31" width="1721" height="992" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.13159528" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.12626563" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -258,7 +293,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="11" visible="true" weight="0.32911393" />
+      <window_info anchor="bottom" id="Terminal" order="11" weight="0.32911393" />
       <window_info anchor="bottom" id="Python Console" order="12" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -275,7 +310,8 @@
     <MESSAGE value="update on 20190702" />
     <MESSAGE value="update on 20190709" />
     <MESSAGE value="update on 20190923" />
-    <option name="LAST_COMMIT_MESSAGE" value="update on 20190923" />
+    <MESSAGE value="update on 20191022" />
+    <option name="LAST_COMMIT_MESSAGE" value="update on 20191022" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/1_basic/README.md">
@@ -320,10 +356,27 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/2_complete_ML_proj_process/5_model_training_And_optimization/2_Boosting/1_lgb/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="701">
+            <caret line="216" column="10" lean-forward="true" selection-start-line="216" selection-start-column="10" selection-end-line="216" selection-end-column="10" />
+            <folding>
+              <element signature="e#0#47#0" expanded="true" />
+              <element signature="e#0#20#0" expanded="true" />
+            </folding>
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/2_complete_ML_proj_process/5_model_training_And_optimization/2_Boosting/1_lgb/oof.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="73">
-          <caret line="4" column="19" lean-forward="true" selection-start-line="4" selection-start-column="19" selection-end-line="4" selection-end-column="19" />
+        <state relative-caret-position="1349">
+          <caret line="71" column="10" selection-start-line="71" selection-start-column="10" selection-end-line="71" selection-end-column="10" />
+          <folding>
+            <element signature="e#47#65#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

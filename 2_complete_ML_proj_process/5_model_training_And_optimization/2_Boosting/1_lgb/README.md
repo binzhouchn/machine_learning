@@ -8,7 +8,7 @@
 
 [**3. lgb常用参数**](#lgb常用参数)
 
-[**]
+[**4. oof**](#oof)
 
 ---
 
@@ -189,6 +189,55 @@ clf.fit(
     categorical_feature='auto'
 )
 ```
+
+## oof
+
+```python
+from lightgbm import LGBMClassifier
+from sklearn.model_selection import StratifiedKFold
+from tqdm import tqdm
+def train_model(X, y, X_test, cv, cv_seed, lgb_seed):
+    params = {'boosting_type': 'gbdt',# 'rf', 'dart', 'goss'
+          'objective': 'binary',# 'application': 'multiclass', 'num_class': 3, # multiclass=softmax, multiclassova=ova  One-vs-All
+          'max_depth': 7,
+          'n_estimators': 3000,
+          'num_leaves': 63, # 根据具体问题调整
+          'learning_rate': 0.02421306293966501,
+          'min_split_gain': 0.0,
+          'min_child_weight': 19.75111813614344,
+          'min_child_samples': 20,
+          'subsample': 0.57,
+          'subsample_freq': 8,
+          'colsample_bytree': 0.1999,
+          'reg_alpha': 5.455077557037526,
+          'reg_lambda': 5.8700819100907715,
+          'scale_pos_weight': 1,
+          'random_state': lgb_seed,
+          'n_jobs': 32}
+    clf = LGBMClassifier(**params)
+
+    oof_preds = np.zeros(X.shape[0])
+    sub_preds = np.zeros((X_test.shape[0], cv))
+    for n_fold, (train_idx, valid_idx) in enumerate(StratifiedKFold(cv, True, cv_seed).split(X, y), 1):
+        X_train, y_train = X[train_idx], y[train_idx]
+        X_valid, y_valid = X[valid_idx], y[valid_idx]
+
+        clf.fit(X_train, y_train,
+                eval_set=[(X_train, y_train), (X_valid, y_valid)],
+                eval_metric='auc',
+                early_stopping_rounds=300,
+                verbose=0)
+        oof_preds[valid_idx] = clf.predict_proba(X_valid)[:, 1]
+        sub_preds[:, n_fold - 1] = clf.predict_proba(X_test)[:, 1]
+    sub_preds = sub_preds.mean(1)
+    print('TRIN AUC:', roc_auc_score(y, oof_preds))
+    return sub_preds
+
+```
+
+
+
+
 
 遇到的问题：<br>
 如果服务器上直接pip install lightgbm那么跑模型的时候可能会非常慢，解决办法：

@@ -69,7 +69,7 @@ def train_model(X, y, X_test, cv, cv_seed, xgb_seed):
               'scale_pos_weight': 1,
               'random_state': lgb_seed,
               'n_jobs': 32}
-    clf = lgb.LGBMClassifier(**params)
+    clf = LGBMClassifier(**params)
 
     oof_preds = np.zeros(X.shape[0])
     sub_preds = np.zeros((X_test.shape[0], cv))
