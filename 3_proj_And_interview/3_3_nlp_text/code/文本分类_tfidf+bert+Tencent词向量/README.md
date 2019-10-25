@@ -32,7 +32,7 @@ class Tokenizer:
         tokens = line.split()
         return tokens
 
-vectorizer = TfidfVectorizer(tokenizer=Tokenizer())
+vectorizer = TfidfVectorizer(tokenizer=Tokenizer(), ngram_range=(1,3), min_df=3, max_df=0.9, use_idf=1, smooth_idf=0, sublinear_tf=1)
 tfidf = vectorizer.fit_transform(data['comment_text'])
 # 训练集和验证集划分 4:1
 kf = KFold(n_splits=5)

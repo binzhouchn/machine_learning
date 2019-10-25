@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="1c8e89e8-98b5-4ad0-b169-11140df361ca" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/2_complete_ML_proj_process/5_model_training_And_optimization/2_Boosting/1_lgb/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/2_complete_ML_proj_process/5_model_training_And_optimization/2_Boosting/1_lgb/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/3_proj_And_interview/3_3_nlp_text/code/文本分类_tfidf+bert+Tencent词向量/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/3_proj_And_interview/3_3_nlp_text/code/文本分类_tfidf+bert+Tencent词向量/README.md" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -13,36 +13,16 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/3_proj_And_interview/3_3_nlp_text/code/文本分类_tfidf+bert+Tencent词向量/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="2185">
-                <caret line="115" column="152" selection-start-line="115" selection-start-column="3" selection-end-line="115" selection-end-column="152" />
-              </first_editor>
-              <second_editor />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/2_complete_ML_proj_process/5_model_training_And_optimization/2_Boosting/1_lgb/oof.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="814">
-              <caret line="71" column="10" selection-start-line="71" selection-start-column="10" selection-end-line="71" selection-end-column="10" />
-              <folding>
-                <element signature="e#47#65#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/2_complete_ML_proj_process/5_model_training_And_optimization/2_Boosting/1_lgb/README.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SPLIT">
-              <first_editor relative-caret-position="319">
-                <caret line="197" column="51" selection-start-line="197" selection-start-column="51" selection-end-line="197" selection-end-column="51" />
+              <first_editor relative-caret-position="450">
+                <caret line="34" selection-start-line="34" selection-end-line="34" />
+                <folding>
+                  <element signature="e#0#18#0" expanded="true" />
+                  <element signature="e#124#200#0" expanded="true" />
+                </folding>
               </first_editor>
               <second_editor />
             </state>
@@ -62,9 +42,9 @@
       <list>
         <option value="$PROJECT_DIR$/3_proj_And_interview/3_3_nlp_text/README.md" />
         <option value="$PROJECT_DIR$/2_complete_ML_proj_process/8_visualization/README.md" />
-        <option value="$PROJECT_DIR$/3_proj_And_interview/3_3_nlp_text/code/文本分类_tfidf+bert+Tencent词向量/README.md" />
         <option value="$PROJECT_DIR$/2_complete_ML_proj_process/5_model_training_And_optimization/2_Boosting/1_lgb/oof.py" />
         <option value="$PROJECT_DIR$/2_complete_ML_proj_process/5_model_training_And_optimization/2_Boosting/1_lgb/README.md" />
+        <option value="$PROJECT_DIR$/3_proj_And_interview/3_3_nlp_text/code/文本分类_tfidf+bert+Tencent词向量/README.md" />
       </list>
     </option>
   </component>
@@ -82,7 +62,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -138,12 +117,13 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/2_complete_ML_proj_process/5_model_training_And_optimization/2_Boosting/1_lgb" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -178,7 +158,8 @@
       <workItem from="1561970446911" duration="766000" />
       <workItem from="1562637804168" duration="669000" />
       <workItem from="1569230022005" duration="1484000" />
-      <workItem from="1571714066351" duration="444000" />
+      <workItem from="1571714066351" duration="564000" />
+      <workItem from="1571986783881" duration="157000" />
     </task>
     <task id="LOCAL-00001" summary="update on 20190701">
       <created>1561970537227</created>
@@ -278,17 +259,24 @@
       <option name="project" value="LOCAL" />
       <updated>1571714445749</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="update on 20191022">
+      <created>1571714514340</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1571714514340</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3363000" />
+    <option name="totallyTimeSpent" value="3640000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1879" y="31" width="1721" height="992" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.12626563" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.12745681" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -355,11 +343,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/3_proj_And_interview/3_3_nlp_text/code/文本分类_tfidf+bert+Tencent词向量/README.md">
+    <entry file="file://$PROJECT_DIR$/2_complete_ML_proj_process/5_model_training_And_optimization/2_Boosting/1_lgb/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="2185">
-            <caret line="115" column="152" selection-start-line="115" selection-start-column="3" selection-end-line="115" selection-end-column="152" />
+          <first_editor relative-caret-position="319">
+            <caret line="197" column="51" selection-start-line="197" selection-start-column="51" selection-end-line="197" selection-end-column="51" />
           </first_editor>
           <second_editor />
         </state>
@@ -375,11 +363,15 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/2_complete_ML_proj_process/5_model_training_And_optimization/2_Boosting/1_lgb/README.md">
+    <entry file="file://$PROJECT_DIR$/3_proj_And_interview/3_3_nlp_text/code/文本分类_tfidf+bert+Tencent词向量/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="319">
-            <caret line="197" column="51" selection-start-line="197" selection-start-column="51" selection-end-line="197" selection-end-column="51" />
+          <first_editor relative-caret-position="450">
+            <caret line="34" selection-start-line="34" selection-end-line="34" />
+            <folding>
+              <element signature="e#0#18#0" expanded="true" />
+              <element signature="e#124#200#0" expanded="true" />
+            </folding>
           </first_editor>
           <second_editor />
         </state>
