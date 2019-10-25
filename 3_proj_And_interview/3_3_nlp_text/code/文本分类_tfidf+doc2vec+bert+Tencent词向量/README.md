@@ -12,6 +12,7 @@ from sklearn.metrics import roc_auc_score
 from sklearn.metrics import accuracy_score
 import gensim
 from gensim.models.word2vec import Word2Vec
+from gensim.models.doc2vec import Doc2Vec, TaggedDocument
 from m import BOW
 ```
 、
@@ -54,7 +55,21 @@ print('acc: ', accuracy_score(val_y, val_pred))
 #acc:  0.9566647866140252
 ```
 
-## 2. bert句向量接xgb
+## 2. gensim训练doc2vec示例
+
+```python
+from gensim.models.doc2vec import Doc2Vec, TaggedDocument
+import pkuseg
+seg = pkuseg.pkuseg()
+data = pd.concat([train, test], axis=0, ignore_index=True)
+data['content_seg'] = data.content.apply(seg.cut)
+texts = data['content_seg'].tolist()
+documents = [TaggedDocument(doc, [i]) for i, doc in enumerate(texts)]
+model = Doc2Vec(documents, vector_size=200, window=5, min_count=3, workers=4, epochs=25)
+docvecs = model.docvecs
+```
+
+## 3. bert句向量接xgb
 
 [bert as service](https://github.com/hanxiao/bert-as-service)<br>
  
@@ -93,7 +108,7 @@ print('acc: ',accuracy_score(bc_y_dev.tolist(), model_xgb.predict(np.array(bc_X_
 print('auc: ', roc_auc_score(bc_y_dev.tolist(), model_xgb.predict_proba(np.array(bc_X_dev.tolist()))[:,1]))
 ```
 
-## 3. 生成train和dev跑bert模型 run_classify.py
+## 4. 生成train和dev跑bert模型 run_classify.py
 
 [google bert](https://github.com/google-research/bert/)<br>
 [BERT在极小数据下带来显著提升的开源实现](https://mp.weixin.qq.com/s?__biz=MzIwMTc4ODE0Mw==&mid=2247493161&idx=1&sn=58ddcd071602c42dda93275289311bb3&chksm=96ea39a9a19db0bf15df95cc9961064a3bab4e4a0b8d25a9bfb45c154942330b9cdb0abe0f4b&scene=0&xtrack=1#rd)<br>
@@ -113,7 +128,7 @@ tmp_dev.to_csv('data/dev.tsv',sep='\t',index=False)
 ```
 [run_classify.py](run_classifier_v1.py)
 
-## 4. 用腾讯外部词+词向量
+## 5. 用腾讯外部词+词向量
 
 1. 把[腾讯词向量](https://ai.tencent.com/ailab/nlp/embedding.html)存入mongodb中，需先[安装mongodb](https://blog.csdn.net/weixin_29026283/article/details/82252941)<br>
 
