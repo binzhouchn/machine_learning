@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1c8e89e8-98b5-4ad0-b169-11140df361ca" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/3_proj_And_interview/3_3_nlp_text/code/文本分类_tfidf+bert+Tencent词向量/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/3_proj_And_interview/3_3_nlp_text/code/文本分类_tfidf+bert+Tencent词向量/README.md" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -17,8 +16,8 @@
         <entry file="file://$PROJECT_DIR$/3_proj_And_interview/3_3_nlp_text/code/文本分类_tfidf+bert+Tencent词向量/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="450">
-                <caret line="34" selection-start-line="34" selection-end-line="34" />
+              <first_editor relative-caret-position="198">
+                <caret line="17" selection-start-line="17" selection-end-line="17" />
                 <folding>
                   <element signature="e#0#18#0" expanded="true" />
                   <element signature="e#124#200#0" expanded="true" />
@@ -159,7 +158,7 @@
       <workItem from="1562637804168" duration="669000" />
       <workItem from="1569230022005" duration="1484000" />
       <workItem from="1571714066351" duration="564000" />
-      <workItem from="1571986783881" duration="157000" />
+      <workItem from="1571986783881" duration="785000" />
     </task>
     <task id="LOCAL-00001" summary="update on 20190701">
       <created>1561970537227</created>
@@ -266,11 +265,18 @@
       <option name="project" value="LOCAL" />
       <updated>1571714514340</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="update on 20191025">
+      <created>1571986960407</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1571986960407</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3640000" />
+    <option name="totallyTimeSpent" value="4268000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1879" y="31" width="1721" height="992" extended-state="0" />
@@ -308,7 +314,8 @@
     <MESSAGE value="update on 20190709" />
     <MESSAGE value="update on 20190923" />
     <MESSAGE value="update on 20191022" />
-    <option name="LAST_COMMIT_MESSAGE" value="update on 20191022" />
+    <MESSAGE value="update on 20191025" />
+    <option name="LAST_COMMIT_MESSAGE" value="update on 20191025" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/1_basic/README.md">
@@ -366,8 +373,8 @@
     <entry file="file://$PROJECT_DIR$/3_proj_And_interview/3_3_nlp_text/code/文本分类_tfidf+bert+Tencent词向量/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="450">
-            <caret line="34" selection-start-line="34" selection-end-line="34" />
+          <first_editor relative-caret-position="198">
+            <caret line="17" selection-start-line="17" selection-end-line="17" />
             <folding>
               <element signature="e#0#18#0" expanded="true" />
               <element signature="e#124#200#0" expanded="true" />

@@ -1,4 +1,4 @@
-# 文本分类（tfidf + bert + Tencent词向量）
+# 文本分类（tfidf + doc2vec + bert + Tencent词向量）
 
 ```python
 import numpy as np
@@ -14,6 +14,8 @@ import gensim
 from gensim.models.word2vec import Word2Vec
 from m import BOW
 ```
+、
+
 
 ## 1. tfidf+lr
 
