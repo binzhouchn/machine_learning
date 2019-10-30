@@ -34,7 +34,7 @@
 
 ## oof用法
 
-[**0，1二分类cv**]<br>
+**0，1二分类cv**<br>
 ```python
 from lightgbm import LGBMClassifier
 from sklearn.model_selection import StratifiedKFold
