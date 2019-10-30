@@ -68,7 +68,7 @@ X_test = new_features[new_features.label==-1].drop(['label'],axis=1)
 train_model(X.values, y.values, X_test.values, 5, 0, 0)
 ```
 
-多分类cv<br>
+**多分类cv**<br>
 ```python
 test = tf_feat[train_shape[0]:] 
 
