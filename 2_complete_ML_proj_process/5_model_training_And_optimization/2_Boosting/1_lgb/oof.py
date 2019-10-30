@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
+############ 二分类 ##############
 import numpy as np
 import pandas as pd
 from sklearn.model_selection import StratifiedKFold
