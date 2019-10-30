@@ -31,6 +31,10 @@
 |early_stopping_rounds|early_stopping_rounds|early_stopping_rounds|early_stopping_rounds|
 |verbose_eval|verbose_eval|verbose|verbose|
 
+
+## oof用法
+
+
 ---
 [1]: http://xgboost.readthedocs.io/en/latest/parameter.html#
 [2]: https://lightgbm.readthedocs.io/en/latest/Parameters.html#
