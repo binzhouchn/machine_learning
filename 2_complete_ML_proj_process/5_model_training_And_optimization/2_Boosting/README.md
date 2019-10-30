@@ -68,6 +68,26 @@ X_test = new_features[new_features.label==-1].drop(['label'],axis=1)
 train_model(X.values, y.values, X_test.values, 5, 0, 0)
 ```
 
+多分类cv<br
+```python
+test = tf_feat[train_shape[0]:] 
+
+kf = StratifiedKFold(n_splits=N,random_state=42,shuffle=True)
+oof = np.zeros((X.shape[0],3))
+oof_sub = np.zeros((sub.shape[0],3))
+for j,(train_in,dev_in) in enumerate(kf.split(X,y)):
+    print('running',j)
+    X_train,X_dev,y_train,y_dev = X[train_in],X[dev_in],y[train_in],y[dev_in]
+    clf = LogisticRegression(C=4)
+    clf.fit(X_train,y_train)
+    dev_y = clf.predict_proba(X_dev)
+    oof[dev_in] = dev_y
+    oof_sub = oof_sub + clf.predict_proba(test)
+
+xx_cv = f1_score(y,np.argmax(oof,axis=1),average='macro')
+print(xx_cv)
+```
+
 ---
 [1]: http://xgboost.readthedocs.io/en/latest/parameter.html#
 [2]: https://lightgbm.readthedocs.io/en/latest/Parameters.html#
