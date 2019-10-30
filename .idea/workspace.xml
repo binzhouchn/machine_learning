@@ -13,11 +13,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/2_complete_ML_proj_process/5_model_training_And_optimization/2_Boosting/1_lgb/oof.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="38">
+            <state relative-caret-position="57">
               <caret line="3" column="31" selection-start-line="3" selection-start-column="31" selection-end-line="3" selection-end-column="31" />
-              <folding>
-                <element signature="e#47#65#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -26,7 +23,7 @@
         <entry file="file://$PROJECT_DIR$/2_complete_ML_proj_process/5_model_training_And_optimization/2_Boosting/1_lgb/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="656">
+              <first_editor relative-caret-position="3800">
                 <caret line="200" selection-start-line="200" selection-end-line="200" />
               </first_editor>
               <second_editor />
@@ -38,8 +35,8 @@
         <entry file="file://$PROJECT_DIR$/2_complete_ML_proj_process/5_model_training_And_optimization/2_Boosting/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="745">
-                <caret line="72" column="32" selection-start-line="72" selection-start-column="32" selection-end-line="72" selection-end-column="32" />
+              <first_editor relative-caret-position="427">
+                <caret line="70" column="3" selection-start-line="70" selection-start-column="3" selection-end-line="70" selection-end-column="3" />
               </first_editor>
               <second_editor />
             </state>
@@ -194,6 +191,7 @@
       <workItem from="1571986783881" duration="785000" />
       <workItem from="1571996952864" duration="681000" />
       <workItem from="1572400098136" duration="2095000" />
+      <workItem from="1572406835262" duration="41000" />
     </task>
     <task id="LOCAL-00001" summary="update on 20190701">
       <created>1561970537227</created>
@@ -363,17 +361,24 @@
       <option name="project" value="LOCAL" />
       <updated>1572406585852</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="update on 20191030">
+      <created>1572406859743</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1572406859743</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="7044000" />
+    <option name="totallyTimeSpent" value="7085000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1879" y="31" width="1721" height="992" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1298392" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.13103038" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -479,18 +484,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/2_complete_ML_proj_process/5_model_training_And_optimization/2_Boosting/1_lgb/oof.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="38">
+        <state relative-caret-position="57">
           <caret line="3" column="31" selection-start-line="3" selection-start-column="31" selection-end-line="3" selection-end-column="31" />
-          <folding>
-            <element signature="e#47#65#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/2_complete_ML_proj_process/5_model_training_And_optimization/2_Boosting/1_lgb/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="656">
+          <first_editor relative-caret-position="3800">
             <caret line="200" selection-start-line="200" selection-end-line="200" />
           </first_editor>
           <second_editor />
@@ -500,8 +502,8 @@
     <entry file="file://$PROJECT_DIR$/2_complete_ML_proj_process/5_model_training_And_optimization/2_Boosting/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="745">
-            <caret line="72" column="32" selection-start-line="72" selection-start-column="32" selection-end-line="72" selection-end-column="32" />
+          <first_editor relative-caret-position="427">
+            <caret line="70" column="3" selection-start-line="70" selection-start-column="3" selection-end-line="70" selection-end-column="3" />
           </first_editor>
           <second_editor />
         </state>
