@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1c8e89e8-98b5-4ad0-b169-11140df361ca" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/2_complete_ML_proj_process/5_model_training_And_optimization/2_Boosting/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/2_complete_ML_proj_process/5_model_training_And_optimization/2_Boosting/README.md" afterDir="false" />
-    </list>
+    <list default="true" id="1c8e89e8-98b5-4ad0-b169-11140df361ca" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,7 +38,7 @@
         <entry file="file://$PROJECT_DIR$/2_complete_ML_proj_process/5_model_training_And_optimization/2_Boosting/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="354">
+              <first_editor relative-caret-position="745">
                 <caret line="72" column="32" selection-start-line="72" selection-start-column="32" selection-end-line="72" selection-end-column="32" />
               </first_editor>
               <second_editor />
@@ -196,7 +193,7 @@
       <workItem from="1571714066351" duration="564000" />
       <workItem from="1571986783881" duration="785000" />
       <workItem from="1571996952864" duration="681000" />
-      <workItem from="1572400098136" duration="2028000" />
+      <workItem from="1572400098136" duration="2095000" />
     </task>
     <task id="LOCAL-00001" summary="update on 20190701">
       <created>1561970537227</created>
@@ -359,11 +356,18 @@
       <option name="project" value="LOCAL" />
       <updated>1572406368577</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="update on 20191030">
+      <created>1572406585852</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1572406585852</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="6977000" />
+    <option name="totallyTimeSpent" value="7044000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1879" y="31" width="1721" height="992" extended-state="0" />
@@ -496,7 +500,7 @@
     <entry file="file://$PROJECT_DIR$/2_complete_ML_proj_process/5_model_training_And_optimization/2_Boosting/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="354">
+          <first_editor relative-caret-position="745">
             <caret line="72" column="32" selection-start-line="72" selection-start-column="32" selection-end-line="72" selection-end-column="32" />
           </first_editor>
           <second_editor />
