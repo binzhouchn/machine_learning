@@ -1,4 +1,4 @@
-# ML Catalog
+# Machine Learning Catalog
 
 [**1. ML Basic**](1_basic)
 
