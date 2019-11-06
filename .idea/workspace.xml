@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1c8e89e8-98b5-4ad0-b169-11140df361ca" name="Default Changelist" comment="" />
+    <list default="true" id="1c8e89e8-98b5-4ad0-b169-11140df361ca" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/3_proj_And_interview/3_3_nlp_text/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/3_proj_And_interview/3_3_nlp_text/README.md" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,12 +34,24 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/2_complete_ML_proj_process/5_model_training_And_optimization/2_Boosting/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="427">
-                <caret line="70" column="3" selection-start-line="70" selection-start-column="3" selection-end-line="70" selection-end-column="3" />
+              <first_editor relative-caret-position="789">
+                <caret line="82" column="36" selection-start-line="82" selection-start-column="36" selection-end-line="82" selection-end-column="36" />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/3_proj_And_interview/3_3_nlp_text/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="549">
+                <caret line="235" column="21" lean-forward="true" selection-start-line="235" selection-start-column="21" selection-end-line="235" selection-end-column="21" />
               </first_editor>
               <second_editor />
             </state>
@@ -54,13 +69,13 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/3_proj_And_interview/3_3_nlp_text/README.md" />
         <option value="$PROJECT_DIR$/2_complete_ML_proj_process/8_visualization/README.md" />
         <option value="$PROJECT_DIR$/3_proj_And_interview/3_3_nlp_text/code/文本分类_tfidf+bert+Tencent词向量/README.md" />
         <option value="$PROJECT_DIR$/3_proj_And_interview/3_3_nlp_text/code/文本分类_tfidf+doc2vec+bert+Tencent词向量/README.md" />
         <option value="$PROJECT_DIR$/2_complete_ML_proj_process/5_model_training_And_optimization/2_Boosting/1_lgb/oof.py" />
         <option value="$PROJECT_DIR$/2_complete_ML_proj_process/5_model_training_And_optimization/2_Boosting/1_lgb/README.md" />
         <option value="$PROJECT_DIR$/2_complete_ML_proj_process/5_model_training_And_optimization/2_Boosting/README.md" />
+        <option value="$PROJECT_DIR$/3_proj_And_interview/3_3_nlp_text/README.md" />
       </list>
     </option>
   </component>
@@ -134,14 +149,6 @@
               <item name="3_3_nlp_text" type="462c0819:PsiDirectoryNode" />
               <item name="code" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="machine_learning" type="b2602c69:ProjectViewProjectNode" />
-              <item name="machine_learning" type="462c0819:PsiDirectoryNode" />
-              <item name="3_proj_And_interview" type="462c0819:PsiDirectoryNode" />
-              <item name="3_3_nlp_text" type="462c0819:PsiDirectoryNode" />
-              <item name="code" type="462c0819:PsiDirectoryNode" />
-              <item name="文本分类_tfidf+doc2vec+bert+Tencent词向量" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -192,6 +199,8 @@
       <workItem from="1571996952864" duration="681000" />
       <workItem from="1572400098136" duration="2095000" />
       <workItem from="1572406835262" duration="41000" />
+      <workItem from="1572406952625" duration="157000" />
+      <workItem from="1573031908968" duration="128000" />
     </task>
     <task id="LOCAL-00001" summary="update on 20190701">
       <created>1561970537227</created>
@@ -368,17 +377,52 @@
       <option name="project" value="LOCAL" />
       <updated>1572406859743</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="update on 20191030">
+      <created>1572406969021</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1572406969021</updated>
+    </task>
+    <task id="LOCAL-00027" summary="update on 20191030">
+      <created>1572407002603</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1572407002603</updated>
+    </task>
+    <task id="LOCAL-00028" summary="update on 20191030">
+      <created>1572407025712</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1572407025712</updated>
+    </task>
+    <task id="LOCAL-00029" summary="update on 20191030">
+      <created>1572407041421</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1572407041421</updated>
+    </task>
+    <task id="LOCAL-00030" summary="update on 20191030">
+      <created>1572407055486</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1572407055487</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="7085000" />
+    <option name="totallyTimeSpent" value="7370000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1879" y="31" width="1721" height="992" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.13103038" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.13341275" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -446,16 +490,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/3_proj_And_interview/3_3_nlp_text/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="3116">
-            <caret line="164" column="47" selection-start-line="164" selection-start-column="47" selection-end-line="164" selection-end-column="47" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/3_proj_And_interview/3_3_nlp_text/code/文本分类_tfidf+doc2vec+bert+Tencent词向量/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
@@ -502,8 +536,18 @@
     <entry file="file://$PROJECT_DIR$/2_complete_ML_proj_process/5_model_training_And_optimization/2_Boosting/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="427">
-            <caret line="70" column="3" selection-start-line="70" selection-start-column="3" selection-end-line="70" selection-end-column="3" />
+          <first_editor relative-caret-position="789">
+            <caret line="82" column="36" selection-start-line="82" selection-start-column="36" selection-end-line="82" selection-end-column="36" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/3_proj_And_interview/3_3_nlp_text/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="549">
+            <caret line="235" column="21" lean-forward="true" selection-start-line="235" selection-start-column="21" selection-end-line="235" selection-end-column="21" />
           </first_editor>
           <second_editor />
         </state>
