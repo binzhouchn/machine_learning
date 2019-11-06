@@ -2,186 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1c8e89e8-98b5-4ad0-b169-11140df361ca" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/2_machine_learning_process/1_mathematical_abstraction/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/2_machine_learning_process/2_data_procurement/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/2_machine_learning_process/3_preprocess_and_data_analysis(feature_engineering_1)/BayesianSmoothing.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/2_machine_learning_process/3_preprocess_and_data_analysis(feature_engineering_1)/DataFrameExplr.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/2_machine_learning_process/3_preprocess_and_data_analysis(feature_engineering_1)/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/2_machine_learning_process/3_preprocess_and_data_analysis(feature_engineering_1)/pic/pic1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/2_machine_learning_process/3_preprocess_and_data_analysis(feature_engineering_1)/pic/pic2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/2_machine_learning_process/3_preprocess_and_data_analysis(feature_engineering_1)/pic/pic3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/2_machine_learning_process/3_preprocess_and_data_analysis(feature_engineering_1)/pic/变化率.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/2_machine_learning_process/3_preprocess_and_data_analysis(feature_engineering_1)/pic/时间角度1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/2_machine_learning_process/3_preprocess_and_data_analysis(feature_engineering_1)/pic/时间角度2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/2_machine_learning_process/3_preprocess_and_data_analysis(feature_engineering_1)/pic/比率值.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/2_machine_learning_process/3_preprocess_and_data_analysis(feature_engineering_1)/pic/特征处理_思维导图.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/2_machine_learning_process/3_preprocess_and_data_analysis(feature_engineering_1)/pic/空间角度.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/2_machine_learning_process/4_feature_generation_and_selection(feature_engineering_2)/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/2_machine_learning_process/4_feature_generation_and_selection(feature_engineering_2)/_FeatureSelector.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/2_machine_learning_process/4_feature_generation_and_selection(feature_engineering_2)/_aggFeature.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/2_machine_learning_process/4_feature_generation_and_selection(feature_engineering_2)/_horizontalFeature.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/2_machine_learning_process/4_feature_generation_and_selection(feature_engineering_2)/baseline_model.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/2_machine_learning_process/4_feature_generation_and_selection(feature_engineering_2)/binzhou_pac.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/2_machine_learning_process/4_feature_generation_and_selection(feature_engineering_2)/iFeature_from_yuanjie/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/2_machine_learning_process/4_feature_generation_and_selection(feature_engineering_2)/iFeature_from_yuanjie/__utils/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/2_machine_learning_process/4_feature_generation_and_selection(feature_engineering_2)/iFeature_from_yuanjie/__utils/funcs.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/2_machine_learning_process/4_feature_generation_and_selection(feature_engineering_2)/iFeature_from_yuanjie/examples/data.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/2_machine_learning_process/4_feature_generation_and_selection(feature_engineering_2)/iFeature_from_yuanjie/ifeature/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/2_machine_learning_process/4_feature_generation_and_selection(feature_engineering_2)/iFeature_from_yuanjie/ifeature/add/Binning.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/2_machine_learning_process/4_feature_generation_and_selection(feature_engineering_2)/iFeature_from_yuanjie/ifeature/add/CategoryFeature.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/2_machine_learning_process/4_feature_generation_and_selection(feature_engineering_2)/iFeature_from_yuanjie/ifeature/add/NumericalFeature.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/2_machine_learning_process/4_feature_generation_and_selection(feature_engineering_2)/iFeature_from_yuanjie/ifeature/add/RowFeature.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/2_machine_learning_process/4_feature_generation_and_selection(feature_engineering_2)/iFeature_from_yuanjie/ifeature/add/TimeFeature.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/2_machine_learning_process/4_feature_generation_and_selection(feature_engineering_2)/iFeature_from_yuanjie/ifeature/add/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/2_machine_learning_process/4_feature_generation_and_selection(feature_engineering_2)/iFeature_from_yuanjie/ifeature/models/SemiSupervision.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/2_machine_learning_process/4_feature_generation_and_selection(feature_engineering_2)/iFeature_from_yuanjie/ifeature/models/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/2_machine_learning_process/4_feature_generation_and_selection(feature_engineering_2)/iFeature_from_yuanjie/ifeature/models/baseline.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/2_machine_learning_process/4_feature_generation_and_selection(feature_engineering_2)/iFeature_from_yuanjie/ifeature/models/eli5.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/2_machine_learning_process/4_feature_generation_and_selection(feature_engineering_2)/iFeature_from_yuanjie/ifeature/models/utils/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/2_machine_learning_process/4_feature_generation_and_selection(feature_engineering_2)/iFeature_from_yuanjie/ifeature/models/utils/_model_cv.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/2_machine_learning_process/4_feature_generation_and_selection(feature_engineering_2)/iFeature_from_yuanjie/ifeature/models/utils/get_class.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/2_machine_learning_process/4_feature_generation_and_selection(feature_engineering_2)/iFeature_from_yuanjie/ifeature/models/utils/online.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/2_machine_learning_process/4_feature_generation_and_selection(feature_engineering_2)/iFeature_from_yuanjie/ifeature/sub/FeatureSelector.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/2_machine_learning_process/4_feature_generation_and_selection(feature_engineering_2)/iFeature_from_yuanjie/ifeature/sub/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/2_machine_learning_process/4_feature_generation_and_selection(feature_engineering_2)/iFeature_from_yuanjie/ifeature/sub/csi.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/2_machine_learning_process/4_feature_generation_and_selection(feature_engineering_2)/iFeature_from_yuanjie/ifeature/sub/distcorr.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/2_machine_learning_process/4_feature_generation_and_selection(feature_engineering_2)/iFeature_from_yuanjie/ifeature/sub/fs.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/2_machine_learning_process/4_feature_generation_and_selection(feature_engineering_2)/iFeature_from_yuanjie/ifeature/sub/info_value.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/2_machine_learning_process/4_feature_generation_and_selection(feature_engineering_2)/iFeature_from_yuanjie/ifeature/transform/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/2_machine_learning_process/4_feature_generation_and_selection(feature_engineering_2)/iFeature_from_yuanjie/ifeature/transform/encoder.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/2_machine_learning_process/4_feature_generation_and_selection(feature_engineering_2)/iFeature_from_yuanjie/ifeature/utils/DataCreate.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/2_machine_learning_process/4_feature_generation_and_selection(feature_engineering_2)/iFeature_from_yuanjie/ifeature/utils/Pickle.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/2_machine_learning_process/4_feature_generation_and_selection(feature_engineering_2)/iFeature_from_yuanjie/ifeature/utils/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/2_machine_learning_process/4_feature_generation_and_selection(feature_engineering_2)/iFeature_from_yuanjie/ifeature/utils/auto_notebook.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/2_machine_learning_process/4_feature_generation_and_selection(feature_engineering_2)/iFeature_from_yuanjie/ifeature/utils/colors.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/2_machine_learning_process/4_feature_generation_and_selection(feature_engineering_2)/iFeature_from_yuanjie/ifeature/utils/decorator.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/2_machine_learning_process/4_feature_generation_and_selection(feature_engineering_2)/iFeature_from_yuanjie/ifeature/utils/file_processing.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/2_machine_learning_process/4_feature_generation_and_selection(feature_engineering_2)/iFeature_from_yuanjie/ifeature/utils/multi_func.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/2_machine_learning_process/4_feature_generation_and_selection(feature_engineering_2)/iFeature_from_yuanjie/ifeature/utils/os_utils.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/2_machine_learning_process/4_feature_generation_and_selection(feature_engineering_2)/iFeature_from_yuanjie/ifeature/utils/parallel.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/2_machine_learning_process/4_feature_generation_and_selection(feature_engineering_2)/iFeature_from_yuanjie/ifeature/utils/plot.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/2_machine_learning_process/4_feature_generation_and_selection(feature_engineering_2)/iFeature_from_yuanjie/ifeature/utils/reader_pandas.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/2_machine_learning_process/4_feature_generation_and_selection(feature_engineering_2)/iFeature_from_yuanjie/ifeature/utils/reader_parallel.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/2_machine_learning_process/4_feature_generation_and_selection(feature_engineering_2)/iFeature_from_yuanjie/ifeature/utils/shuffle_data.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/2_machine_learning_process/4_feature_generation_and_selection(feature_engineering_2)/iFeature_from_yuanjie/ifeature/utils/time_utils.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/2_machine_learning_process/4_feature_generation_and_selection(feature_engineering_2)/iFeature_from_yuanjie/setup.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/2_machine_learning_process/4_feature_generation_and_selection(feature_engineering_2)/notebook_from_kaggle/regression_top4.ipynb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/2_machine_learning_process/4_feature_generation_and_selection(feature_engineering_2)/notebook_from_kaggle/titanic_a_data_science_framework.ipynb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/2_machine_learning_process/4_feature_generation_and_selection(feature_engineering_2)/notebook_from_kaggle/ultimate-feature-engineering-xgb-lgb-nn.ipynb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/2_machine_learning_process/5_model_training_and_optimization/1_LR_and_ScoreCardmodel/LogisticRegession.ipynb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/2_machine_learning_process/5_model_training_and_optimization/1_LR_and_ScoreCardmodel/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/2_machine_learning_process/5_model_training_and_optimization/2_Boosting/1_lgb/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/2_machine_learning_process/5_model_training_and_optimization/2_Boosting/1_lgb/baseline_model.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/2_machine_learning_process/5_model_training_and_optimization/2_Boosting/1_lgb/oof.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/2_machine_learning_process/5_model_training_and_optimization/2_Boosting/2_xgb/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/2_machine_learning_process/5_model_training_and_optimization/2_Boosting/2_xgb/Xgboost+LR.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/2_machine_learning_process/5_model_training_and_optimization/2_Boosting/2_xgb/oof.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/2_machine_learning_process/5_model_training_and_optimization/2_Boosting/2_xgb/xgboost调参示例代码.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/2_machine_learning_process/5_model_training_and_optimization/2_Boosting/3_catboost/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/2_machine_learning_process/5_model_training_and_optimization/2_Boosting/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/2_machine_learning_process/5_model_training_and_optimization/2_Boosting/feval.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/2_machine_learning_process/5_model_training_and_optimization/3_Clustering/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/2_machine_learning_process/5_model_training_and_optimization/4_ParametersTuning/BayesianOptimization/Demo.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/2_machine_learning_process/5_model_training_and_optimization/4_ParametersTuning/BayesianOptimization/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/2_machine_learning_process/5_model_training_and_optimization/4_ParametersTuning/BayesianOptimization/TuningCV.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/2_machine_learning_process/5_model_training_and_optimization/4_ParametersTuning/BayesianOptimization/Usages.ipynb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/2_machine_learning_process/5_model_training_and_optimization/4_ParametersTuning/BayesianOptimization/lgb_cv.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/2_machine_learning_process/5_model_training_and_optimization/4_ParametersTuning/BayesianOptimization/xgb_cv.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/2_machine_learning_process/5_model_training_and_optimization/4_ParametersTuning/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/2_machine_learning_process/5_model_training_and_optimization/4_ParametersTuning/auto_ml/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/2_machine_learning_process/5_model_training_and_optimization/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/2_machine_learning_process/5_model_training_and_optimization/经验参数.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/2_machine_learning_process/6_model_ensemble/1_Bagging/1_RandomForest.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/2_machine_learning_process/6_model_ensemble/1_Bagging/2_ExtraTrees.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/2_machine_learning_process/6_model_ensemble/1_Bagging/3_RandomTreesEmbedding.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/2_machine_learning_process/6_model_ensemble/1_Bagging/4_IsolationForest.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/2_machine_learning_process/6_model_ensemble/1_Bagging/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/2_machine_learning_process/6_model_ensemble/2_Boosting/1_AdaBoost.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/2_machine_learning_process/6_model_ensemble/2_Boosting/2_GBDT.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/2_machine_learning_process/6_model_ensemble/2_Boosting/3_XGBoost.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/2_machine_learning_process/6_model_ensemble/2_Boosting/4_LightGBM.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/2_machine_learning_process/6_model_ensemble/2_Boosting/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/2_machine_learning_process/6_model_ensemble/2_Boosting/pic/公式_20180902220459.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/2_machine_learning_process/6_model_ensemble/3_Stacking/ModelEnsembling.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/2_machine_learning_process/6_model_ensemble/3_Stacking/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/2_machine_learning_process/6_model_ensemble/3_Stacking/StackNet.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/2_machine_learning_process/6_model_ensemble/3_Stacking/myStacking.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/2_machine_learning_process/6_model_ensemble/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/2_machine_learning_process/6_model_ensemble/stacking1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/2_machine_learning_process/6_model_ensemble/stacking2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/2_machine_learning_process/7_model_evaluation/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/2_machine_learning_process/7_model_evaluation/auc_calc.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/2_machine_learning_process/7_model_evaluation/自定义lgb metric.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/2_machine_learning_process/8_visualization/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/2_machine_learning_process/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/3_project_and_interview/3_1_financial_risk/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/3_project_and_interview/3_1_financial_risk/code/loan_default_prediction/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/3_project_and_interview/3_1_financial_risk/code/loan_default_prediction/features.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/3_project_and_interview/3_1_financial_risk/code/loan_default_prediction/predict.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/3_project_and_interview/3_1_financial_risk/code/scorecardpy-master/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/3_project_and_interview/3_1_financial_risk/code/scorecardpy-master/LICENSE" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/3_project_and_interview/3_1_financial_risk/code/scorecardpy-master/MANIFEST.in" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/3_project_and_interview/3_1_financial_risk/code/scorecardpy-master/NEWS.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/3_project_and_interview/3_1_financial_risk/code/scorecardpy-master/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/3_project_and_interview/3_1_financial_risk/code/scorecardpy-master/build/lib/scorecardpy/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/3_project_and_interview/3_1_financial_risk/code/scorecardpy-master/build/lib/scorecardpy/condition_fun.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/3_project_and_interview/3_1_financial_risk/code/scorecardpy-master/build/lib/scorecardpy/data/germancredit.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/3_project_and_interview/3_1_financial_risk/code/scorecardpy-master/build/lib/scorecardpy/germancredit.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/3_project_and_interview/3_1_financial_risk/code/scorecardpy-master/build/lib/scorecardpy/info_ent_indx_gini.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/3_project_and_interview/3_1_financial_risk/code/scorecardpy-master/build/lib/scorecardpy/info_value.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/3_project_and_interview/3_1_financial_risk/code/scorecardpy-master/build/lib/scorecardpy/perf.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/3_project_and_interview/3_1_financial_risk/code/scorecardpy-master/build/lib/scorecardpy/scorecard.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/3_project_and_interview/3_1_financial_risk/code/scorecardpy-master/build/lib/scorecardpy/splitdf.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/3_project_and_interview/3_1_financial_risk/code/scorecardpy-master/build/lib/scorecardpy/var_filter.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/3_project_and_interview/3_1_financial_risk/code/scorecardpy-master/build/lib/scorecardpy/woebin.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/3_project_and_interview/3_1_financial_risk/code/scorecardpy-master/scorecardpy/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/3_project_and_interview/3_1_financial_risk/code/scorecardpy-master/scorecardpy/condition_fun.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/3_project_and_interview/3_1_financial_risk/code/scorecardpy-master/scorecardpy/data/germancredit.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/3_project_and_interview/3_1_financial_risk/code/scorecardpy-master/scorecardpy/germancredit.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/3_project_and_interview/3_1_financial_risk/code/scorecardpy-master/scorecardpy/info_ent_indx_gini.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/3_project_and_interview/3_1_financial_risk/code/scorecardpy-master/scorecardpy/info_value.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/3_project_and_interview/3_1_financial_risk/code/scorecardpy-master/scorecardpy/perf.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/3_project_and_interview/3_1_financial_risk/code/scorecardpy-master/scorecardpy/scorecard.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/3_project_and_interview/3_1_financial_risk/code/scorecardpy-master/scorecardpy/scorecardpy.Rproj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/3_project_and_interview/3_1_financial_risk/code/scorecardpy-master/scorecardpy/split_df.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/3_project_and_interview/3_1_financial_risk/code/scorecardpy-master/scorecardpy/var_filter.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/3_project_and_interview/3_1_financial_risk/code/scorecardpy-master/scorecardpy/woebin.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/3_project_and_interview/3_1_financial_risk/code/scorecardpy-master/setup.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/3_project_and_interview/3_1_financial_risk/code/西南财经大学_新网银行杯/1_baseline.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/3_project_and_interview/3_1_financial_risk/code/西南财经大学_新网银行杯/3_baseline.ipynb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/3_project_and_interview/3_1_financial_risk/code/西南财经大学_新网银行杯/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/3_project_and_interview/3_1_financial_risk/code/金融信贷风控_课/Combined_Scorecards.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/3_project_and_interview/3_1_financial_risk/code/金融信贷风控_课/scorecard.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/3_project_and_interview/3_1_financial_risk/code/金融信贷风控_课/scorecard_functions.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/3_project_and_interview/3_1_financial_risk/pic/信用评分模型开发流程.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/3_project_and_interview/3_1_financial_risk/pic/风控分类模型.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/3_project_and_interview/3_1_financial_risk/评分卡算法建模流程.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/3_project_and_interview/3_2_time_series/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/3_project_and_interview/3_2_time_series/code/lgbm-one-step-ahead.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/3_project_and_interview/3_2_time_series/code/lstm-starter-keras-version.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/3_project_and_interview/3_2_time_series/code/lstm_starter_pytorch_version.ipynb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/3_project_and_interview/3_3_nlp_text/.机器人流程及遇到的问题.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/3_project_and_interview/3_3_nlp_text/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/3_project_and_interview/3_3_nlp_text/code/意图识别_21类/m.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/3_project_and_interview/3_3_nlp_text/code/意图识别_21类/意图识别_AttLSTM-多分类.ipynb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/3_project_and_interview/3_3_nlp_text/code/意图识别_21类/意图识别_BiLSTM-多分类.ipynb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/3_project_and_interview/3_3_nlp_text/code/意图识别_21类/意图识别_FastText-多分类.ipynb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/3_project_and_interview/3_3_nlp_text/code/意图识别_21类/意图识别_Inception-多分类.ipynb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/3_project_and_interview/3_3_nlp_text/code/意图识别_21类/意图识别_RCNN-多分类.ipynb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/3_project_and_interview/3_3_nlp_text/code/意图识别_21类/意图识别_TextCNN-多分类.ipynb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/3_project_and_interview/3_3_nlp_text/code/意图识别_21类/意图识别_capsule-keras版.ipynb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/3_project_and_interview/3_3_nlp_text/code/意图识别_21类/意图识别_capsule-pytorch版.ipynb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/3_project_and_interview/3_3_nlp_text/code/文本分类_tfidf+doc2vec+bert+Tencent词向量/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/3_project_and_interview/3_3_nlp_text/code/文本分类_tfidf+doc2vec+bert+Tencent词向量/run_classifier_v1.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/3_project_and_interview/3_3_nlp_text/code/汽车行业用户观点主题及情感识别/LSTM_naive .ipynb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/3_project_and_interview/3_3_nlp_text/code/汽车行业用户观点主题及情感识别/TextCNN_naive.ipynb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/3_project_and_interview/3_3_nlp_text/code/汽车行业用户观点主题及情感识别/capsule_keras.ipynb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/3_project_and_interview/3_3_nlp_text/code/汽车行业用户观点主题及情感识别/m.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/3_project_and_interview/3_3_nlp_text/各种距离计算及文本相似度算法.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/3_project_and_interview/interview_Qs/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/3_project_and_interview/interview_Qs/pic/diagram_of_relationships.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/3_project_and_interview/interview_Qs/pic/roc_pic.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/3_project_and_interview/interview_Qs/pic/textcnn_pic.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/1_basic/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/1_basic/README.md" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -191,12 +13,24 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="209">
-                <caret line="11" column="15" lean-forward="true" selection-start-line="11" selection-start-column="15" selection-end-line="11" selection-end-column="15" />
+              <first_editor relative-caret-position="38">
+                <caret line="2" column="14" selection-start-line="2" selection-start-column="14" selection-end-line="2" selection-end-column="14" />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/1_basic/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor>
+                <caret column="38" selection-start-column="38" selection-end-column="38" />
               </first_editor>
               <second_editor />
             </state>
@@ -222,6 +56,8 @@
         <option value="$PROJECT_DIR$/2_complete_ML_proj_process/5_model_training_And_optimization/2_Boosting/README.md" />
         <option value="$PROJECT_DIR$/3_proj_And_interview/3_3_nlp_text/README.md" />
         <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/2_machine_learning_process/README.md" />
+        <option value="$PROJECT_DIR$/1_basic/README.md" />
       </list>
     </option>
   </component>
@@ -302,7 +138,7 @@
       <workItem from="1572400098136" duration="2095000" />
       <workItem from="1572406835262" duration="41000" />
       <workItem from="1572406952625" duration="157000" />
-      <workItem from="1573031908968" duration="645000" />
+      <workItem from="1573031908968" duration="818000" />
     </task>
     <task id="LOCAL-00001" summary="update on 20190701">
       <created>1561970537227</created>
@@ -549,11 +385,32 @@
       <option name="project" value="LOCAL" />
       <updated>1573032577901</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="update on 20191106">
+      <created>1573032632228</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1573032632228</updated>
+    </task>
+    <task id="LOCAL-00037" summary="update on 20191106">
+      <created>1573032702124</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1573032702124</updated>
+    </task>
+    <task id="LOCAL-00038" summary="update on 20191106">
+      <created>1573032755663</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1573032755663</updated>
+    </task>
+    <option name="localTasksCounter" value="39" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="7887000" />
+    <option name="totallyTimeSpent" value="8060000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1879" y="31" width="1721" height="992" extended-state="0" />
@@ -599,14 +456,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="update on 20191106" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/1_basic/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="-208" />
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/2_complete_ML_proj_process/8_visualization/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
@@ -692,11 +541,31 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/2_machine_learning_process/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="19">
+            <caret line="1" column="22" selection-start-line="1" selection-start-column="22" selection-end-line="1" selection-end-column="22" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="209">
-            <caret line="11" column="15" lean-forward="true" selection-start-line="11" selection-start-column="15" selection-end-line="11" selection-end-column="15" />
+          <first_editor relative-caret-position="38">
+            <caret line="2" column="14" selection-start-line="2" selection-start-column="14" selection-end-line="2" selection-end-column="14" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/1_basic/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor>
+            <caret column="38" selection-start-column="38" selection-end-column="38" />
           </first_editor>
           <second_editor />
         </state>

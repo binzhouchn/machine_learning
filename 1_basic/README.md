@@ -1,4 +1,4 @@
-# Basic knowledge for ML
+# Basic knowledge for Machine Learning
 
 [**1. 衡量标准(准确率，召回率)**](#衡量标准)
 
