@@ -4,7 +4,7 @@
 
 按照时间顺序从最新开始，可以重点参考下第一个!
 
-[**1. 第二届YIZHIFU杯大数据建模大赛-信用风险用户识别**](https://www.dcjingsai.com/v2/cmptDetail.html?id=410)
+[1. 第二届YIZHIFU杯大数据建模大赛-信用风险用户识别](https://www.dcjingsai.com/v2/cmptDetail.html?id=410)
 
  - EDA
  - 特征工程
