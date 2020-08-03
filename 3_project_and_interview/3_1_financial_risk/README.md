@@ -2,9 +2,17 @@
 
 ## 比赛类
 
-按照时间顺序从最新开始
+按照时间顺序从最新开始，可以重点参考下第一个!
 
-[**1. Loan Default Prediction - Imperial College London**](https://www.kaggle.com/c/loan-default-prediction)
+[**1. 第二届YIZHIFU杯大数据建模大赛-信用风险用户识别**](https://www.dcjingsai.com/v2/cmptDetail.html?id=410)
+
+ - EDA
+ - 特征工程
+ - lgb建模
+ 
+ [代码](code/YIZHIFU)
+
+[**2. Loan Default Prediction - Imperial College London**](https://www.kaggle.com/c/loan-default-prediction)
 
  - 加载数据操作有点过时
  - 特征衍生，主要以组合特征为主（加、减、乘、除等）与label算皮尔逊相关
@@ -15,7 +23,7 @@
  [代码](code/loan_default_prediction/README.md)
  
 
-[**2. 西南财经大学“新网银行杯”数据科学竞赛**](http://www.dcjingsai.com/common/cmpt/%E8%A5%BF%E5%8D%97%E8%B4%A2%E7%BB%8F%E5%A4%A7%E5%AD%A6%E2%80%9C%E6%96%B0%E7%BD%91%E9%93%B6%E8%A1%8C%E6%9D%AF%E2%80%9D%E6%95%B0%E6%8D%AE%E7%A7%91%E5%AD%A6%E7%AB%9E%E8%B5%9B_%E7%BB%93%E6%9E%9C%E6%8F%90%E4%BA%A4.html)
+[**3. 西南财经大学“新网银行杯”数据科学竞赛**](http://www.dcjingsai.com/common/cmpt/%E8%A5%BF%E5%8D%97%E8%B4%A2%E7%BB%8F%E5%A4%A7%E5%AD%A6%E2%80%9C%E6%96%B0%E7%BD%91%E9%93%B6%E8%A1%8C%E6%9D%AF%E2%80%9D%E6%95%B0%E6%8D%AE%E7%A7%91%E5%AD%A6%E7%AB%9E%E8%B5%9B_%E7%BB%93%E6%9E%9C%E6%8F%90%E4%BA%A4.html)
 
  - 数据集先合并
  - 粗筛：空缺值去除(0.95)和single_unique，或collinear
@@ -40,7 +48,7 @@
  
 [代码](code/西南财经大学_新网银行杯)
 
-[**3. 融360天机 智能金融算法挑战赛**](http://openresearch.rong360.com/#/question)
+[**4. 融360天机 智能金融算法挑战赛**](http://openresearch.rong360.com/#/question)
 
  - [第一题 拒绝推断 top2方案](https://zhuanlan.zhihu.com/p/46090290)
  - [第二题 特征挖掘 1st_解决方案](https://github.com/xSupervisedLearning/Rong360_feature_mining_1st_solution)
