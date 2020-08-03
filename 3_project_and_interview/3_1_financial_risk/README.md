@@ -2,6 +2,8 @@
 
 ## 比赛类
 
+按照时间顺序从最新开始
+
 [**1. Loan Default Prediction - Imperial College London**](https://www.kaggle.com/c/loan-default-prediction)
 
  - 加载数据操作有点过时
