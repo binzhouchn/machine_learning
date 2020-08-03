@@ -11,5 +11,5 @@
     `可以重点参考下2020YIZHIFU的比赛主要是EDA和特征工程`
  
  - Time Series
- - NLP Text
+ - Recommendation
  - Interview Qs
