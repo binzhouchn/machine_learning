@@ -10,7 +10,7 @@
  - 特征工程
  - lgb建模
  
- [代码](code/YIZHIFU)
+ [**代码**](code/YIZHIFU)
 
 [**2. Loan Default Prediction - Imperial College London**](https://www.kaggle.com/c/loan-default-prediction)
 
