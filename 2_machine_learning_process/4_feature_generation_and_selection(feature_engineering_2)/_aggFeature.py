@@ -146,10 +146,19 @@ class AggFeature(object):
         get_q3_q1 = lambda x: x.quantile(0.75) - x.quantile(0.25)
         get_cov = lambda x: np.var(x) * 1.0 / (np.mean(x) + 10 ** -8)
         get_cov_reciprocal = lambda x: np.mean(x) * 1.0 / (np.var(x) + 10 ** -8)
-        func_list = [('count', 'count'), ('mean', 'mean'), ('std', 'std'), ('var', 'var'), ('min', 'min'),
-                     ('max', 'max'), ('median', 'median'), \
-                     ('q1_func', q1_func), ('q3_func', q3_func), ('q3_q1', get_q3_q1), ('max_min', get_max_min),
-                     ('get_cov', get_cov), ('get_cov_reciprocal', get_cov_reciprocal)]
+        func_list = [('count', 'count'),
+                     ('mean', 'mean'),
+                     ('std', 'std'),
+                     ('var', 'var'),
+                     ('min', 'min'),
+                     ('max', 'max'),
+                     ('median', 'median'),
+                     ('q1_func', q1_func),
+                     ('q3_func', q3_func),
+                     ('q3_q1', get_q3_q1),
+                     ('max_min', get_max_min),
+                     ('get_cov', get_cov),
+                     ('get_cov_reciprocal', get_cov_reciprocal)]
         if feats is not None:  # 对时间特征可用数值特征平均编码
             print("%s_encoding ..." % by)
             new_feats = []
