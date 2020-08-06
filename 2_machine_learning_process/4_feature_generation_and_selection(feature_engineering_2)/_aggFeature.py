@@ -17,7 +17,7 @@ class AggFeature(object):
     def __init__(self):
         pass
 
-    # 可以未聚合之前或聚合之后使用，都可以
+    # 1. 可以未聚合之前或聚合之后使用，都可以
     @staticmethod
     def get_feats_vectors(X, vectorizer='TfidfVectorizer', tokenizer=None, ngram_range=(1, 1), max_features=None):
         """
@@ -34,7 +34,7 @@ class AggFeature(object):
         vectorizer.fit(X)
         return vectorizer
 
-    # 类别型特征（聚合）
+    # 2. 类别型特征（聚合）
     @staticmethod
     def get_feats_desc_cat(data, group='ID', feats=['feat1', ]):
         for col_name in tqdm_notebook(feats):
@@ -58,7 +58,7 @@ class AggFeature(object):
                 df = df.merge(_func(), 'left', group).fillna(0)
         return df
 
-    # 数值型特征（聚合）
+    # 3. 数值型特征（聚合）
     @staticmethod
     def get_feats_desc_numeric(data, group='ID', feats=['feat1', ]):
         """
