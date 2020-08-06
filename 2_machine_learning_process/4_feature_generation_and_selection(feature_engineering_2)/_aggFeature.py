@@ -78,12 +78,23 @@ class AggFeature(object):
                 get_cov = lambda x : np.var(x)*1.0 / (np.mean(x)+10**-8)
                 get_cov_reciprocal = lambda x : np.mean(x)*1.0 / (np.var(x)+10**-8)
                 # (new_feature_name, operation)
-                df = gr.agg([(col_name+'_'+'count','count'), (col_name+'_'+'mean','mean'), (col_name+'_'+'std','std'),\
-                             (col_name+'_'+'var','var'), (col_name+'_'+'min','min'), (col_name+'_'+'max','max'),\
-                             (col_name+'_'+'median','median'), (col_name+'_'+'q1',q1_func), (col_name+'_'+'q3',q3_func), \
-                             (col_name+'_'+'max_min',get_max_min), (col_name+'_'+'q3_q1',get_q3_q1), (col_name+'_'+'kurt',pd.Series.kurt), \
-                             (col_name+'_'+'skew',pd.Series.skew), (col_name+'_'+'sem',pd.Series.sem), (col_name+'_'+'sum',np.sum), \
-                             (col_name+'_'+'COV',get_cov), (col_name+'_'+'COV_reciprocal',get_cov_reciprocal)]).reset_index()
+                df = gr.agg({col_name + '_' + 'count': 'count',
+                             col_name + '_' + 'mean': 'mean',
+                             col_name + '_' + 'std': 'std',
+                             col_name + '_' + 'var': 'var',
+                             col_name + '_' + 'min': 'min',
+                             col_name + '_' + 'max': 'max',
+                             col_name + '_' + 'median': 'median',
+                             col_name + '_' + 'q1': q1_func,
+                             col_name + '_' + 'q3': q3_func,
+                             col_name + '_' + 'max_min': get_max_min,
+                             col_name + '_' + 'q3_q1': get_q3_q1,
+                             col_name + '_' + 'kurt': pd.Series.kurt,
+                             col_name + '_' + 'skew': pd.Series.skew,
+                             col_name + '_' + 'sem': pd.Series.sem,
+                             col_name + '_' + 'sum': np.sum,
+                             col_name + '_' + 'COV': get_cov,
+                             col_name + '_' + 'COV_reciprocal': get_cov_reciprocal}).reset_index()
                 return df
             if col_name == feats[0]:
                 df = _func()
