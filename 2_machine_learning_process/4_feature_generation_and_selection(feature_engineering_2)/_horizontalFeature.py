@@ -10,7 +10,7 @@ from sklearn.preprocessing import LabelEncoder
 from sklearn.preprocessing import PolynomialFeatures
 
 
-# 横向特征扩展，没用到group by【适合未聚合或者已经聚合的特征】
+# 横向特征扩展，没用到group by【适合不需要聚合或者已经聚合好的特征】
 
 class HorizongtalFeature(object):
 
