@@ -8,10 +8,9 @@ import pandas as pd
 from tqdm import tqdm, tqdm_notebook
 from sklearn.preprocessing import LabelEncoder
 from sklearn.preprocessing import PolynomialFeatures
-from sklearn.preprocessing import StandardScaler
-from itertools import combinations
 
-# 未聚合前的横向特征扩展【适合未聚合或者已经聚合的特征】
+
+# 横向特征扩展，没用到group by【适合未聚合或者已经聚合的特征】
 
 class HorizongtalFeature(object):
 
@@ -74,70 +73,7 @@ class HorizongtalFeature(object):
             return poly, data
         return data
 
-    # 4. 时间特征 with_group
-    @staticmethod
-    def get_feats_time(data, group=None, feats=None, ts='ts'):
-        """
-        (1) 输入的data需要先根据group和ts进行排序, data.sort_values([group,ts])
-        (2) 时间形式2018-07-25，必须为时间类型 pd.to_datetime('2018-07-25')
-        时间的聚合特征同数值型
-        与时间相关特征的特征衍生的非聚合特征
-        :param data:
-        :param group: "id"
-        :param feats: numerical features name
-        :param ts:
-        :return
-        """
-        print('time continuous ...')
-        data[ts + '_year'] = data[ts].apply(lambda x: x.year)
-        data[ts + '_month'] = data[ts].apply(lambda x: x.month)
-        data[ts + '_day'] = data[ts].apply(lambda x: x.day)
-        data[ts + '_weekday'] = data[ts].apply(lambda x: x.weekday())
-        data[ts + '_diff'] = data.groupby(group)[ts].diff().apply(lambda x: x.days).fillna(0)  ##########
-        # transform是对一列进行操作
-        data[ts + '_time_interval'] = data[ts].transform(lambda x: x.max() - x).apply(lambda x: x.days)
-        if feats:  # 对时间特征可用数值特征平均编码
-            print("ts_average_encoding ...")
-            gr = data.groupby(ts)
-            for i in tqdm_notebook(feats):
-                data['ts_average_encoding_' + i] = gr[i].transform('mean')  # median
-
-            print("feats diff ...")
-            gr = data.groupby(group)
-            for i in tqdm_notebook(feats):  # 数值特征也可以按时间顺序进行差分
-                data['diff_' + i] = gr[i].diff().fillna(0)
-        return data
-
-    # 5. Grougby类别型特征（比如时间，性别等）计算其他数值型特征的均值，方差等等（交叉特征，特征表征）
-    @staticmethod
-    def create_fts_from_catgroup(data, feats=None, by='ts',standardize=False):
-        data = data.copy()
-        q1_func = lambda x: x.quantile(0.25)
-        q3_func = lambda x: x.quantile(0.75)
-        get_max_min = lambda x: np.max(x) - np.min(x)
-        get_q3_q1 = lambda x: x.quantile(0.75) - x.quantile(0.25)
-        get_cov = lambda x: np.var(x) * 1.0 / (np.mean(x) + 10 ** -8)
-        get_cov_reciprocal = lambda x: np.mean(x) * 1.0 / (np.var(x) + 10 ** -8)
-        func_list = [('count', 'count'), ('mean', 'mean'), ('std', 'std'), ('var', 'var'), ('min', 'min'),
-                     ('max', 'max'), ('median', 'median'), \
-                     ('q1_func', q1_func), ('q3_func', q3_func), ('q3_q1', get_q3_q1), ('max_min', get_max_min),
-                     ('get_cov', get_cov), ('get_cov_reciprocal', get_cov_reciprocal)]
-        if feats is not None:  # 对时间特征可用数值特征平均编码
-            print("%s_encoding ..." % by)
-            new_feats = []
-            gr = data.groupby(by)
-            for ft in tqdm_notebook(feats):
-                for func_name, func in func_list:
-                    new_feat = '{}_{}_encoding_'.format(by, func_name) + ft
-                    data[new_feat] = gr[ft].transform(func)
-                    new_feats.append(new_feat)
-        if standardize:
-            sdsr = StandardScaler()
-            data[new_feats] = sdsr.fit_transform(data[new_feats])
-            return data, sdsr # sdsr不一定用得到如果数据是训练和测试拼接完后放进来的
-        return data
-
-    # 6. 组合特征
+    # 4. 组合特征
     '''
     造组合特征之前，一定要看下数据分布情况，然后确定哪些特征进行组合：
     技巧一：组合特征的分布最好要一致（不一定）；
@@ -160,7 +96,7 @@ class HorizongtalFeature(object):
                 df[col_name] = eval(oper)(df[f1],df[f2])
         return df
 
-    # 7. 类别型特征进行one-hot编码
+    # 5. 类别型特征进行one-hot编码
     @staticmethod
     def get_dummy(df, feats=None, drop_orig_feats=False):
         df = df.copy()
