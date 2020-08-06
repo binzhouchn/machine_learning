@@ -7,7 +7,7 @@ __mtime__ = '2018/7/27'
 import numpy as np
 import pandas as pd
 from sklearn.feature_extraction import text
-from tqdm import tqdm, tqdm_notebook
+from tqdm import tqdm
 from sklearn.preprocessing import StandardScaler
 from itertools import combinations
 
@@ -37,7 +37,7 @@ class AggFeature(object):
     # 2. 类别型特征（聚合）
     @staticmethod
     def get_feats_desc_cat(data, group='ID', feats=['feat1', ]):
-        for col_name in tqdm_notebook(feats):
+        for col_name in tqdm(feats):
             gr = data.groupby(group)[col_name]
             def _func():
                 get_max_min = lambda x : np.max(x) - np.min(x)
@@ -67,7 +67,7 @@ class AggFeature(object):
         """
         print("There are %s features..."%str(len(feats)))
         df = pd.DataFrame()
-        for col_name in tqdm_notebook(feats, desc='get_feature_desc'):
+        for col_name in tqdm(feats, desc='get_feature_desc'):
             gr = data.groupby(group)[col_name]
 
             def _func():
@@ -127,12 +127,12 @@ class AggFeature(object):
         if feats:  # 对时间特征可用数值特征平均编码
             print("ts_average_encoding ...")
             gr = data.groupby(ts)
-            for i in tqdm_notebook(feats):
+            for i in tqdm(feats):
                 data['ts_average_encoding_' + i] = gr[i].transform('mean')  # median
 
             print("feats diff ...")
             gr = data.groupby(group)
-            for i in tqdm_notebook(feats):  # 数值特征也可以按时间顺序进行差分
+            for i in tqdm(feats):  # 数值特征也可以按时间顺序进行差分
                 data['diff_' + i] = gr[i].diff().fillna(0)
         return data
 
@@ -154,7 +154,7 @@ class AggFeature(object):
             print("%s_encoding ..." % by)
             new_feats = []
             gr = data.groupby(by)
-            for ft in tqdm_notebook(feats):
+            for ft in tqdm(feats):
                 for func_name, func in func_list:
                     new_feat = '{}_{}_encoding_'.format(by, func_name) + ft
                     data[new_feat] = gr[ft].transform(func)
