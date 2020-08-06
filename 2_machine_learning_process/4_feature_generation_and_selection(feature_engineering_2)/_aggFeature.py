@@ -66,7 +66,7 @@ class AggFeature(object):
         时间特征差分后当数值型特征
         """
         print("There are %s features..."%str(len(feats)))
-
+        df = pd.DataFrame()
         for col_name in tqdm_notebook(feats, desc='get_feature_desc'):
             gr = data.groupby(group)[col_name]
 
