@@ -11,7 +11,7 @@ from sklearn.preprocessing import PolynomialFeatures
 from sklearn.preprocessing import StandardScaler
 from itertools import combinations
 
-# 未聚合前的横向特征扩展
+# 未聚合前的横向特征扩展【适合未聚合或者已经聚合的特征】
 
 class HorizongtalFeature(object):
 
