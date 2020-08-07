@@ -105,7 +105,7 @@ class AggFeature(object):
     # 4. Grougby类别型特征（比如时间，性别等）计算其他数值型特征的均值，方差等等（交叉特征，特征表征）
     # 然后再根据某个字段聚合比如user
     @staticmethod
-    def create_fts_from_catgroup_aggnumeric(data, feats=None, by='ts', standardize=False):
+    def create_fts_from_catgroup_aggnumeric(data, feats=None, by='ts', second_group='user'):
         data = data.copy()
         q1_func = lambda x: x.quantile(0.25)
         q3_func = lambda x: x.quantile(0.75)
@@ -135,6 +135,6 @@ class AggFeature(object):
                     new_feat = '{}_{}_encoding_'.format(by, func_name) + ft
                     data[new_feat] = gr[ft].transform(func)
                     new_feats.append(new_feat)
-        data = AggFeature.get_feats_desc_numeric(data, group='user', feats=new_feats)
+        data = AggFeature.get_feats_desc_numeric(data, group=second_group, feats=new_feats)
         return data
 
