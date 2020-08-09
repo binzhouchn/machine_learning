@@ -273,7 +273,7 @@ def lgb_model(train, target, test, k):
     return output_preds, oof_probs, np.mean(offline_score)
 
 if __name__ == '__main__':
-    DATA_PATH = '../data/'
+    DATA_PATH = 'data/'
     print('读取数据...')
     data, op_df, trans_df = data_preprocess(DATA_PATH=DATA_PATH)
 
@@ -296,4 +296,4 @@ if __name__ == '__main__':
 
     sub_df = test[['user']].copy()
     sub_df['prob'] = lgb_preds
-    sub_df.to_csv('../submission/sub.csv', index=False)
+    sub_df.to_csv('sub.csv', index=False)
