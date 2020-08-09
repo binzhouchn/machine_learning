@@ -37,6 +37,7 @@ class AggFeature(object):
     # 2. 类别型特征（聚合）
     @staticmethod
     def get_feats_desc_cat(data, group='ID', feats=['feat1', ]):
+        df = pd.DataFrame()
         for col_name in tqdm(feats):
             gr = data.groupby(group)[col_name]
             def _func():
@@ -45,9 +46,13 @@ class AggFeature(object):
                 # get_mode = lambda x : max(pd.Series.mode(x)) # 可能返回多个mode，取最大的那个mode
                 get_mode = lambda x : x.value_counts().index[0]
 
-                df = gr.agg([(col_name + '_' + 'count','count'),(col_name + '_' + 'nunique','nunique'),(col_name + '_' + 'max','max'),\
-                             (col_name + '_' + 'min','min'),(col_name + '_' + 'max_min',get_max_min),(col_name + '_' + 'mode',get_mode),\
-                            (col_name + '_' + 'category_density',get_category_density)]).reset_index()
+                df = gr.agg({col_name + '_' + 'count':'count',
+                             col_name + '_' + 'nunique':'nunique',
+                             col_name + '_' + 'max':'max',
+                             col_name + '_' + 'min':'min',
+                             col_name + '_' + 'max_min':get_max_min,
+                             col_name + '_' + 'mode':get_mode,
+                             col_name + '_' + 'category_density':get_category_density}).reset_index()
                 return df
 
             if col_name == feats[0]:
@@ -106,6 +111,13 @@ class AggFeature(object):
     # 然后再根据某个字段聚合比如user
     @staticmethod
     def create_fts_from_catgroup_aggnumeric(data, feats=None, by='ts', second_group='user'):
+        '''
+        :param data: 需要聚合的df
+        :param feats: 数值型特征s
+        :param by: 第一次聚合并transform的类别型特征
+        :param second_group: 第二次聚合的列比如user
+        :return:
+        '''
         data = data.copy()
         q1_func = lambda x: x.quantile(0.25)
         q3_func = lambda x: x.quantile(0.75)

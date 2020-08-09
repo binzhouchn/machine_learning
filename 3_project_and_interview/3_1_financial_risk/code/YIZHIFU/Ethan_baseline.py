@@ -142,6 +142,12 @@ def gen_user_countvec_features(df, value):
     return group_df
 
 def kfold_stats_feature(train, test, feats, k):
+    '''
+    函数说明：基于target的编码
+    数据：用户的年龄，性别，职业等
+    标签：用户是否违约？0或1
+    这种情况下，我们就构造目标编码，分析不同年龄人群违约或者不违约的比例，作为特征去直接预测。不过这种情况下构造的特征很容易过拟合，因此常常和五折特征搭配使用
+    '''
     folds = StratifiedKFold(n_splits=k, shuffle=True, random_state=2020)  # 这里最好和后面模型的K折交叉验证保持一致
 
     train['fold'] = None
