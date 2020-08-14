@@ -14,7 +14,7 @@
 
 ## 论文
 
-经典推荐论文<br>
+**经典推荐论文**<br>
 ```text
 FM：《Factorization Machines》
 FFM：《Field-aware Factorization Machines for CTR Prediction》
@@ -31,7 +31,7 @@ BPR：《BPR: Bayesian Personalized Ranking from Implicit Feedback》
 Youtube：《Deep Neural Networks for YouTube Recommendations》
 ```
 
-最近推荐论文，思维发散<br>
+**最近推荐论文，思维发散**<br>
 ```text
 强化学习
 《DRN: A Deep Reinforcement Learning Framework for News Recommendation》
