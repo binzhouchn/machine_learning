@@ -312,3 +312,7 @@ def load_model(path, model_name):
 	load_path = path + model_name
 	model = joblib.load(load_path)
 	return model
+
+
+import xgboost
+a = xgboost.sklearn.XGBClassifier
