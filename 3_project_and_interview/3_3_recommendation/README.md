@@ -14,6 +14,7 @@
 
 ## 论文
 
+经典推荐论文<br>
 ```text
 FM：《Factorization Machines》
 FFM：《Field-aware Factorization Machines for CTR Prediction》
@@ -30,3 +31,40 @@ BPR：《BPR: Bayesian Personalized Ranking from Implicit Feedback》
 Youtube：《Deep Neural Networks for YouTube Recommendations》
 ```
 
+最近推荐论文，思维发散<br>
+```text
+强化学习
+《DRN: A Deep Reinforcement Learning Framework for News Recommendation》
+《Deep Reinforcement Learning for List-wise Recommendations》
+
+多任务学习
+《Entire Space Multi-Task Model: An Effective Approach for Estimating Post-Click Conversion Rate》
+《Why I like it: Multi-task Learning for Recommendation and Explanation》
+
+GAN
+《IRGAN: A Minimax Game for Unifying Generative and Discriminative Information Retrieval Models》
+《CFGAN: A Generic Collaborative Filtering Framework based on Generative Adversarial Networks》
+
+知识图谱
+
+《DKN: Deep Knowledge-Aware Network for News Recommendation》
+《RippleNet: Propagating User Preferences on the Knowledge Graph for Recommender Systems》
+《Multi-task Learning for KG enhanced Recommendation》
+《Perceive Your Users in Depth: Learning Universal User Representations from Multiple E-commerce Tasks》
+
+Transformer
+《Next Item Recommendation with Self-Attention》
+《Deep Session Interest Network for Click-Through Rate Prediction》
+《Behavior Sequence Transformer for E-commerce Recommendation in Alibaba》
+《BERT4Rec: Sequential Recommendation with Bidirectional Encoder Representations from Transformer》
+
+RNN & GNN
+《SESSION-BASED RECOMMENDATIONS WITH RECURRENT NEURAL NETWORKS》
+《Improved Recurrent Neural Networks for Session-based Recommendations》
+《Session-based Recommendation with Graph Neural Networks》
+
+Embedding技巧
+《Real-time Personalization using Embeddings for Search Ranking at Airbnb》
+《Learning and Transferring IDs Representation in E-commerce》
+《Billion-scale Commodity Embedding for E-commerce Recommendation in Alibaba》
+```
