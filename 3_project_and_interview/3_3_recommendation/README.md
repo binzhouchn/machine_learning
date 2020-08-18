@@ -10,6 +10,11 @@
 [深度学习推荐系统学习笔记](https://zhuanlan.zhihu.com/p/119248677?utm_source=zhihu&utm_medium=social&utm_oi=26827615633408)<br>
 
 
+## 推荐相关比赛
+
+这个比赛不错，适合推荐入门<br>
+[Getting Started with a Movie Recommendation System](https://www.kaggle.com/ibtesama/getting-started-with-a-movie-recommendation-system/)<br>
+
 
 
 ## 论文
