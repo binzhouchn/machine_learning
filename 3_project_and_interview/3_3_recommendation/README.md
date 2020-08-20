@@ -27,6 +27,8 @@
    - Model-based
      - neural networks
      - bayesian networks
+     - clustering models
+     - latent factor models such as Singular Value Decomposition (SVD) and, probabilistic latent semantic analysis
  - Hybrid Recommender
 
 ## 论文
