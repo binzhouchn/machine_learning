@@ -15,7 +15,13 @@
 这个比赛不错，适合推荐入门<br>
 [Getting Started with a Movie Recommendation System](https://www.kaggle.com/ibtesama/getting-started-with-a-movie-recommendation-system/)<br>
 
+这个教程也很不错<br>
+[Recommender Systems in Python 101](https://www.kaggle.com/gspmoreira/recommender-systems-in-python-101)<br>
 
+ - Popularity model
+ - Content-Based Filtering model
+ - Collaborative Filtering model
+ - Hybrid Recommender
 
 ## 论文
 
