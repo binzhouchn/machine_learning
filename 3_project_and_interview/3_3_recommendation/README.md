@@ -21,6 +21,12 @@
  - Popularity model
  - Content-Based Filtering model
  - Collaborative Filtering model
+   - Memory-based
+     - user-based approach
+     - item-based approach
+   - Model-based
+     - neural networks
+     - bayesian networks
  - Hybrid Recommender
 
 ## 论文
