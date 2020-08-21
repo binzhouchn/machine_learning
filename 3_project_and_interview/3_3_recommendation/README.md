@@ -29,7 +29,7 @@
      - bayesian networks
      - clustering models
      - latent factor models such as Singular Value Decomposition (SVD) and, probabilistic latent semantic analysis
- - Hybrid Recommender
+ - Hybrid Recommender(cb+cf融合)
 
 ## 论文
 
