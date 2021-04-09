@@ -105,7 +105,7 @@ clf2 = xgb.XGBClassifier(
       reg_lambda=10,
 )
 clf2.save_model('tmp/xxggb.model')
-#用treelite编译已存模型
+#用treelite编译已存模型，[treelite参考](https://zhuanlan.zhihu.com/p/347514385)
 import treelite #treelite==1.0.0
 import treelite_runtime  #treelite==1.0.0
 model = treelite.Model.load('tmp/xxggb.model', model_format='xgboost')
