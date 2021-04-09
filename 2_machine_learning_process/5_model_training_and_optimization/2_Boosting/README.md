@@ -88,6 +88,36 @@ xx_cv = f1_score(y,np.argmax(oof,axis=1),average='macro')
 print(xx_cv)
 ```
 
+## xgboost, lightgm预测加速方法
+
+```python
+#保存xgboost模型
+clf2 = xgb.XGBClassifier(
+      n_estimators=400,
+      max_depth=11,
+      learning_rate=0.05,
+      subsample=0.90,
+      colsample_bytree=0.7,
+      missing=-999,
+      random_state=2020,
+      tree_method='gpu_hist',  # THE MAGICAL PARAMETER
+      reg_alpha=10,
+      reg_lambda=10,
+)
+clf2.save_model('tmp/xxggb.model')
+#用treelite编译已存模型
+import treelite #treelite==1.0.0
+import treelite_runtime  #treelite==1.0.0
+model = treelite.Model.load('tmp/xxggb.model', model_format='xgboost')
+model.export_lib(toolchain='gcc', libpath='tmp/mymodel.so',
+                 params={'parallel_comp': 32}, verbose=True)
+#示例化predictor
+predictor = treelite_runtime.Predictor('tmp/mymodel.so', verbose=True)
+#用treelite预测
+batch = treelite_runtime.DMatrix(X_test)#X_test为array([[-1.00000000e+00, -3.17202633e+00...shape(1,130)
+predictor.predict(batch)
+##具体可看deep_learning/jane_street代码
+```
 
 ---
 [1]: http://xgboost.readthedocs.io/en/latest/parameter.html#
