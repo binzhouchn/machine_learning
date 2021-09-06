@@ -6,27 +6,46 @@
 [各种算法优缺点2](https://mp.weixin.qq.com/s/6hD19wWEex-0s-dweuP5sg)<br>
 [各种算法优缺点3](https://blog.csdn.net/u012422446/article/details/53034260)<br>
 
-# 1. 数据分成训练集和验证集
+# 1. 数据训练oof
+
+参考地址：https://www.kaggle.com/binzhouchn/latest-code2?scriptVersionId=73995696
 
 ```python
 from sklearn.model_selection import StratifiedKFold
-# 训练和验证分成4:1
-# 这里X和y都是dataframe，series形式
-skf = StratifiedKFold(n_splits = 5, shuffle = True, random_state = 42)
-for train_index, val_index in skf.split(X, y):
-    X_train, y_train = X.iloc[train_index], y.iloc[train_index]
-    X_val, y_val = X.iloc[val_index], y.iloc[val_index]
-    
-# 直接进行cv操作
-#Validation function
+from sklearn.model_selection import KFold
 import numpy as np
-from sklearn.model_selection import KFold, cross_val_score, train_test_split
-n_folds = 5
+'''
+train(这里train，test是一个dataframe)
+test
+y = train['target']
+'''
+oof_predictions = np.zeros(train.shape[0])
+test_predictions = np.zeros(test.shape[0])
+# Create a KFold object
+kfold = KFold(n_splits = 5, random_state = 2021, shuffle = True)
+# Iterate through each fold
+for fold, (trn_ind, val_ind) in enumerate(kfold.split(train)):
+    print(f'Training fold {fold + 1}')
+    x_train, x_val = train.iloc[trn_ind], train.iloc[val_ind]
+    y_train, y_val = y.iloc[trn_ind], y.iloc[val_ind]
+    # Root mean squared percentage error weights
+    train_weights = 1 / np.square(y_train)
+    val_weights = 1 / np.square(y_val)
+    train_dataset = lgb.Dataset(x_train[features], y_train, weight = train_weights)
+    val_dataset = lgb.Dataset(x_val[features], y_val, weight = val_weights)
+    model = lgb.train(params = params,
+                      num_boost_round=1300,
+                      train_set = train_dataset, 
+                      valid_sets = [train_dataset, val_dataset], 
+                      verbose_eval = 250,
+                      early_stopping_rounds=50, #50
+                      feval = feval_rmspe)
+    # Add predictions to the out of folds array
+    oof_predictions[val_ind] = model.predict(x_val[features])
+    # Predict the test set
+    test_predictions += model.predict(test[features]) / 5
+rmspe_score = rmspe(y, oof_predictions)
 
-def rmsle_cv(model):
-    kf = KFold(n_folds, shuffle=True, random_state=42).get_n_splits(train.values)
-    rmse= np.sqrt(-cross_val_score(model, train.values, y_train, scoring="neg_mean_squared_error", cv = kf))
-    return(rmse)
 ```
 
 # 2. 经验参数
