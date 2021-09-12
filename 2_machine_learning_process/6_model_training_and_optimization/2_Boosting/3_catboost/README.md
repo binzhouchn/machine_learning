@@ -21,7 +21,7 @@ class RMSPE:
     def evaluate(self, approxes, target, weight):            
         assert len(approxes) == 1
         assert len(target) == len(approxes[0])
-        approx = approxes[0]
+        approx = approxes[0] 
         score = self.rmspe(target, approx)
         return score, 1
     def get_final_error(self, error, weight):
