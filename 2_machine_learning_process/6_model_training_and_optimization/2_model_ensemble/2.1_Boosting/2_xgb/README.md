@@ -80,8 +80,11 @@ params = {
 ```
 
 ## xgboost_sklearn框架和原生态框架
+
 ### 1. 原生接口
-- 分类
+
+ - 1.1 分类祖传参数
+ 
 ```python
 """
 max_delta_step: 类别不平衡有助于逻辑回归
@@ -102,7 +105,9 @@ params = {
     'seed': 888,
 }
 ```
-- 回归
+
+ - 2.1 回归祖传参数
+ 
 ```python
 params = {
     'booster': 'gbtree', # 'dart', 'gblinear' 
@@ -124,6 +129,11 @@ params = {
     'seed': 888
 }
 ```
+
+ - 2.2 回归(kaggle optiver比赛参数)
+ 
+[notebook链接](https://www.kaggle.com/binzhouchn/latest-code9-lgb-xgb-catboost)
+
 
 ---
 ```python
@@ -152,8 +162,10 @@ xgb.train(
 )
 ```
 
+
 ---
-### 2. SK接口
+
+### 2. SK接口(archive)
 - 分类
 ```python
 clf = XGBClassifier(

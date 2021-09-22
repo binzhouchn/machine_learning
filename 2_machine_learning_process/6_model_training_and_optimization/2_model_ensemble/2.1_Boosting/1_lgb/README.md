@@ -106,7 +106,7 @@ params = {
 
  - 2.2 回归(kaggle optiver比赛参数)
  
- [notebook链接](https://www.kaggle.com/binzhouchn/latest-code9-lgb-xgb-catboost)
+[notebook链接](https://www.kaggle.com/binzhouchn/latest-code9-lgb-xgb-catboost)
 
 ---
 ```python
