@@ -35,6 +35,7 @@
     - [GBDT算法](http://www.jianshu.com/p/005a4e6ac775)
     - xgboost
     - lgb
+    - catboost
 
 关于Boosting的两个核心问题：
 
@@ -96,9 +97,9 @@ Boosting：各个预测函数只能顺序生成，因为后一个模型参数需
 ```
 
 stacking经典图<br>
-![stacking经典图](stacking1.png)
+![stacking经典图](pic/stacking1.png)
 
-![stacking2](stacking2.png)
+![stacking2](pic/stacking2.png)
 
 上图展示了使用5-Fold进行一次Stacking的过程<br>
 主要步骤是，比如数据是200个特征，样本数是10万个，
