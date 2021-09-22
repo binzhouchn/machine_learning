@@ -30,7 +30,7 @@ class RMSPE:
     def get_final_error(self, error, weight):
         return error
         
-cb_model = CatBoostRegressor(iterations=3000,
+catb_model = CatBoostRegressor(iterations=3000,
                              learning_rate=0.05,
                              depth=7,
                              subsample=0.7,
@@ -44,10 +44,20 @@ cb_model = CatBoostRegressor(iterations=3000,
                              od_type='Iter',
                              metric_period=75,
                              od_wait=100)
+catb_model.fit(
+    X=train.loc[train_idx, features], y=train.loc[train_idx, 'target'].to_numpy(),
+    sample_weight = train.loc[train_idx, 'target_sqr'].to_numpy(),
+    eval_set = (train.loc[valid_idx, features], train.loc[valid_idx, 'target'].to_numpy(),),
+    early_stopping_rounds = 20,
+    cat_features = [0], #第一个特征定为类别特征
+    verbose=False)
+
+#sk接口模型保存与读取
+catb_model.save_model(f"./catb{fold}.model") #存储
+catb_model = catb_model.load_model(f'./catb{fold}.model')#读取
 ```
 
 ## xx
-
 
 
 
