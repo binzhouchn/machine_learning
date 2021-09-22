@@ -53,30 +53,14 @@ params={
     'seed':1000,
     'nthread':12,# cpu 线程数
     'eval_metric':'auc',
-    'missing':-1
+    'missing':-1,
 }
 plst = list(params.items())
 num_rounds = 2000 # 迭代次数
 xgb_train = xgb.DMatrix(X, label=y)
-xgb_val = xgb.DMatrix(val_X,label=val_y)
+xgb_val = xgb.DMatrix(val_X, label=val_y)
 watchlist = [(xgb_train, 'train'),(xgb_val, 'val')]
-model = xgb.train(plst, xgb_train, num_boost_round=75000,evals=watchlist,early_stopping_rounds=500)
-```
-```python
-params = {
-        'colsample_bytree': 0.5041920450812235,
-        'gamma': 0.690363148214239,
-        'learning_rate': 0.01,
-        'max_depth': 8,
-        'min_child_weight': 9,
-        'nthread': 1,
-        'objective': 'binary:logistic',
-        'reg_alpha': 4.620727573976632,
-        'reg_lambda': 1.9231173132006631,
-        'scale_pos_weight': 5,
-        'seed': 2017,
-        'subsample': 0.5463188675095159
-        }
+model = xgb.train(plst, xgb_train, num_boost_round=75000, evals=watchlist, early_stopping_rounds=500)
 ```
 
 ## xgboost_sklearn框架和原生态框架
@@ -91,7 +75,7 @@ max_delta_step: 类别不平衡有助于逻辑回归
 """
 params = {
     'booster': 'gbtree', #  'dart' # 'rank:pairwise'对排序友好
-   'objective': 'binary:logistic', # 'objective': 'multi:softmax', 'num_class': 3,
+    'objective': 'binary:logistic', # 'objective': 'multi:softmax', 'num_class': 3,
     'eta': 0.01,
     'max_depth': 7,
 
