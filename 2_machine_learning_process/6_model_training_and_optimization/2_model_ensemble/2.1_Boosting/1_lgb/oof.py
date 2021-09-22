@@ -51,7 +51,7 @@ for i in tqdm(cat_feats):
     data['r_' + i] = data[i].rank()
 
 
-def train_model(X, y, X_test, cv, cv_seed, xgb_seed):
+def train_model(X, y, X_test, cv, cv_seed, lgb_seed):
     params = {'boosting_type': 'gbdt',  # 'rf', 'dart', 'goss'
               'objective': 'binary',
               # 'application': 'multiclass', 'num_class': 3, # multiclass=softmax, multiclassova=ova  One-vs-All
@@ -96,5 +96,5 @@ X_test = data[data.label.isnull()]
 
 rst = 0
 for cv_seed in range(10):
-    for xgb_seed in range(36):
-        rst += train_model(X, y, X_test, 5, cv_seed, xgb_seed) / 360
+    for lgb_seed in range(36):
+        rst += train_model(X, y, X_test, 5, cv_seed, lgb_seed) / 360

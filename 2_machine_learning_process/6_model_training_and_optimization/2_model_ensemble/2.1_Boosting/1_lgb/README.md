@@ -27,11 +27,19 @@ clf.run()
 ## lgb_自定义metric
 
 ```python
+#自定义样例一
+import numpy as np
 from sklearn import metrics
 def ks(y_hat, data):
     y_true = data.get_label()
-    fpr,tpr,thres = metrics.roc_curve(y_true,y_hat,pos_label=1)
+    fpr, tpr, thres = metrics.roc_curve(y_true,y_hat,pos_label=1)
     return 'ks', abs(fpr - tpr).max(), True
+#自定义样例二
+def rmspe(y_true, y_pred):
+    return np.sqrt(np.mean(np.square((y_true - y_pred) / y_true)))
+def feval_rmspe(y_pred, lgb_train):
+    y_true = lgb_train.get_label()
+    return 'RMSPE', rmspe(y_true, y_pred), False
 
 lgb_data = lgb.Dataset(X, y)
 
@@ -48,8 +56,11 @@ lgb.cv(
 ```
 
 ## lgb常用参数
+
 ### 1. 原生接口
-- 分类
+ 
+ - 1.1 分类祖传参数
+ 
 ```python
 params = {'boosting_type': 'gbdt',# 'rf', 'dart', 'goss'
           'objective': 'binary',# 'application': 'multiclass', 'num_class': 3, # multiclass=softmax, multiclassova=ova  One-vs-All
@@ -69,7 +80,8 @@ params = {'boosting_type': 'gbdt',# 'rf', 'dart', 'goss'
           'n_jobs': 32}
 ```
 
-- 回归
+ - 2.1 回归祖传参数
+ 
 ```python
 params = {
     'boosting': 'gbdt', # 'rf', 'dart', 'goss'
@@ -91,6 +103,10 @@ params = {
     'num_threads': 32,
 }
 ```
+
+ - 2.2 回归(kaggle optiver比赛参数)
+ 
+ [notebook链接](https://www.kaggle.com/binzhouchn/latest-code9-lgb-xgb-catboost)
 
 ---
 ```python
@@ -118,8 +134,10 @@ lgb.train(
     verbose_eval=50
 )
 ```
+
 ---
-### 2. SK接口
+
+### 2. SK接口(archive)
 - 分类
 ```python
 clf = LGBMClassifier(
