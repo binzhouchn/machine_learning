@@ -136,7 +136,7 @@ xgb.cv(
     seed=0
 )
        
-xgb.train(
+model = xgb.train(
     params,
     dtrain,
     num_boost_round=2000,
@@ -144,6 +144,9 @@ xgb.train(
     early_stopping_rounds=50,
     verbose_eval=50
 )
+#原生接口模型保存与读取
+model.save_model(f"./xgb{fold}.model") #存储
+model = xgb.Booster(params, model_file=f"./xgb{fold}.model")#读取
 ```
 
 
@@ -212,6 +215,8 @@ clf.fit(
     verbose=50
 )
 ```
+
+
 
 ## xgb调参指南及示例代码
 
