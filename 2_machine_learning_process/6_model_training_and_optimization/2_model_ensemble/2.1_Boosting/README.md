@@ -6,6 +6,7 @@
 - [LightGBM][2]
 - [GBDT-PL][7]
 - [LinXGBoost][8]
+- [CatBoost]
 
  http://dwz.cn/74863J
 ---
