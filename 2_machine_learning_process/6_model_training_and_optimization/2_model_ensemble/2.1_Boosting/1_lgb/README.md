@@ -8,7 +8,7 @@
 
 [**3. lgb常用参数**](#lgb常用参数)
 
-[**4. oof**](#oof)
+[**4. lgb参数调优**](#lgb参数调优)
 
 ---
 
@@ -208,7 +208,81 @@ clf.fit(
 )
 ```
 
+## lgb参数调优
 
+```python
+num_folds = 5
+group_fold = GroupKFold( n_splits = num_folds )
+def objective(trial):
+
+    # Optuna suggest params
+    seed = 1111
+    params = {
+        'learning_rate': trial.suggest_uniform('learning_rate', 0.01, 0.2),        
+        'lambda_l1': trial.suggest_float('lambda_l1', 0.1, 1),
+        'lambda_l2': trial.suggest_float('lambda_l2', 0.1, 1),
+        'num_leaves': trial.suggest_int('num_leaves', 400, 800),
+        'feature_fraction': trial.suggest_uniform('feature_fraction', 0.50, 1),
+        'bagging_fraction': trial.suggest_uniform('bagging_fraction', 0.50, 1),
+        'bagging_freq': trial.suggest_int('bagging_freq',1, 2),
+        'min_data_in_leaf':trial.suggest_int('min_data_in_leaf',400,700),
+        'max_depth': trial.suggest_int('max_depth', 6 , 13),
+        'seed': seed,
+        'objective': 'rmse',
+        'boosting': 'gbdt',
+        'verbosity': -1,
+        'n_jobs': -1,
+        #'device': 'gpu','gpu_platform_id': 0,
+        #'gpu_device_id': 0
+    }  
+
+    
+    rmspe_list = []
+
+    for fold, (trn_ind, val_ind) in enumerate(group_fold.split(X, y, groups = X['time_id'])):
+        print(f'Training fold {fold + 1}')
+        x_train, x_val = X.iloc[trn_ind], X.iloc[val_ind]
+        y_train, y_val = y.iloc[trn_ind], y.iloc[val_ind]
+        # Root mean squared percentage error weights
+        train_weights = 1 / np.square(y_train)
+        val_weights = 1 / np.square(y_val)
+        train_dataset = lgb.Dataset(x_train, y_train, weight = train_weights)
+        val_dataset = lgb.Dataset(x_val, y_val, weight = val_weights)
+        model = lgb.train(params = params,
+                          num_boost_round=5000,
+                          train_set = train_dataset, 
+                          valid_sets = [train_dataset, val_dataset], 
+                          verbose_eval = 250,
+                          early_stopping_rounds=50,
+                          feval = feval_rmspe)
+        
+        #preds = model.predict(d_val)
+        preds = model.predict(x_val[features])
+        score = rmspe(y_val, preds)
+        rmspe_list.append(score)
+    
+    print(f'Trial done: rmspe values on folds: {score}')
+    return np.mean(rmspe_list)
+    
+n_trials = 10
+
+FIT_LGB = True
+
+if FIT_LGB:
+    study = optuna.create_study(direction="minimize",study_name = 'LGB')
+    study.optimize(objective)
+
+    print("Number of finished trials: {}".format(len(study.trials)))
+
+    print("Best trial:")
+    trial = study.best_trial
+
+    print("  Value: {}".format(trial.value))
+
+    print("  Params: ")
+    for key, value in trial.params.items():
+        print("    {}: {}".format(key, value))
+```
 
 
 
