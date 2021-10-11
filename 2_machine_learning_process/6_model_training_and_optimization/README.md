@@ -52,6 +52,68 @@ rmspe_score = rmspe(y, oof_predictions)
 
 ![经验参数](经验参数.jpg)
 
+## 2.1 选择最优参数
+
+```python
+import optuna
+from optuna.samplers import TPESampler
+seed = 10087
+
+def objective(trial):
+    # for reg
+    def rmspe(y_true, y_pred):
+        return  (np.sqrt(np.mean(np.square((y_true - y_pred) / y_true))))
+    # for cls
+    def auc(y_true, y_pred):
+        return roc_auc_score(y_true, y_pred)
+    
+    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=seed, shuffle=False)
+    valid = [(X_test, y_test)]
+    
+    param = {
+        "device": "cpu",#"gpu"
+        "metric": "auc",
+        'objective':'binary',
+        'boosting_type':'gbdt',
+        'tree_learner':'serial',
+        'n_jobs':-1,
+        "verbosity": -1,
+        'is_unbalance':True,
+        'subsample':trial.suggest_float('subsample',0.2,0.9),
+        'colsample_bytree':trial.suggest_float('colsample_bytree',0.2,0.8),
+        'reg_alpha':trial.suggest_float('reg_alpha',0.2,0.8),
+        'reg_lambda':trial.suggest_float('reg_lambda',0.2,0.8),
+        'learning_rate':trial.suggest_loguniform('learning_rate', 0.005, 0.5),
+        "max_depth": trial.suggest_int("max_depth", 2, 500),
+        "lambda_l1": trial.suggest_float("lambda_l1", 1e-8, 10.0, log=True),
+        "lambda_l2": trial.suggest_float("lambda_l2", 1e-8, 10.0, log=True),
+        "num_leaves": trial.suggest_int("num_leaves", 2, 128),
+        "n_estimators": trial.suggest_int("n_estimators", 1000, 10000),
+        "feature_fraction": trial.suggest_float("feature_fraction", 0.4, 1.0),
+        "bagging_fraction": trial.suggest_float("bagging_fraction", 0.4, 1.0),
+        "bagging_freq": trial.suggest_int("bagging_freq", 1, 7),
+        "min_child_samples": trial.suggest_int("min_child_samples", 5, 100),
+        'seed': seed,
+        'feature_fraction_seed': seed,
+        'bagging_seed': seed,
+        'drop_seed': seed,
+        'data_random_seed': seed,}
+
+    pruning_callback = optuna.integration.LightGBMPruningCallback(trial, "auc") # "mse"
+    model = LGBMClassifier(**param)#分类模型用LGBMClassifier (auc)，回归模型用LGBMRegressor (mse)
+    
+    model.fit(X_train, y_train, eval_set=valid, verbose=False, callbacks=[pruning_callback], early_stopping_rounds=100)
+    preds = model.predict_proba(X_test)[:,1]
+    auc = auc(y_test, preds)
+    return auc
+
+study = optuna.create_study(sampler=TPESampler(), direction='maximize', pruner=optuna.pruners.MedianPruner(n_warmup_steps=5))
+study.optimize(objective, n_trials=1000, gc_after_trial=True)
+
+print('Number of finished trials:', len(study.trials))
+print('Best trial:', study.best_trial.params)
+```
+
 # 3. 模型选择
 
  - 对于稀疏型特征（如文本特征，One-hot的ID类特征），我们一般使用线性模型，譬如 Linear Regression 或者 Logistic Regression。Random Forest 和 GBDT 等树模型不太适用于稀疏的特征，但可以先对特征进行降维（如PCA，SVD/LSA等），再使用这些特征。稀疏特征直接输入 DNN 会导致网络 weight 较多，不利于优化，也可以考虑先降维，或者对 ID 类特征使用 Embedding 的方式
