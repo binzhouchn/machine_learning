@@ -204,7 +204,8 @@ clf.fit(
     early_stopping_rounds=100,
     verbose=50,
     feature_name='auto',
-    categorical_feature='auto'
+    categorical_feature='auto',
+    callbacks = [lgb.reset_parameter(learning_rate=lambda iter: 0.1 * (0.999 ** iter))], #可以每个iter动态变更学习率
 )
 ```
 
