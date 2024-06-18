@@ -105,7 +105,9 @@ svm损失函数：[合页损失(加正则项)](https://www.jianshu.com/p/fe14cd0
 顺便可以看下线性回归，损失函数：均方误差MSE
 
 看统计学习方法P78及<br>
-[LR推导及代码实现（推荐）](https://zhuanlan.zhihu.com/p/36670444)
+[LR推导及代码实现（推荐）](https://zhuanlan.zhihu.com/p/36670444)<br>
+[LR最详细推导](https://zhuanlan.zhihu.com/p/74722035)<br>
+
 
 LR损失函数：对数损失logloss(逻辑回归采用对数损失函数来求参数，实际上与采用极大似然估计来求参数是一致的)
 
