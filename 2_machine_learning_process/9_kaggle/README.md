@@ -1,3 +1,7 @@
+## kaggle大佬
+
+https://www.kaggle.com/yuanzhezhou/competitions
+
 ## 股票市场波动率预测
 
 https://www.kaggle.com/c/optiver-realized-volatility-prediction
